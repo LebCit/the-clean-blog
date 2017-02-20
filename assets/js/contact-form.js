@@ -24,11 +24,12 @@ jQuery(document).ready(function ($) {
         // Initialize form validation on the registration form.
         // It has the id "contactform".
         var v = $('#contactform').validate({            
-                    
+            
+            // Set the error element to the "p" tags inside the form.
             errorElement: "p",
             rules: {
                 // The key name on the left side is the name attribute of an input field.
-                // Validation rules are defined on the right side.
+                // Validation rules are defined inside the keys as an object consisting of rule/parameter pairs.
                 sender: {
                     required: true,
                     // Specify that sender should be validated by the custom sender name pattern defined above.
@@ -70,15 +71,20 @@ jQuery(document).ready(function ($) {
                 }
             },
             // Make sure the form is submitted to the correct destination.
+            // Use AJAX to submit the form.
             submitHandler: function(form) {
-                var params = $(form).serialize();
+                var params = $(form).serialize(); // Encode form's elements as a string for submission.
                 $.ajax({
-                    type: 'POST',
-                    url: '/wp-admin/admin-ajax.php',
-                    data: params + '&action=cleanblog_ajax_sendmail',
+                    type: 'POST', // Use $_POST method to submit data.
+                    url: '/wp-admin/admin-ajax.php', // Submit data and process AJAX request from admin-ajax.php 
+                    data: params + '&action=cleanblog_ajax_sendmail', // Serialize and load function action hook.
+                    // If the form is successfully submitted.
                     success: function(success) {
+                        // Start by hiding the success div.
                         $('#success').hide();
+                        // Show it when the email is send.
                         $('#success').html(success);
+                        // Animate the success div.
                         $('#success').fadeIn('slow', function () {
                             $(this).delay(3000).fadeOut('slow');
                         });
@@ -87,6 +93,7 @@ jQuery(document).ready(function ($) {
                         $("#email").val("");
                         $("#message").val("");
                     },
+                    // Else, show the related error(s).
                     error: function() {
                         $('#contactform').fadeTo( "slow", 0.15, function() {
                             $('p').fadeIn();
@@ -99,7 +106,6 @@ jQuery(document).ready(function ($) {
         // Programmatically reset above form.
         $("#reset").click(function() {
             v.resetForm();
-            $('#success').hide();
         });
         
     });//End contact form validation script with validate.js
