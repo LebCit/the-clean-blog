@@ -414,12 +414,12 @@ function cleanblog_contact_form_class() {
                 global $email;
                 global $message;
                 // Email information.
-                $to = get_option( 'admin_email');
+                $to = get_option( 'admin_email'); // E-mail address of blog administrator.
                 $subject = 'From: ' .$sender . ' / ' . $email;
 
                 // Send email.
-                var_dump($success = wp_mail($to, $subject, $message));
-                wp_die();
+                wp_mail($to, $subject, $message);
+                wp_die(); // Required to end AJAX request.
             }
         }
 
