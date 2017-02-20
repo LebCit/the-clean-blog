@@ -51,6 +51,9 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 = 17.02.20 =
 * Released: February 20, 2017
 - Added AJAX to contact form
+- Added useful comments to contact-form.js
+- Removed unnecessary code from contact-form.js and cleanblog-functions.php
+- Updated readme.txt
 
 = 17.02.15 =
 * Released: February 15, 2017
