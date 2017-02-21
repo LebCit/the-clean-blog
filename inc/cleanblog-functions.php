@@ -414,7 +414,7 @@ function cleanblog_contact_form_class() {
                 global $email;
                 global $message;
                 // Email information.
-                $to = get_option( 'admin_email'); // E-mail address of blog administrator.
+                $to = get_option('admin_email'); // E-mail address of blog administrator.
                 $subject = 'From: ' .$sender . ' / ' . $email;
 
                 // Send email.
