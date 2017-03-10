@@ -6,7 +6,32 @@
  */
 
 /**
+ * Localize hero.js to asynchronously load the header image.
+ */
+function cleanblog_header_script() {
+    
+    // Adding custom javascript file to handle the header image.
+    wp_enqueue_script('cleanblog-hero', get_theme_file_uri() . '/assets/js/hero.js', array('jquery'), '', true);
+    
+    // Declare $post global if used outside of the loop.
+    $post = get_post();
+    
+    $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
+    $imgUrl = array (
+        'key1' => $heroImg[0],
+        'key2' => get_template_directory_uri() . '/components/header/images/default-hero.jpg',
+        'key3' => has_post_thumbnail(),
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'sm' => 'Hooray, it worked! Load The Image Here',
+        'um' => 'This is the default image'
+    );
+    wp_localize_script('cleanblog-hero', 'imgobj', $imgUrl);
+}
+add_action('wp_enqueue_scripts', 'cleanblog_header_script');
+
+/**
  * Set background image for the header.
+ * PHP falback for the header image. 
  * 
  * Add inline style to the backgroung header image.
  * @link https://developer.wordpress.org/reference/functions/wp_add_inline_style/
@@ -25,18 +50,22 @@ function cleanblog_header_style() {
         $custom_header_style = '
             .intro-header {
                 background-image: url( ' . $backgroundImg[0] . ' );
+                height: 100vh;
             }
         ';
     } else {
         $custom_header_style = '
             .intro-header {
                 background-image: url( ' . get_template_directory_uri() . '/components/header/images/default-hero.jpg' . ' );
+                height: 100vh;
             }
         ';
     }
-    wp_add_inline_style( 'cleanblog-main-style', $custom_header_style );
+    wp_add_inline_style('cleanblog-main-style', $custom_header_style);
 }
-add_action( 'wp_enqueue_scripts', 'cleanblog_header_style' );
+add_action('wp_enqueue_scripts', 'cleanblog_header_style');
+add_action('wp_ajax_cleanblog_header_style', 'cleanblog_header_style');
+add_action('wp_ajax_nopriv_cleanblog_header_style', 'cleanblog_header_style');
 
 /**
  * Add Subtitle in admin post.
