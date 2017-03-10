@@ -17,15 +17,13 @@ function cleanblog_header_script() {
     $post = get_post();
     
     $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
-    $imgUrl = array (
-        'key1' => $heroImg[0],
-        'key2' => get_template_directory_uri() . '/components/header/images/default-hero.jpg',
-        'key3' => has_post_thumbnail(),
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'sm' => 'Hooray, it worked! Load The Image Here',
-        'um' => 'This is the default image'
+    $heroSettings = array (
+        'cleanblog_hero_ajaxurl'       => admin_url( 'admin-ajax.php' ),
+        'cleanblog_has_post_thumbnail' => has_post_thumbnail(),
+        'cleanblog_featured_image'     => $heroImg[0],
+        'cleanblog_default_image'      => get_template_directory_uri() . '/components/header/images/default-hero.jpg'
     );
-    wp_localize_script('cleanblog-hero', 'imgobj', $imgUrl);
+    wp_localize_script('cleanblog-hero', 'cleanblog_hero_set', $heroSettings);
 }
 add_action('wp_enqueue_scripts', 'cleanblog_header_script');
 
@@ -303,17 +301,18 @@ function cleanblog_contact_form_script() {
 
         // Create array with values that are going to be used in Javascript file itself
         $translations = array(
-            'sender_required'    => __('Please enter your Name.', 'the-clean-blog'),
-            'sender_rangelength' => __('Your Name must be 2 to 30 characters long !', 'the-clean-blog'),
-            'sender_pattern'     => __('Your Name can only contain _, 1-9, A-Z or a-z and 2 to 20 characters long !', 'the-clean-blog'),
-            'email_required'     => __('Please enter a valid email address !', 'the-clean-blog'),
-            'email_maxlength'    => __('Email address should not exceed 45 Charachters !', 'the-clean-blog'),
-            'website_url'        => __('Please enter a valid website url !', 'the-clean-blog'),
-            'website_maxlength'  => __('HO HO HO ! JS GOT YOU ! THANKS FOR TRYING !', 'the-clean-blog'),
-            'message_required'   => __('Please enter your message.', 'the-clean-blog'),
-            'message_maxlength'  => __('Your message should not exceed 500 characters !', 'the-clean-blog')
+            'cleanblog_msg_ajaxurl'            => admin_url( 'admin-ajax.php' ),
+            'cleanblog_sender_required'        => __('Please enter your Name.', 'the-clean-blog'),
+            'cleanblog_sender_rangelength'     => __('Your Name must be 2 to 30 characters long !', 'the-clean-blog'),
+            'cleanblog_sender_pattern'         => __('Your Name can only contain _, 1-9, A-Z or a-z and 2 to 20 characters long !', 'the-clean-blog'),
+            'cleanblog_email_required'         => __('Please enter a valid email address !', 'the-clean-blog'),
+            'cleanblog_email_maxlength'        => __('Email address should not exceed 45 Charachters !', 'the-clean-blog'),
+            'cleanblog_website_url'            => __('Please enter a valid website url !', 'the-clean-blog'),
+            'cleanblog_website_maxlength'      => __('HO HO HO ! JS GOT YOU ! THANKS FOR TRYING !', 'the-clean-blog'),
+            'cleanblog_message_required'       => __('Please enter your message.', 'the-clean-blog'),
+            'cleanblog_message_maxlength'      => __('Your message should not exceed 500 characters !', 'the-clean-blog')
         );
-        wp_localize_script('contact_form_script', 'object', $translations);
+        wp_localize_script('contact_form_script', 'cleanblog_msg', $translations);
     }
 }
 add_action('wp_enqueue_scripts', 'cleanblog_contact_form_script');

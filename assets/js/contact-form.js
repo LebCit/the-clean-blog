@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
         // Custom sender name pattern for the sender field.
         $.validator.addMethod("sender", function(value, element) {
             return this.optional(element) || /^[a-zA-Z0-9\_]{2,20}/.test(value);
-        }, object.sender_pattern);
+        }, cleanblog_msg.cleanblog_sender_pattern);
         
         // Custom email pattern for the built-in email validation rule.
         $.validator.methods.email = function( value, element ) {
@@ -54,20 +54,20 @@ jQuery(document).ready(function ($) {
             // Specify validation error messages.
             messages: {
                 sender: {
-                    required: object.sender_required,
-                    rangelength: object.sender_rangelength
+                    required: cleanblog_msg.cleanblog_sender_required,
+                    rangelength: cleanblog_msg.cleanblog_sender_rangelength
                 },
                 email: {
-                    required : object.email_required,
-                    maxlenght : object.email_maxlength
+                    required : cleanblog_msg.cleanblog_email_required,
+                    maxlenght : cleanblog_msg.cleanblog_email_maxlength
                 },
                 website: {
-                    url: object.website_url,
-                    maxlength : object.website_maxlength
+                    url: cleanblog_msg.cleanblog_website_url,
+                    maxlength : cleanblog_msg.cleanblog_website_maxlength
                 },
                 message: {
-                    required: object.message_required,
-                    maxlength: object.message_maxlength
+                    required: cleanblog_msg.cleanblog_message_required,
+                    maxlength: cleanblog_msg.cleanblog_message_maxlength
                 }
             },
             // Make sure the form is submitted to the correct destination.
@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
                 var params = $(form).serialize(); // Encode form's elements as a string for submission.
                 $.ajax({
                     type: 'POST', // Use $_POST method to submit data.
-                    url: '/wp-admin/admin-ajax.php', // Submit data and process AJAX request from admin-ajax.php 
+                    url: cleanblog_msg.cleanblog_msg_ajaxurl, // Submit data and process AJAX request from admin-ajax.php 
                     data: params + '&action=cleanblog_ajax_sendmail', // Serialize and load function action hook.
                     // If the form is successfully submitted.
                     success: function(success) {
