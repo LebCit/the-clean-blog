@@ -122,9 +122,7 @@ function cleanblog_scripts()
     wp_enqueue_script('cleanblog-bootstrap-script', get_theme_file_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
 
     wp_enqueue_script('cleanblog-script', get_theme_file_uri() . '/assets/js/clean-blog.js', array('jquery'), '3.3.7', true);
-
-    wp_enqueue_script('cleanblog-hero', get_theme_file_uri() . '/assets/js/hero.js', array('jquery'), '', true);
-
+    
     wp_enqueue_script('cleanblog-scrollto', get_theme_file_uri() . '/assets/js/scrollTo.js', array('jquery'), '2.1.2', true);
 
     wp_enqueue_script('cleanblog-footer', get_theme_file_uri() . '/assets/js/footer-reveal.min.js', array('jquery'), '', true);
@@ -165,3 +163,9 @@ require get_template_directory() . '/inc/jetpack.php';
  * Require Clean Blog custom functions.
  */
 require get_template_directory() . '/inc/cleanblog-functions.php';
+
+add_filter( 'allowed_http_origins', 'my_add_origins' );
+function my_add_origins( $origins ) {
+	$origins[] = 'http://127.0.0.1'; // this will add http://127.0.0.1 to the list of allowed origins when send_origin_headers() is called
+	return $origins;
+}
