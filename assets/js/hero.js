@@ -12,20 +12,36 @@
  * @link http://codepen.io/web2feel/pen/gbjNgw
  */
 
-jQuery(document).ready(function ($) {
-    // Defining a function to set size for #masthead 
+(function($) {
+    fullscreen();
     function fullscreen() {
-        jQuery('#masthead').css({
-            width: jQuery(window).width(),
-            height: jQuery(window).height()
+        $.ajax({
+            type: 'POST',
+            url: imgobj.ajaxurl,
+            data: {
+                action : 'cleanblog_header_style'
+            },
+            beforeSend : function(){
+                if (imgobj.key3){
+                    $('#masthead').css({
+                        'background-image': 'url(' + imgobj.key1 + ')',
+                        width: $(window).width(),
+                        height: $(window).height()
+                    });
+                } else {
+                    $('#masthead').css({
+                        'background-image': 'url(' + imgobj.key2 + ')',
+                        width: $(window).width(),
+                        height: $(window).height()
+                    });
+                }
+            }
         });
     }
-
-    fullscreen();
-
-    // Run the function in case of window resize
-    jQuery(window).resize(function () {
+    
+    // Run the function in case of window resize.
+    $(window).resize(function(e) {
+        e.preventDefault();
         fullscreen();
     });
-
-});
+})(jQuery);
