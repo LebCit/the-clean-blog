@@ -15,12 +15,20 @@ function cleanblog_header_script() {
     
     // Declare $post global if used outside of the loop.
     $post = get_post();
+    // Check if post is object otherwise we're not in singular post.
+    if (!is_object($post)) {
+        return;
+    }
     
     $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
     $heroSettings = array (
         'cleanblog_hero_ajaxurl'       => admin_url( 'admin-ajax.php' ),
         'cleanblog_has_post_thumbnail' => has_post_thumbnail(),
         'cleanblog_featured_image'     => $heroImg[0],
+        'cleanblog_is_seach'           => is_search(),
+        'cleanblog_seach_image'        => get_template_directory_uri() . '/components/header/images/search-hero.jpg',
+        'cleanblog_is_404'             => is_404(),
+        'cleanblog_404_image'          => get_template_directory_uri() . '/components/header/images/404-hero.jpg',
         'cleanblog_default_image'      => get_template_directory_uri() . '/components/header/images/default-hero.jpg'
     );
     wp_localize_script('cleanblog-hero', 'cleanblog_hero_set', $heroSettings);

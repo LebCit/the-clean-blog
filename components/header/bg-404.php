@@ -8,6 +8,7 @@
 <header id="masthead" class="site-header intro-header" role="banner">
     <style>
         .intro-header {
+            height: 100vh;
             background-image: url('<?php
             echo esc_url(get_template_directory_uri());
             echo '/components/header/images/404-hero.jpg';
