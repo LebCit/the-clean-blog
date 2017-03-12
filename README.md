@@ -16,6 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 The Clean Blog is a carefully styled Bootstrap blog theme, **without sidebars**, that is perfect for personal or company blogs.  
 The Clean Blog is **Fully Responsive**, with a **Modern Design** and a **Distraction Free** blog text optimized for legibility with a menu bar interface that conveniently appears when you scroll up !  
 The **defined featured image of a post or page turns into a responsive full screen custom parallax header background image !**  
+**Header's background image** is retrieved with AJAX to speed time's load !  
 **Subtitle** option for each post and page in the backend directly under the title !  
 Galleries are displayed in a **responsive touch-friendly image lightbox** when images are linked to their respective media file.  
 The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.  
@@ -49,6 +50,13 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 2. That's all folks !
 
 ## Changelog
+
+### 17.03.12 =
+* Released: March 12, 2017
+- Ajaxified header's background image
+- Localized hero.js
+- Renamed localized arrays' keys
+- Updated readme.txt
 
 ### 17.02.20 =
 * Released: February 20, 2017
