@@ -13,7 +13,8 @@
 </div>
 </div>
 <!-- Main Content -->
-<hr>
+<hr class="page-footer">
+</main>
 </div>
 <!-- #page.site -->
 
