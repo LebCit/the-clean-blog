@@ -49,6 +49,7 @@ header.cb-nav::before {
         -o-transform: translateX(0);
         transform: translateX(0);
     }
+    /* Start Hide/Show Menu */
     header.cb-nav {
         -webkit-transition: background-color 0.3s;
         -moz-transition: background-color 0.3s;
@@ -80,6 +81,7 @@ header.cb-nav::before {
         -o-transform: translate3d(0, 100%, 0);
         transform: translate3d(0, 100%, 0);
     }
+    /* End Hide/Show Menu */
     header.cb-nav::before {
         content: 'desktop';
     }
@@ -110,7 +112,6 @@ header.cb-nav::before {
 @media only screen and (min-width: 1024px) {
     .cb-logo {
         position: absolute;
-        /*z-index: 2; Removed to hide the logo on sub-menu */
         margin-left: 5%;
     }
     .cb-logo img {
@@ -377,21 +378,7 @@ header.cb-nav::before {
     }
     .cb-main-nav > li:nth-child(n+6),
     .cb-main-nav li ul li:nth-child(n+7):not(:last-child){
-        /* 
-         * Added to hide all the main <li> strating from 6 and beyond.
-         * In other words, show only the 5 first main <li>.
-         * Then, in sub-menu view, we hide the children <li> strating from 7 and beyond,
-         * but not the last one (the .placeholder) because we need it.
-         * We are counting 7 because the children <li> begins with the <li class="go-back">.
-         * Even if it's hidden on desktop, the <li class="go-back"> is still the first child
-         * in the children <li> of the sub-menu, so we have to count it.
-         * Counting it and addding 5 after it will give 6.
-         * So, to show only the first 5 children <li> we hide starting from 7 and beyond.
-         * In other words, show only the first 5 children <li> after <li class="go-back">
-         * as well as the last-child (the .placeholder).
-         *
-         * This is much easier than writing a Walker... 
-        */
+        /*  Much easier than writing a Walker */
         display: none !important;
     }
     .cb-main-nav li a {
@@ -501,15 +488,6 @@ header.cb-nav::before {
         opacity: 0;
         pointer-events: none;
     }
-    /*.cb-main-nav.moves-out > li {
-        /* 
-        * This is only for the clicked <li> that has children
-        * so it can act as it's children and take 16% of the <ul class="sub-menu"> !
-        */
-        /*width: 16%;
-        text-align: left;
-        vertical-align: middle;
-    } */
     .cb-main-nav.moves-out > li > a {
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
@@ -600,72 +578,3 @@ header.cb-nav::before {
         transform: translateX(0);
     }
 }
-
-/*.no-js .cb-nav-trigger,
-.no-js .cb-subnav-trigger {
-    display: none;
-}
-
-.no-js header.cb-nav {
-    position: relative;
-    height: auto;
-}
-
-.no-js .cb-logo img {
-    margin-bottom: 14px;
-}
-
-.no-js .cb-main-nav {
-    position: static;
-    width: 100%;
-    height: auto;
-    visibility: visible;
-    overflow: visible;
-}
-.no-js .cb-main-nav li {
-    display: inline-block;
-}
-.no-js .cb-main-nav li:last-child {
-    display: block;
-}
-.no-js .cb-main-nav .go-back {
-    display: none;
-}
-.no-js .cb-main-nav li ul {
-    position: static;
-    width: 100%;
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
-}
-@media only screen and (min-width: 1024px) {
-    .no-js .cb-main-nav {
-        height: 80px;
-    }
-    .no-js .cb-main-nav li ul {
-        position: absolute;
-        top: 80px;
-    }
-    .no-js .cb-main-nav li ul li {
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-    .no-js .cb-main-nav li ul li:last-child {
-        display: none;
-    }
-}
-
-.no-js .cb-main-content {
-    padding-top: 0;
-}
-@media only screen and (min-width: 1024px) {
-    .no-js .cb-main-content {
-        padding-top: 80px;
-    }
-}*/
