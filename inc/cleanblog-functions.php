@@ -11,7 +11,7 @@
 function cleanblog_header_script() {
     
     // Adding custom javascript file to handle the header image.
-    wp_enqueue_script('cleanblog-hero', get_theme_file_uri() . '/assets/js/hero.js', array('jquery'), '', true);
+    wp_enqueue_script('cleanblog-hero', get_theme_file_uri('/assets/js/hero.js'), array('jquery'), '', true);
     
     // Declare $post global if used outside of the loop.
     $post = get_post();
@@ -22,13 +22,9 @@ function cleanblog_header_script() {
     
     $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
     $heroSettings = array (
-        'cleanblog_hero_ajaxurl'       => admin_url( 'admin-ajax.php' ),
+        'cleanblog_hero_ajaxurl'       => esc_url(admin_url('admin-ajax.php')),
         'cleanblog_has_post_thumbnail' => has_post_thumbnail(),
-        'cleanblog_featured_image'     => $heroImg[0],
-        'cleanblog_is_seach'           => is_search(),
-        'cleanblog_seach_image'        => get_template_directory_uri() . '/components/header/images/search-hero.jpg',
-        'cleanblog_is_404'             => is_404(),
-        'cleanblog_404_image'          => get_template_directory_uri() . '/components/header/images/404-hero.jpg',
+        'cleanblog_featured_image'     => esc_url($heroImg[0]),
         'cleanblog_default_image'      => get_template_directory_uri() . '/components/header/images/default-hero.jpg'
     );
     wp_localize_script('cleanblog-hero', 'cleanblog_hero_set', $heroSettings);
@@ -55,7 +51,7 @@ function cleanblog_header_style() {
     if (has_post_thumbnail()) {
         $custom_header_style = '
             .intro-header {
-                background-image: url( ' . $backgroundImg[0] . ' );
+                background-image: url( ' . esc_url($backgroundImg[0]) . ' );
                 height: 100vh;
             }
         ';
@@ -74,64 +70,33 @@ add_action('wp_ajax_cleanblog_header_style', 'cleanblog_header_style');
 add_action('wp_ajax_nopriv_cleanblog_header_style', 'cleanblog_header_style');
 
 /**
- * Add Subtitle in admin post.
+ * Generate custom search form
  *
- * @param WP_Post $post Post object.
- *
- * @return void
- *
- * @link https://codepad.co/snippet/UrzTcQId
+ * @param string $form Form HTML.
+ * @return string Modified form HTML.
+ * 
+ * @link https://developer.wordpress.org/reference/functions/get_search_form/#comment-369
+ * 
  */
-function unprefix_subtitle($post)
-{
-    if (!in_array($post->post_type, [ 'post', 'page'], true)) {
-        return;
-    }
-
-    // The subtitle field.
-    $_stitle = sanitize_text_field(get_post_meta($post->ID, '_unprefix_subtitle', true));
-
-    echo '<label class="screen-reader-text" for="unprefix_subtitle">' . esc_html__('Enter subtitle here', 'the-clean-blog') . '</label>';
-    echo '<input style="width:50%;" type="text" name="unprefix_subtitle" id="unprefix_subtitle" value="' . esc_attr($_stitle) . '" size="30" spellcheck="true" autocomplete="off" placeholder="Enter subtitle here" maxlength="45" />';
+function cleanblog_search_form( $form ) {
+    $form = 
+        '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '" >
+            <label>
+                <span class="screen-reader-text">' . esc_attr__('Search for:', 'the-clean-blog') . '</span>
+                <input type="search" class="search-field"
+                       placeholder="' . esc_attr__('Search ...', 'the-clean-blog') . '" '
+                    . 'value="' . get_search_query() . '" name="s" id="s" required '
+                    . 'title="' . esc_attr__('Search for:', 'the-clean-blog') . '" />
+            </label>
+            <button type="submit" class="search-submit"
+                    value="'. esc_attr__('Search', 'the-clean-blog') .'" />
+                <i class="icon-search"></i>
+            </button>
+        </form>';
+ 
+    return $form;
 }
-
-/**
- * Save Subtitle
- *
- * @param int     $post_ID Post ID.
- * @param WP_Post $post    Post object.
- * @param bool    $update  Whether this is an existing post being updated or not.
- *
- * @return void
- */
-function unprefix_save_subtitle($post_ID, $post, $update)
-{
-    if (!in_array($post->post_type, [ 'post', 'page'], true)) {
-        return;
-    }
-
-    // Prevent to execute twice.
-    if (defined('DOING_AJAX') && DOING_AJAX) {
-        return;
-    }
-
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-
-    // Get the subtitle value from $_POST.
-    $_stitle = filter_input(INPUT_POST, 'unprefix_subtitle', FILTER_SANITIZE_STRING);
-
-    if ($update) {
-        // Update the post meta.
-        update_post_meta($post_ID, '_unprefix_subtitle', sanitize_text_field($_stitle));
-    } elseif (!empty($_stitle)) {
-        // Add unique post meta.
-        add_post_meta($post_ID, '_unprefix_subtitle', sanitize_text_field($_stitle), true);
-    }
-}
-add_action('edit_form_after_title', 'unprefix_subtitle', 20);
-add_action('wp_insert_post', 'unprefix_save_subtitle', 20, 3);
+add_filter( 'get_search_form', 'cleanblog_search_form' );
 
 /**
  * Customizimg the excerpt function.
@@ -140,7 +105,11 @@ add_action('wp_insert_post', 'unprefix_save_subtitle', 20, 3);
  */
 function cleanblog_custom_excerpt_length($length)
 {
-    return 15;
+    if ( is_admin() ) {
+        return $length;
+    } else {
+        return 15;
+    }
 }
 add_filter('excerpt_length', 'cleanblog_custom_excerpt_length', 999);
 
@@ -150,12 +119,6 @@ function cleanblog_excerpt_more($more)
     );
 }
 add_filter('excerpt_more', 'cleanblog_excerpt_more');
-/**
- * Remove p tag arround the excerpt function.
- *
- * @link https://codex.wordpress.org/Function_Reference/wpautop
- */
-remove_filter( 'the_excerpt', 'wpautop' );
 
 /**
  * Add social sharing icons to posts.
@@ -171,7 +134,7 @@ function cleanblog_social_sharing_buttons($content) {
         $cleanblogURL = urlencode(get_permalink());
 
         // Get current post title.
-        $cleanblogTitle = str_replace( ' ', '%20', get_the_title());
+        $cleanblogTitle = str_replace( ' ', '%20', the_title_attribute('echo=0'));
 
         // Get Post Thumbnail for pinterest.
         $cleanblogThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
@@ -187,7 +150,7 @@ function cleanblog_social_sharing_buttons($content) {
         // Add sharing button at the end of post's content.
         $variable .= '<div class="panel-footer">';
         $variable .= '<ul class="social-network social-circle">';
-        $variable .= '<li><span>SHARE :</span></li>';
+        $variable .= '<li><span>' . esc_html__('SHARE :', 'the-clean-blog') . '</span></li>';
         $variable .= '<li><a class="cleanblog-email" href="'.$emailURL.'" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>';
         $variable .= '<li><a class="cleanblog-twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
         $variable .= '<li><a class="cleanblog-facebook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';        
@@ -218,7 +181,7 @@ add_filter( 'the_content', 'cleanblog_social_sharing_buttons');
  */
 function cleanblog_comment_textarea_placeholder($args)
 {
-    $args['comment_field'] = str_replace('textarea', 'textarea placeholder="Comment" class="form-control"', $args['comment_field']);
+    $args['comment_field'] = str_replace('textarea', 'textarea placeholder="' . esc_attr__('Comment', 'the-clean-blog') .'" class="form-control"', $args['comment_field']);
     return $args;
 }
 add_filter('comment_form_defaults', 'cleanblog_comment_textarea_placeholder');
@@ -230,8 +193,8 @@ function cleanblog_comment_form_fields($fields)
 {
     unset($fields['url']);
     foreach ($fields as &$field) {
-        $field = str_replace('id="author"', 'id="author" class="form-control" placeholder="Name *"', $field);
-        $field = str_replace('id="email"', 'id="email" class="form-control" placeholder="Email *"', $field);
+        $field = str_replace('id="author"', 'id="author" class="form-control" placeholder="' . esc_attr__('Name *', 'the-clean-blog') . '"', $field);
+        $field = str_replace('id="email"', 'id="email" class="form-control" placeholder="' . esc_attr__('Email *', 'the-clean-blog') . '"', $field);
     }
     return $fields;
 }
@@ -291,224 +254,6 @@ function cleanblog_comments($comment, $depth, $args)
     </article><!-- .comment-body -->
     <?php
 
-}
-
-/**
- * Localize contact form script to translate it's strings.
- * 
- * @link https://codex.wordpress.org/I18n_for_WordPress_Developers
- */
-function cleanblog_contact_form_script() {
-    // Fires only if we are on the Contact Form Template.
-    if ( is_page_template( 'page-contact.php' ) ) {
-        // Adding jQuery Validation Plugin.
-        wp_enqueue_script('cleanblog-validate', get_theme_file_uri() . '/assets/js/jquery.validate.min.js', array('jquery'), '1.15.0', true);
-        
-        // Adding custom javascript contact form file to theme.
-        wp_enqueue_script('contact_form_script', get_template_directory_uri().'/assets/js/contact-form.js', array('jquery', 'cleanblog-validate'));
-
-        // Create array with values that are going to be used in Javascript file itself
-        $translations = array(
-            'cleanblog_msg_ajaxurl'            => admin_url( 'admin-ajax.php' ),
-            'cleanblog_sender_required'        => __('Please enter your Name.', 'the-clean-blog'),
-            'cleanblog_sender_rangelength'     => __('Your Name must be 2 to 30 characters long !', 'the-clean-blog'),
-            'cleanblog_sender_pattern'         => __('Your Name can only contain _, 1-9, A-Z or a-z and 2 to 20 characters long !', 'the-clean-blog'),
-            'cleanblog_email_required'         => __('Please enter a valid email address !', 'the-clean-blog'),
-            'cleanblog_email_maxlength'        => __('Email address should not exceed 45 Charachters !', 'the-clean-blog'),
-            'cleanblog_website_url'            => __('Please enter a valid website url !', 'the-clean-blog'),
-            'cleanblog_website_maxlength'      => __('HO HO HO ! JS GOT YOU ! THANKS FOR TRYING !', 'the-clean-blog'),
-            'cleanblog_message_required'       => __('Please enter your message.', 'the-clean-blog'),
-            'cleanblog_message_maxlength'      => __('Your message should not exceed 500 characters !', 'the-clean-blog')
-        );
-        wp_localize_script('contact_form_script', 'cleanblog_msg', $translations);
-    }
-}
-add_action('wp_enqueue_scripts', 'cleanblog_contact_form_script');
-
-/* 
- * Create the Clean_Blog_Contact_Form_Handler class.
- * Please note that the original class from the link below has been heavily modified.
- * Ajaxify contact form to all users.
- * 
- * Thanks to WP Knowledge Base
- * @link https://www.wpkb.com/how-to-code-your-own-wordpress-contact-form-with-jquery-validation/
- */
-add_action('wp_ajax_cleanblog_ajax_sendmail', 'cleanblog_contact_form_class');
-add_action('wp_ajax_nopriv_cleanblog_ajax_sendmail', 'cleanblog_contact_form_class');
-function cleanblog_contact_form_class() {
-    class Clean_Blog_Contact_Form_Handler {
-
-        function cleanblog_handle_form() {
-            // Check if the form is submitted && verify the Nonce set.
-            if($this->cleanblog_is_form_submitted() && $this->cleanblog_is_nonce_set()) {
-                // If form is submitted and Nonce set, validate form's fields.
-                if($this->cleanblog_is_form_valid()) {
-                    // If form's fields are valide, send the message.
-                    $this->cleanblog_send_contact_form_message();
-                } else { // If form's fields are not valid, display the form.
-                    $this->cleanblog_display_form();
-                }
-            } else { // If the form is not submitted &&/|| the Nonce set not verified, display the form.
-                $this->cleanblog_display_form();
-            }
-        }
-
-        function cleanblog_is_form_submitted() {
-            if(isset($_POST['submitted'])) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        function cleanblog_is_nonce_set() {
-            if(isset( $_POST['submit_contact_form_nonce_field'])  &&
-                wp_verify_nonce(sanitize_key($_POST['submit_contact_form_nonce_field']), 'submit_contact_form_action')) {
-                    return true;
-            } else{
-                return false;
-            }
-        }
-
-        function cleanblog_is_form_valid() {
-
-            // Initialize error array!
-            $errors = array();
-
-            // Check all mandatory fields are present.
-            // Check for a proper Name.
-            if (!empty($_POST['sender'])) {
-                global $sender;
-                $sender = sanitize_text_field(wp_unslash($_POST['sender']));
-                $sender_pattern = "/^[a-zA-Z0-9\_]{2,20}/";// Regular expression that checks if the name is valid characters
-                if (preg_match($sender_pattern,$sender)) {
-                    $sender = $sender;
-                } else {
-                    $errors[] = esc_html__('Your Name can only contain _, 1-9, A-Z or a-z and 2 to 20 characters long !', 'the-clean-blog');
-                }
-            } else {
-                $errors[] = esc_html__('You forgot to enter your Name.', 'the-clean-blog');
-            }
-
-            // Check for a proper Email.
-            if (!empty($_POST['email'])) {
-                global $email;
-                $email = sanitize_email(wp_unslash($_POST['email']));
-                if (is_email($email)) { // Validate email.
-                    $email = $email;
-                } else {
-                    $errors[] = esc_html__('Please, enter a valid email address !', 'the-clean-blog');
-                }
-            } else {
-                $errors[] = esc_html__('You forgot to enter your email address.', 'the-clean-blog');
-            }
-
-            // Make sure the website field is empty !
-            if (!empty($_POST['website'])) {
-                $website = esc_url_raw(wp_unslash($_POST['website']));
-                if (filter_var($website, FILTER_VALIDATE_URL) === false) { // Invalid URL.
-                    $errors[] = esc_html__('Please enter a valid URL.', 'the-clean-blog');
-                } else { // Valid URL.
-                    $errors[] = esc_html__('HO HO HO ! PHP GOT YOU ! THANKS FOR TRYING !', 'the-clean-blog');
-                }
-            }
-
-            // Validate the textarea message.
-            global $message;
-            if (!empty($_POST['message'])) {               
-                $message = sanitize_text_field(wp_unslash($_POST['message']));
-                if (strlen($message) > 500) {
-                    $errors[] = esc_html__('Your message should not exceed 500 characters !', 'the-clean-blog');
-                }
-            } else {
-                $errors[] = esc_html__('You forgot to enter your message.', 'the-clean-blog');
-            }
-            // End of validation!
-
-            // Check if any error was detected in validation and print error(s) or success message(s).
-            // Print any error message.
-            if (!empty($errors)) {
-                echo '<hr><h3>' . esc_html__('The following occurred:', 'the-clean-blog') . '</h3><ul>';
-                // Print each error.
-                foreach ($errors as $error) {
-                    echo '<li>'. esc_html($error) . '</li>';
-                }
-                echo '</ul><h3>' . esc_html__('Your mail could not be sent due to input errors.', 'the-clean-blog') . '</h3><hr>';
-                return false;
-            } else {
-                    echo '<div class="panel-success"><hr><h3 align="center">' . esc_html__('Your mail was sent. Thank you for contacting us !', 'the-clean-blog') . '</h3><hr></div>';
-            }
-            // End of errors array !
-
-            return true;
-        }
-
-        public function cleanblog_send_contact_form_message() {
-            if (empty($errors) && empty($website)) {
-                // If the form is submitted and no error found && website field is empty, send email.                
-                global $sender;
-                global $email;
-                global $message;
-                // Email information.
-                $to = get_option('admin_email'); // E-mail address of blog administrator.
-                $subject = 'From: ' .$sender . ' / ' . $email;
-
-                // Send email.
-                wp_mail($to, $subject, $message);
-                wp_die(); // Required to end AJAX request.
-            }
-        }
-
-        //This function displays the Contact form.
-        public function cleanblog_display_form() {
-
-        ?>
-        <form method="post" action="" enctype="multipart/form-data" name="contactform" id="contactform" autocomplete="off">
-            <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Name</label>
-                    <input name="sender" type="text" class="form-control" placeholder="Name" id="sender" required>
-                    <p class="help-block text-danger"></p>
-                </div>
-            </div>
-            <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Email Address</label>
-                    <input name="email" type="email" class="form-control" placeholder="Email Address" id="email" required>
-                    <p class="help-block text-danger"></p>
-                </div>
-            </div>
-            <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Website URL</label>
-                    <input name="website" type="url" class="form-control" placeholder="Website URL" id="website" tabindex="-1" autocomplete="nope">
-                    <p class="help-block text-danger"></p>
-                </div>
-            </div>
-            <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" class="form-control" placeholder="Message" id="message" required></textarea>
-                    <p class="help-block text-danger"></p>
-                </div>
-            </div>
-            <br>
-            <div id="success" class="success-div"></div>
-            <div class="row">
-                <div class="form-group col-xs-12">
-                    <button type="submit" name="submitted" class="btn btn-default">Send</button>
-                    <button type="reset" value="Reset" class="btn btn-default" id="reset">Reset</button>
-                </div>
-            </div>
-            <?php wp_nonce_field( 'submit_contact_form_action' , 'submit_contact_form_nonce_field'); ?>
-        </form>
-
-        <?php
-        }
-    }
-    
-    $cleanblog_contact_form_obj = new Clean_Blog_Contact_Form_Handler();
-    $cleanblog_contact_form_obj -> cleanblog_handle_form();
 }
 
 /**
