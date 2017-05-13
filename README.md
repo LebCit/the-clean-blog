@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.7.2  
-Stable tag: 17.02.20  
+Tested up to: WordPress 4.7.3  
+Stable tag: 17.05.13  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,10 +17,8 @@ The Clean Blog is a carefully styled Bootstrap blog theme, **without sidebars**,
 The Clean Blog is **Fully Responsive**, with a **Modern Design** and a **Distraction Free** blog text optimized for legibility with a menu bar interface that conveniently appears when you scroll up !  
 The **defined featured image of a post or page turns into a responsive full screen custom parallax header background image !**  
 **Header's background image** is retrieved with AJAX to speed time's load !  
-**Subtitle** option for each post and page in the backend directly under the title !  
 Galleries are displayed in a **responsive touch-friendly image lightbox** when images are linked to their respective media file.  
-The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.  
-**Custom AJAX Contact Form** with HTML validation, JS validation and PHP validate/sanitize/escape data.
+The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.
 
 ## Installation
 
@@ -44,19 +42,21 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 5. Don't forget to press the **Update** button of the post or the page.
 6. Go to your site and click on any image of the gallery. Enjoy !
 
-### How to use the contact form ?
-
-1. Create a **page** and from the **Page Attributes** choose the **Contact Form** Template.
-2. That's all folks !
-
 ## Changelog
+
+### 17.05.13 =
+* Released: May 13, 2017
+- Added New Navigation.
+- Made required changes after review for approval.
+- Removed unneeded files and code from previous version after changes.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.03.12 =
 * Released: March 12, 2017
 - Ajaxified header's background image
 - Localized hero.js
 - Renamed localized arrays' keys
-- Updated readme.txt
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.02.20 =
 * Released: February 20, 2017
@@ -87,13 +87,13 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 * Released: January 27, 2017
 - Changed top.png to to-top.png icon for license compatibility
 - Added social sharing icons to posts
-- Updated readme.txt
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.01.25 =
 * Released: January 25, 2017
 - Added escape on some functions to secure the output
 - Corrected error in comments.php
-- Updated readme.txt
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.01.21 =
 * Released: January 21, 2017
@@ -107,7 +107,7 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 - Putting some order in some files
 - Removed unnecessary folders and files
 - Updated description
-- Updated readme.txt
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 14.01.17 =
 * Released: January 14, 2017
@@ -125,8 +125,9 @@ Initial release
 
 * Based on [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog), (C) 2013-2016 [Blackrock Digital](https://github.com/BlackrockDigital), LLC., [MIT](http://opensource.org/licenses/MIT)
 * Based on [COMPONENTS](https://github.com/Automattic/theme-components/), (C) 2015-2016 [Automattic](https://automattic.com/), Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on [Bootstrap](https://github.com/twbs/bootstrap), (C) 2011-2017 [Bootstrap](https://github.com/twbs), [MIT](http://opensource.org/licenses/MIT)
 * [normalize.css](http://necolas.github.io/normalize.css/), (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* [Font Awesome Icons](http://fontawesome.io/), (C) [Dave Gandy](https://twitter.com/davegandy), [SIL OFL](http://scripts.sil.org/OFL)
+* [Font Awesome Icons](http://fontawesome.io/), (C) [Dave Gandy](https://twitter.com/davegandy), [SIL OFL 1.1](http://scripts.sil.org/OFL)
 * [jQuery scrollTo](https://github.com/flesler/jquery.scrollTo), (C) 2007-2015 [Ariel Flesler](https://github.com/flesler), [MIT](http://opensource.org/licenses/MIT)
 * [jQuery ScrollUp](https://github.com/markgoodyear/scrollup), (C) [Mark Goodyear](https://github.com/markgoodyear), [MIT](http://opensource.org/licenses/MIT)
 * [footer-reveal.js](https://github.com/IainAndrew/footer-reveal), (C) [Iain Andrew](https://github.com/IainAndrew), [MIT](http://opensource.org/licenses/MIT)
