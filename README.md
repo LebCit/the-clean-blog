@@ -18,7 +18,8 @@ The Clean Blog is **Fully Responsive**, with a **Modern Design** and a **Distrac
 The **defined featured image of a post or page turns into a responsive full screen custom parallax header background image !**  
 **Header's background image** is retrieved with AJAX to speed time's load !  
 Galleries are displayed in a **responsive touch-friendly image lightbox** when images are linked to their respective media file.  
-The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.
+The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.  
+The **new** improved navigation with **one sub-menu depth**, can hold only 5 main items and 5 children items on desktop. No limitation of items on mobile.
 
 ## Installation
 
@@ -41,6 +42,12 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 4. If you want a caption under an image, set an alt text for this image.
 5. Don't forget to press the **Update** button of the post or the page.
 6. Go to your site and click on any image of the gallery. Enjoy !
+
+### I can't see more than 5 main/children items !
+
+This is the normal behaviour of the menu starting from 1024px.  
+You can add as many main/children items as you want.  
+But on desktop view, only the **First 5** will show up !
 
 ## Changelog
 
@@ -128,7 +135,7 @@ Initial release
 * Based on [Bootstrap](https://github.com/twbs/bootstrap), (C) 2011-2017 [Bootstrap](https://github.com/twbs), [MIT](http://opensource.org/licenses/MIT)
 * [normalize.css](http://necolas.github.io/normalize.css/), (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * [Font Awesome Icons](http://fontawesome.io/), (C) [Dave Gandy](https://twitter.com/davegandy), [SIL OFL 1.1](http://scripts.sil.org/OFL)
-* [jQuery scrollTo](https://github.com/flesler/jquery.scrollTo), (C) 2007-2015 [Ariel Flesler](https://github.com/flesler), [MIT](http://opensource.org/licenses/MIT)
+* Navigation Inspired By [Secondary Sliding Navigation](https://codyhouse.co/gem/secondary-sliding-navigation/), [Claudia Romano](https://twitter.com/romano_cla)
 * [jQuery ScrollUp](https://github.com/markgoodyear/scrollup), (C) [Mark Goodyear](https://github.com/markgoodyear), [MIT](http://opensource.org/licenses/MIT)
 * [footer-reveal.js](https://github.com/IainAndrew/footer-reveal), (C) [Iain Andrew](https://github.com/IainAndrew), [MIT](http://opensource.org/licenses/MIT)
 * [imageLightbox.js](https://github.com/osvaldasvalutis/imageLightbox.js), (C) 2014-2016 [Osvaldas Valutis](https://github.com/osvaldasvalutis), [MIT](http://opensource.org/licenses/MIT)
