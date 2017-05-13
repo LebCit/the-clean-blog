@@ -140,7 +140,7 @@ function cleanblog_scripts()
 
     wp_enqueue_style('cleanblog-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
 
-    //wp_enqueue_script('cleanblog-navigation', get_theme_file_uri('/assets/js/navigation.js'), array(), '20151215', true);
+    wp_enqueue_script('cleanblog-navigation', get_theme_file_uri('/assets/js/navigation.js'), array(), '20151215', true);
 
     wp_enqueue_script('cleanblog-skip-link-focus-fix', get_theme_file_uri('/assets/js/skip-link-focus-fix.js'), array(), '20151215', true);
 
