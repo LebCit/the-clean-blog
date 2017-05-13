@@ -28,18 +28,6 @@
                         width: $(window).width(),
                         height: $(window).height()
                     });
-                } else if (cleanblog_hero_set.cleanblog_is_seach) {
-                    $('#masthead').css({
-                        'background-image': 'url(' + cleanblog_hero_set.cleanblog_seach_image + ')',
-                        width: $(window).width(),
-                        height: $(window).height()
-                    });
-                } else if (cleanblog_hero_set.cleanblog_is_404) {
-                    $('#masthead').css({
-                        'background-image': 'url(' + cleanblog_hero_set.cleanblog_404_image + ')',
-                        width: $(window).width(),
-                        height: $(window).height()
-                    });
                 } else {
                     $('#masthead').css({
                         'background-image': 'url(' + cleanblog_hero_set.cleanblog_default_image + ')',
