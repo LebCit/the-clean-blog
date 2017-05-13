@@ -13,16 +13,18 @@ if (!function_exists('cleanblog_posted_on')) :
      */
     function cleanblog_posted_on()
     {
-        $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+        global $post;
+        $author_id = $post->post_author;
+        //$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
         if (get_the_time('U') == get_the_modified_time('U')) {
             $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
             $byline = sprintf(
-                esc_html_x('Posted by %s', 'post author', 'the-clean-blog'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+                esc_html_x('Posted by %s', 'post author', 'the-clean-blog'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author_meta('nicename', $author_id)) . '</a></span>'
             );
         } else {
             $time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
             $byline = sprintf(
-                esc_html_x('Updated by %s', 'post author', 'the-clean-blog'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+                esc_html_x('Updated by %s', 'post author', 'the-clean-blog'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author_meta('nicename', $author_id)) . '</a></span>'
             );
         }
 
