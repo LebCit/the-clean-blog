@@ -1,3 +1,9 @@
+/*
+Navigation Script Taken, And TOTALLY Modified, From CodyHouse : https://codyhouse.co/
+Navigation Inspired By Secondary Sliding Navigation Article :   https://codyhouse.co/gem/secondary-sliding-navigation/
+A BIG THANKS Goes To The Author Of This Article, Claudia Romano : https://twitter.com/romano_cla
+*/
+
 /* 
   * BEFORE THE DOM IS READY, INSERT NEEDED ITEMS TO THE MENU,
   * TO AVOID SEEING THE MENU'S CSS BEFORE IT'S PHP CREATION !
@@ -23,7 +29,7 @@ jQuery(document).ready(function ($) {
 
         if (window.innerWidth >= 1024) { /* from mobile TO DESKTOP VIEW */
 
-            // 1- Main menu on mobile to desktop.
+            // 1- Main menu from mobile to desktop.
             $('header.cb-nav, .cb-main-nav, .cb-main-content').removeClass('nav-is-visible');
             $('body').css('overflow-y', 'auto');
             $('.search-trigger').css('pointer-events', 'auto');
@@ -31,7 +37,7 @@ jQuery(document).ready(function ($) {
                 $('#scroll-up').show();
             }
 
-            // 2- Sub menu on mobile to desktop.
+            // 2- Sub menu from mobile to desktop.
             if ($('.cb-main-nav').hasClass('moves-out')) {
                 $('.selected .cb-subnav-trigger').parent().siblings().hide();
                 $('.selected .cb-subnav-trigger').on('click.subMobToDesk', function (event) {
@@ -42,14 +48,14 @@ jQuery(document).ready(function ($) {
             }
         } else { /* (window.innerWidth < 1024)  from desktop TO MOBILE VIEW */
             
-            // 1- Main menu on desktop to mobile.
+            // 1- Main menu from desktop to mobile.
             if ($('.cb-main-content').hasClass('nav-is-visible')) {
                 $('header.cb-nav').addClass('nav-is-visible');
                 $('.cb-main-nav').addClass('nav-is-visible');
                 $('.cb-main-content').addClass('nav-is-visible');
             }
 
-            // 2- Sub menu on desktop to mobile.
+            // 2- Sub menu from desktop to mobile.
             else if ($('.cb-main-nav').hasClass('moves-out')) {
                 $('header.cb-nav, .cb-main-nav, .cb-main-content').addClass('nav-is-visible');
                 $('.cb-main-nav').find('ul:not(.children)').hide();
@@ -155,8 +161,7 @@ jQuery(document).ready(function ($) {
                 setTimeout(function () {
                     $this.parent().css("pointer-events", "auto");
                 }, 600);
-            }
-            else {
+            } else {
                 var $this = $(this);
                 $this.children().hide();
                 $this.css("border", "transparent");

@@ -1,3 +1,8 @@
+/*
+Navigation Styles Taken, And Modified, From CodyHouse : https://codyhouse.co/
+Navigation Inspired By Secondary Sliding Navigation Article :   https://codyhouse.co/gem/secondary-sliding-navigation/
+A BIG THANKS Goes To The Author Of This Article, Claudia Romano : https://twitter.com/romano_cla
+*/
 ol, ul {
     list-style: none;
 }
@@ -378,7 +383,7 @@ header.cb-nav::before {
     }
     .cb-main-nav > li:nth-child(n+6),
     .cb-main-nav li ul li:nth-child(n+7):not(:last-child){
-        /*  Much easier than writing a Walker */
+        /*  EASIER THAN WRITING A WALKER ! */
         display: none !important;
     }
     .cb-main-nav li a {
