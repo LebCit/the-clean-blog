@@ -25,9 +25,13 @@
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'the-clean-blog'); ?></a>
 
             <!-- Navigation -->
-            <nav id="site-navigation" class="navbar navbar-default navbar-custom navbar-fixed-top" role="navigation">
+            <header class="cb-nav">
                 <?php get_template_part('components/navigation/navigation', 'top'); ?>
-            </nav>
+                <button class="search-trigger"><i class="icon-search"></i></button>
+                <li class="search-trigger"><i class="icon-search"></i></li>
+            </header>
+            
+            <main class="cb-main-content">
 
             <!-- Page Header -->
             <?php
