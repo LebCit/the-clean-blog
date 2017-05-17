@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.7.3  
-Stable tag: 17.05.13  
+Tested up to: WordPress 4.7.5  
+Stable tag: 17.05.18  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,14 @@ Clean Blog includes support for Jetpack's Infinite Scroll as well as other featu
 5. Don't forget to press the **Update** button of the post or the page.
 6. Go to your site and click on any image of the gallery. Enjoy !
 
+### How to create a main item link ?
+
+1. Go To Appearance > Menus.
+2. Create a **Custom Link**
+3. In _URL_ type **#0**
+4. In _Link Text_ type the label of your choice.
+5. That's it :)
+
 ### I can't see more than 5 main/children items !
 
 This is the normal behaviour of the menu starting from 1024px.  
@@ -50,6 +58,14 @@ You can add as many main/children items as you want.
 But on desktop view, only the **First 5** will show up !
 
 ## Changelog
+
+### 17.05.18 =
+* Released: May 18, 2017
+- Added new logic to Header Search Dropdown on resize.
+- Changed nicename to nickname in cleanblog_posted_on().
+- Remove default -webkit-tap-highlight-color.
+- Some Code Formatting.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.05.13 =
 * Released: May 13, 2017
