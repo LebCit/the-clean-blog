@@ -14,18 +14,12 @@ jQuery('.cb-main-nav li:has(ul) > a').addClass('cb-subnav-trigger').wrapInner('<
 jQuery('.cb-main-nav li ul').prepend("<li class='go-back'><a href='#0'>" + cleanblog_nav_set.cleanblog_menu + "</a></li>")
         .append("<li><a href='#0' class='placeholder'>" + cleanblog_nav_set.cleanblog_placeholder + "</a></li>");
 
-
-
 jQuery(document).ready(function ($) {
 
     //move nav element position according to window width
     moveNavigation();
     $(window).on('resize', function () { /* WHEN WE RESIZE THE SCREEN/WINDOW */
         (!window.requestAnimationFrame) ? setTimeout(moveNavigation, 300) : window.requestAnimationFrame(moveNavigation);
-        
-        // On any window resize, reset the initial state of the search icon and dropdown.
-        $('.icon-search').removeClass('icon-close');
-        $('.search-dropdown').hide();
 
         if (window.innerWidth >= 1024) { /* from mobile TO DESKTOP VIEW */
 
@@ -129,7 +123,7 @@ jQuery(document).ready(function ($) {
         $('.cb-main-nav').removeClass('moves-out');
 
         // Reset the state of the main menu on mobile
-        $('.cb-subnav-trigger').parent().siblings().children().show(); // 132
+        $('.cb-subnav-trigger').parent().siblings().children().show();
 
         // Reset the original state of the main menu on mobile
         $('.selected').removeClass('selected');
@@ -181,7 +175,7 @@ jQuery(document).ready(function ($) {
         else {
             // Show only .selected <li> children
             if ($('.cb-main-nav').hasClass('moves-out')) {
-                $(this).parent().siblings().find('ul').hide(); // 380
+                $(this).parent().siblings().find('ul').hide();
             }
         }
 
