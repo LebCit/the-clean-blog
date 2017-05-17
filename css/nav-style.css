@@ -275,11 +275,6 @@ header.cb-nav::before {
     */
     display: list-item !important;
 }
-.cb-main-nav.nav-is-visible > li > ul {
-    /* Added to force the .children <ul> on mobile to take the assigned full width : 260px ! */
-    padding-left: 0;
-    margin-left: 0;
-}
 .cb-main-nav.moves-out > li > a {
     /* 
      * Added to force the list items links <a> of the main menu to behave as list items 
@@ -300,6 +295,15 @@ header.cb-nav::before {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0);
+}
+.cb-main-nav.nav-is-visible > li > ul {
+    /* Added to force the .children <ul> on mobile to take the assigned full width : 260px ! */
+    padding-left: 0;
+    margin-left: 0;
+}
+.cb-main-nav.moves-out > li > ul:not(.children) {
+    /* Added to display only the .children <ul> of the .selected <li> on mobile ! */
+    display: none !important;
 }
 .cb-main-nav .cb-subnav-trigger,
 .cb-main-nav .go-back a {
