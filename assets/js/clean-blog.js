@@ -47,13 +47,45 @@ jQuery(document).ready(function ($) {
         }
     });//End 2.
 
-    //3. Open/Close Header Search Form and focus in input search field
+    /*
+     * Before opening the Header Search Form,
+     * do not waste time by creating jQuery object from window multiple times.
+     * Do it just once and store it in a variable.
+     * This is done to take care of the performance.
+     */ 
+    var $window = $(window);
+    var originalHeight = $(window).height();
+    var originalWidth = $(window).width();
+    //3. Open/Close Header Search Form
     $('.search-trigger').click(function () {
-        $(this).find('i').toggleClass('icon-close', 'icon-search');
+        $(this).find('i').toggleClass('icon-close');
         $('.search-dropdown').animate({
             height: 'toggle',
             opacity: 'toggle'
         });
+        // Reset the initial state of the search icon and dropdown
+        if ($('.icon-close').is(':visible')) {
+            if ($window.height() !== originalHeight) {
+                $(this).find('i').addClass('icon-close');
+                $('.search-dropdown').show();
+            }
+            $window.resize(function () {
+                /* 
+                 * Do not calculate the new window width twice.
+                 * Do it just once and store it in a variable.
+                 */
+                var newWidth = $window.width();
+                // Do the comparison
+                if (originalWidth !== newWidth) {
+                    // Execute the code
+                    $('.search-trigger .icon-search').removeClass('icon-close');
+                    $('.search-dropdown').hide();
+                    // Reset the width
+                    originalWidth = newWidth;
+                }
+            });
+        }
+        //  Focus in input search field
         $('.search-dropdown .search-field').focus();
     });
     // Reset Search Input Value to Search...    
