@@ -134,7 +134,7 @@ function cleanblog_scripts()
 
     wp_enqueue_style('cleanblog-main-style', get_theme_file_uri('/css/clean-blog.css'));
     
-    wp_enqueue_style('font-awesome', get_theme_file_uri('/fa/css/font-awesome.min.css'));    
+    wp_enqueue_style('font-awesome', get_theme_file_uri('/fa/css/font-awesome.min.css'));
 
     wp_enqueue_style('cleanblog-lora', '//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic');
 
