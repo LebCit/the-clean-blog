@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-17 23:36+0000\n"
+"POT-Creation-Date: 2017-05-20 13:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -83,67 +83,80 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/cleanblog-functions.php:85 inc/cleanblog-functions.php:89
+#: inc/cleanblog-functions.php:20
+msgid ""
+"Theme not activated: this theme requires at least WordPress Version 4.7 !"
+msgstr ""
+
+#: inc/cleanblog-functions.php:108
+msgid "Home"
+msgstr ""
+
+#: inc/cleanblog-functions.php:114
+msgid "Create a new menu"
+msgstr ""
+
+#: inc/cleanblog-functions.php:136 inc/cleanblog-functions.php:140
 msgid "Search for:"
 msgstr ""
 
-#: inc/cleanblog-functions.php:87
+#: inc/cleanblog-functions.php:138
 msgid "Search ..."
 msgstr ""
 
-#: inc/cleanblog-functions.php:92
+#: inc/cleanblog-functions.php:143
 msgid "Search"
 msgstr ""
 
-#: inc/cleanblog-functions.php:118
+#: inc/cleanblog-functions.php:169
 msgid "Read More"
 msgstr ""
 
-#: inc/cleanblog-functions.php:153
+#: inc/cleanblog-functions.php:204
 msgid "SHARE :"
 msgstr ""
 
-#: inc/cleanblog-functions.php:184
+#: inc/cleanblog-functions.php:235
 msgid "Comment"
 msgstr ""
 
-#: inc/cleanblog-functions.php:196
+#: inc/cleanblog-functions.php:247
 msgid "Name *"
 msgstr ""
 
-#: inc/cleanblog-functions.php:197
+#: inc/cleanblog-functions.php:248
 msgid "Email *"
 msgstr ""
 
 #. %s: comment author link
-#: inc/cleanblog-functions.php:222
+#: inc/cleanblog-functions.php:273
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
 #. 1: comment date, 2: comment time
-#: inc/cleanblog-functions.php:231
+#: inc/cleanblog-functions.php:282
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/cleanblog-functions.php:234
+#: inc/cleanblog-functions.php:285
 msgid "Edit"
 msgstr ""
 
-#: inc/cleanblog-functions.php:238
+#: inc/cleanblog-functions.php:289
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/cleanblog-functions.php:284
+#: inc/cleanblog-functions.php:335
 msgid "Social Media Icons"
 msgstr ""
 
-#: inc/cleanblog-functions.php:340
+#: inc/cleanblog-functions.php:391
 msgid "email icon"
 msgstr ""
 
-#: inc/cleanblog-functions.php:352
+#: inc/cleanblog-functions.php:403
 #, php-format
 msgid "%s icon"
 msgstr ""
@@ -230,18 +243,18 @@ msgstr ""
 msgid "KEEP SEARCHING !"
 msgstr ""
 
-#: components/navigation/navigation-top.php:17
-#: components/navigation/navigation-top.php:21
+#: components/navigation/navigation-top.php:18
+#: components/navigation/navigation-top.php:22
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: components/navigation/navigation-top.php:19
+#: components/navigation/navigation-top.php:20
 msgctxt "placeholder"
 msgid "Search ..."
 msgstr ""
 
-#: components/navigation/navigation-top.php:24
+#: components/navigation/navigation-top.php:25
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
