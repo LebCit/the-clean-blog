@@ -3,7 +3,8 @@ Navigation Styles Taken, And Modified, From CodyHouse : https://codyhouse.co/
 Navigation Inspired By Secondary Sliding Navigation Article : https://codyhouse.co/gem/secondary-sliding-navigation/
 A BIG THANKS Goes To The Author Of This Article, Claudia Romano : https://twitter.com/romano_cla
 */
-ol, ul {
+.cb-main-nav-wrapper ol,
+.cb-main-nav-wrapper ul {    
     list-style: none;
 }
 
