@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-menu, editor-style, featured-image-header,
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.7.5  
-Stable tag: 17.05.18  
+Stable tag: 17.05.22  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,19 @@ You can add as many main/children items as you want.
 But on desktop view, only the **First 5** will show up !
 
 ## Changelog
+
+### 17.05.22 =
+* Released: May 22, 2017
+- Added a WordPress check version function for theme activation.
+- Added a menu callback function.
+- Added Bounce Animation For Scroll Down Arrow with some improvements on scroll.
+- Modified clean-blog-nav.js, process improvement for body events and bounce animation.
+- Modified call order of Font Awesome Sources (iOS fix).
+- Modified bg-header.php for Pages and Archive page.
+- Modified some tags' styles.
+- Removed site-branding.php
+- Updated .pot
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.05.18 =
 * Released: May 18, 2017
