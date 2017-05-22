@@ -8,7 +8,8 @@
             'container' => 'nav',
             'container_class' => 'cb-main-nav-wrapper',
             'menu_class' => 'cb-main-nav',
-            'depth' => 2,
+            'fallback_cb' => 'cleanblog_fallback_menu',
+            'depth' => 2
         ));
     ?>
     <div class="search-dropdown">
