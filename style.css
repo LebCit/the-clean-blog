@@ -400,7 +400,7 @@ pre {
 code, kbd, tt, var {
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 15px;
-    /*font-size: 0.9375rem;*/
+    font-size: 0.9375rem;
 }
 
 abbr, acronym {
@@ -417,41 +417,11 @@ big {
     font-size: 125%;
 }
 
-blockquote {
-    background: #f9f9f9;
-    border-left: 10px solid #ccc !important;
-    margin: 1.5em 10px !important;
-    padding: 0.5em 10px !important;
-    quotes: "\201C""\201D""\2018""\2019";
+blockquote, q {
+    quotes: "" "";
 }
-blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-blockquote:after {
-    color: #ccc;
-    content: close-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-left: 0.25em;
-    vertical-align: -0.6em;
-}
-blockquote p {
-    display: inline;
-    color: #AA1F58;
-}
-q {
-    quotes: "«" "»" "‹" "›";
-}
-q:before {
-    content: open-quote;
-}
-q:after {
-    content: close-quote;
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
 }
 
 /*--------------------------------------------------------------
@@ -573,6 +543,10 @@ hr {
 /*--------------------------------------------------------------
 # Lists
 --------------------------------------------------------------*/
+ul, ol {
+    margin: 0 0 1.5em 3em;
+}
+
 ul {
     list-style: disc;
 }
