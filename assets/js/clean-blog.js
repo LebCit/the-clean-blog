@@ -33,8 +33,8 @@ jQuery(document).ready(function ($) {
                 });
     }//End 1.
 
-    //2. Click on the arrow down and scroll to the #content 
-    $('.fa-arrow-down').click(function (e) {
+    //2. Click on the parent <span> of the arrow down and scroll to the #content
+    $('.strike > span').click(function (e) {
         e.preventDefault();
         if (window.innerWidth >= 1024) {
             $('html, body').animate({
@@ -45,7 +45,47 @@ jQuery(document).ready(function ($) {
                 scrollTop: $("#content").position().top - 50
             }, 600);
         }
-    });//End 2.
+    });
+    
+    // Function to check if an element is visible while scrolling.
+    $.fn.isOnScreen = function () {
+
+        var win = $(window);
+
+        var viewport = {
+            top: win.scrollTop(),
+            left: win.scrollLeft()
+        };
+        viewport.right = viewport.left + win.width();
+        viewport.bottom = viewport.top + win.height();
+
+        var bounds = this.offset();
+        bounds.right = bounds.left + this.outerWidth();
+        bounds.bottom = bounds.top + this.outerHeight();
+
+        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    };
+    
+    // Add/Remove .bounce class from .strike on scroll if it's visible on screen
+    var $strike = $('.strike');
+    $(window).scroll(function (event) {
+        event.preventDefault;
+        if (!$('.fa-arrow-down').isOnScreen()) {
+            $strike.removeClass('bounce');
+        } else {
+            setTimeout(function () {
+                $strike.addClass('bounce');
+            }, 900);
+        }
+    });
+    
+    // Sub menu from mobile to desktop, Remove .bounce class from .strike on resize, even if it's visible on screen
+    $(window).on('resize', function () {
+        if ($('.cb-main-nav').hasClass('moves-out') && window.innerWidth < 1024 && $('.fa-arrow-down').isOnScreen()) {
+            $strike.removeClass('bounce');
+        }
+    });
+    //End 2.
 
     /*
      * Before opening the Header Search Form,
