@@ -16,8 +16,10 @@
                         <?php if (is_front_page() && is_home()) { ?>
                         <h1 id="responsive_headline" class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                         <?php
-                        } elseif (is_single() || is_page() || is_sticky()) {
+                        } elseif (is_single() || is_sticky()) {
                             the_title('<h1 class="entry-title">', '</h1>');
+                        } elseif (is_archive()) {
+                            the_archive_title('<h1 class="entry-title">', '</h1>');
                         } else {
                             the_title('<h1 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h1>');
                         }
@@ -37,7 +39,7 @@
                             ?>
                                 <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
                             <?php
-                            endif; } else {
+                            endif; } elseif (is_single()) {
                                 cleanblog_posted_on();
                             }
                             ?>
