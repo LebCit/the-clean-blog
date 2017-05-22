@@ -26,7 +26,9 @@ jQuery(document).ready(function ($) {
             // 1- Main menu from mobile to desktop.
             $('header.cb-nav, .cb-main-nav, .cb-main-content').removeClass('nav-is-visible');
             $('body').css('overflow-y', 'auto');
+            $('body').css('pointer-events', 'auto');
             $('.search-trigger').css('pointer-events', 'auto');
+            $('.strike').addClass('bounce');
             if ($(document).scrollTop() >= 300) {
                 $('#scroll-up').show();
             }
@@ -64,7 +66,8 @@ jQuery(document).ready(function ($) {
                 }
                 $('.search-dropdown').hide();
                 $('.search-trigger .icon-search').removeClass('icon-close');
-                $('.search-trigger').css('pointer-events', 'none');
+                $('body, .search-trigger').css('pointer-events', 'none');
+                $('#wpadminbar, .cb-nav-trigger, .cb-main-nav').css('pointer-events', 'auto');
             }
             
             /* 
@@ -81,12 +84,15 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         // Disable page scroll while viewing the menu
         $('body').css('overflow', 'hidden');
-        // Disable dropdown serach while viewing the menu
-        $('.search-trigger').css('pointer-events', 'none');
+        // Disable all click events while viewing the menu except on the menu
+        $('body, .search-trigger').css('pointer-events', 'none');
+        $('.cb-nav-trigger, .cb-main-nav').css('pointer-events', 'auto');
         // Close dropdown search if it's opened when viewing the menu
         $('.search-dropdown').hide();
         // Reset the .search-trigger button to it's initial state
         $('.search-trigger .icon-search').removeClass('icon-close');
+        // Stop the arrow down bouncing
+        $('.strike').removeClass('bounce');
         // Set the margin-botom of the #page to 0px
         $('#page').css('margin-bottom', '0');
         
@@ -94,8 +100,13 @@ jQuery(document).ready(function ($) {
             $('.moves-out').removeClass('moves-out');
             // Enable page scroll after closing the menu
             $('body').css('overflow', 'auto');
-            // Enable dropdown serach after closing the menu
-            $('.search-trigger').css('pointer-events', 'auto');
+            // Enable the click events after closing the menu
+            $('body, .search-trigger').css('pointer-events', 'auto');
+            // Give back the arrown down the bouncing effect after 300ms
+            var $strike = $('.strike');
+            setTimeout(function () {
+                $strike.addClass('bounce');
+            }, 300);
             // On close click, give back the #page it's margin-bottom, 166px
             $('#page').css('margin-bottom', '166px');
         }
