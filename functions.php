@@ -182,7 +182,9 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
+require_once get_template_directory() . '/inc/cleanblog-kirki.php';
 require get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/include-kirki.php';
 
 /**
  * Load Jetpack compatibility file.
