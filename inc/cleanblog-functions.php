@@ -6,12 +6,43 @@
  */
 
 /**
+ * Prevent theme activation if WordPress version is less than 4.7 !
+ */
+function cleanblog_check_wp_version( $old_theme_name, $old_theme ) {
+    
+    global $wp_version;
+    if ( $wp_version < 4.7 && current_user_can( 'edit_theme_options' ) ) :
+
+      // Info message: Theme not activated
+      function cleanblog_not_activated_admin_notice() {
+        echo '<div class="error notice">';
+            echo '<h2>';
+                esc_html_e( 'Theme not activated: this theme requires at least WordPress Version 4.7 !', 'the-clean-blog' );
+            echo '</h2>';
+        echo '</div>';
+      }
+      add_action( 'admin_notices', 'cleanblog_not_activated_admin_notice' );
+
+      // Switch back to previous theme
+      switch_theme( $old_theme->stylesheet );
+        return false;
+
+    endif;
+
+}
+add_action( 'after_switch_theme', 'cleanblog_check_wp_version', 10, 2 );
+
+/**
  * Localize hero.js to asynchronously load the header image.
  */
 function cleanblog_header_script() {
     
     // Adding custom javascript file to handle the header image.
-    wp_enqueue_script('cleanblog-hero', get_theme_file_uri('/assets/js/hero.js'), array('jquery'), '', true);
+    if (is_404() || is_search()) {
+        wp_dequeue_script('cleanblog-hero');
+    } else {
+        wp_enqueue_script('cleanblog-hero', get_theme_file_uri('/assets/js/hero.js'), array('jquery'), '', true);
+    }
     
     // Declare $post global if used outside of the loop.
     $post = get_post();
@@ -68,6 +99,30 @@ function cleanblog_header_style() {
 add_action('wp_enqueue_scripts', 'cleanblog_header_style');
 add_action('wp_ajax_cleanblog_header_style', 'cleanblog_header_style');
 add_action('wp_ajax_nopriv_cleanblog_header_style', 'cleanblog_header_style');
+
+/**
+ * Provide a fallback menu featuring a 'Home' link, if no other menu has been provided.
+ * Add 'Create a new menu' link only if the current_user_can('edit_theme_options').
+ */
+function cleanblog_fallback_menu() {
+    $html = '<nav class="cb-main-nav-wrapper">';
+        $html .= '<ul class="cb-main-nav">';
+            $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
+                $html .= '<a href="' . esc_url( home_url() ) . '">';
+                    $html .= esc_html__( 'Home', 'the-clean-blog' );
+                $html .= '</a>';
+            $html .= '</li>';
+            if (current_user_can('edit_theme_options')) {
+                $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
+                    $html .= '<a href="' . esc_url(admin_url('nav-menus.php?action=edit&menu=0')) . '">';
+                        $html .= esc_html__( 'Create a new menu', 'the-clean-blog' );
+                    $html .= '</a>';
+                $html .= '</li>';
+            }
+        $html .= '</ul>';
+    $html .= '</nav>';
+    echo $html;
+}
 
 /**
  * Generate custom search form
