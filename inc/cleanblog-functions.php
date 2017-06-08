@@ -33,6 +33,17 @@ function cleanblog_check_wp_version( $old_theme_name, $old_theme ) {
 add_action( 'after_switch_theme', 'cleanblog_check_wp_version', 10, 2 );
 
 /**
+ * Disable output of kirki styles if the plugin is disabled or removed.
+ */
+if( ! class_exists( 'Kirki' ) ) {
+    function cleanblog_remove_kirki_styles() {
+        wp_dequeue_style( 'the-clean-blog_no-kirki' );
+        wp_deregister_style( 'the-clean-blog_no-kirki' );
+    }
+    add_action( 'wp_enqueue_scripts', 'cleanblog_remove_kirki_styles', 20 );
+}
+
+/**
  * Localize hero.js to asynchronously load the header image.
  */
 function cleanblog_header_script() {
