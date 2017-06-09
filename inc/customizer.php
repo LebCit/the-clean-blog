@@ -658,3 +658,39 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_search_has_no_results',
 ));
 
+// 5.4- Search 404 Page Title Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_404_page_title_text',
+    'label' => __('Search 404 Page Title Text', 'the-clean-blog'),
+    'section' => 'search_pages_texts',
+    'default' => '',
+    'priority' => 20,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.error404 .page-header h1.page-title',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_404',
+));
+
+// 5.5- Search 404 Page Paragraph Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_404_page_paragraph_text',
+    'label' => __('Search 404 Page Paragraph Text', 'the-clean-blog'),
+    'section' => 'search_pages_texts',
+    'default' => '',
+    'priority' => 25,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.error404 .page-content > p',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_404',
+));
+
