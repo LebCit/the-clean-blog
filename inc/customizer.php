@@ -585,3 +585,13 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_404',
 ));
 
+// 5- Search Pages Texts
+Clean_Blog_Kirki::add_section( 'search_pages_texts', array(
+    'title'          => __( 'Search Pages Texts' ),
+    'description'    => __( 'Change Default Search Texts ', 'the-clean-blog' ),
+    'panel'          => 'cleanblog_theme',
+    'priority'       => 25,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
