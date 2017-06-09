@@ -622,3 +622,39 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_search_has_results',
 ));
 
+// 5.2- Search No Results Page Title Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_no_results_page_title_text',
+    'label' => __('Search No Results Page Title Text', 'the-clean-blog'),
+    'section' => 'search_pages_texts',
+    'default' => '',
+    'priority' => 10,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.search-no-results .page-header h1.page-title',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_search_has_no_results',
+));
+
+// 5.3- Search No Results Page Paragraph Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_no_results_page_paragraph_text',
+    'label' => __('Search No Results Page Paragraph Text', 'the-clean-blog'),
+    'section' => 'search_pages_texts',
+    'default' => '',
+    'priority' => 15,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.search-no-results .page-content p',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_search_has_no_results',
+));
+
