@@ -417,3 +417,21 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'alpha' => true,
 ));
 
+// 3.5- Dropdown Search Placeholder Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'dropdown_search_placeholder_text',
+    'label' => __('Dropdown Search Placeholder Text', 'the-clean-blog'),
+    'section' => 'search-icon-and-dropdown-colors',
+    'default'  => '',
+    'priority' => 25,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => '.search-dropdown input#s',
+            'function' => 'html',
+            'attr' => 'placeholder',
+        ),
+    ),
+));
+

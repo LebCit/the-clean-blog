@@ -17,9 +17,15 @@
             <label>
                 <span class="screen-reader-text"><?php echo esc_html_x('Search for:', 'label', 'the-clean-blog') ?></span>
                 <input type="search" class="search-field"
-                       placeholder="<?php echo esc_html_x('Search ...', 'placeholder', 'the-clean-blog') ?>"
-                       value="<?php echo get_search_query() ?>" name="s" id="s" required
-                       title="<?php echo esc_attr_x('Search for:', 'label', 'the-clean-blog') ?>" />
+                        placeholder="<?php
+                            $placeholder = get_theme_mod('dropdown_search_placeholder_text');
+                            if(empty($placeholder)){
+                                $placeholder = 'Search ...';
+                            }
+                            echo esc_html_x($placeholder, 'placeholder', 'the-clean-blog') 
+                        ?>"
+                        value="<?php echo get_search_query() ?>" name="s" id="s" required
+                        title="<?php echo esc_attr_x('Search for:', 'label', 'the-clean-blog') ?>" />
             </label>
             <button type="submit" class="search-submit"
                     value="<?php echo esc_attr_x('Search', 'submit button', 'the-clean-blog') ?>">
