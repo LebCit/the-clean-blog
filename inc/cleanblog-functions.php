@@ -458,3 +458,15 @@ function cleanblog_copyright_date()
     }
     return $output;
 }
+
+/**
+ * Hooking in JS code to affect the controls in the customizer.
+ */
+function cleanblog_customizer_controls() {
+    wp_enqueue_script( 'cleanblog-customizer-controls', get_template_directory_uri() . '/assets/js/clean-blog-customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+    $customizerSettings = array (
+        'cleanblog_control_placeholder' => esc_html__( 'Replace Default Text', 'the-clean-blog' ),
+    );
+    wp_localize_script('cleanblog-customizer-controls', 'cleanblog_customizer_set', $customizerSettings);
+}
+add_action( 'customize_controls_enqueue_scripts', 'cleanblog_customizer_controls' );
