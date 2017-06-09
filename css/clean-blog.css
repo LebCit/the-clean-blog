@@ -64,11 +64,11 @@ hr.page-footer {
 }
 body.search .intro-header {
     height: 100vh !important;
-    background-image: url('../components/header/images/search-hero.jpg') !important;
+    /*background-image: url('../components/header/images/search-hero.jpg') !important;*/
 }
 body.error404 .intro-header {
     height: 100vh !important;
-    background-image: url('../components/header/images/404-hero.jpg') !important;
+    /*background-image: url('../components/header/images/404-hero.jpg') !important;*/
 }
 .intro-header .site-heading {
     padding: 100px 0 50px;
