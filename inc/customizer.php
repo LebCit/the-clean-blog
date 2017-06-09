@@ -463,3 +463,28 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_home',
 ));
 
+// 4.2- Search Header Background Image
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'image',
+    'settings' => 'search_header_background_image',
+    'label' => __('Search Header Background Image', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default'  => get_template_directory_uri() . '/components/header/images/search-hero.jpg',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => 'body.search #masthead',
+            'property' => 'background-image',
+        ),
+    ),
+    'js_vars' => array(
+        array(
+            'element' => 'body.search #masthead',
+            'function' => 'css',
+            'property' => 'background-image',
+        ),
+    ),
+    'active_callback' => 'is_search',
+));
+
