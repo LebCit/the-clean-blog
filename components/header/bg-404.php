@@ -3,9 +3,14 @@
  * This file generates the background header image for 404.php
  */
 
+$heroImgError404 = get_theme_mod( 'error404_header_background_image', '' );
+if (empty($heroImgError404)) {
+    $heroImgError404 = get_template_directory_uri() . '/components/header/images/404-hero.jpg';
+}
+
 ?>
 <!-- Set background image for this header . -->
-<header id="masthead" class="site-header intro-header" role="banner">
+<header id="masthead" class="site-header intro-header" style="background-image: url('<?php echo esc_url( $heroImgError404 ); ?>')" role="banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

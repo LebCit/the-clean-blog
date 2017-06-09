@@ -524,3 +524,28 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_search',
 ));
 
+// 4.5- Error404 Header Background Image
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'image',
+    'settings' => 'error404_header_background_image',
+    'label' => __('Error404 Header Background Image', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default'  => get_template_directory_uri() . '/components/header/images/404-hero.jpg',
+    'priority' => 30,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => 'body.error404 .intro-header',
+            'property' => 'background-image',
+        ),
+    ),
+    'js_vars' => array(
+        array(
+            'element' => 'body.error404 .intro-header',
+            'function' => 'css',
+            'property' => 'background-image',
+        ),
+    ),
+    'active_callback' => 'is_404',
+));
+
