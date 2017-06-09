@@ -63,11 +63,15 @@ function cleanblog_header_script() {
     }
     
     $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
+    $heroImgDefault = get_theme_mod( 'default_header_background_image', '' );
+    if (empty($heroImgDefault)) {
+        $heroImgDefault = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
+    }
     $heroSettings = array (
         'cleanblog_hero_ajaxurl'       => esc_url(admin_url('admin-ajax.php')),
         'cleanblog_has_post_thumbnail' => has_post_thumbnail(),
         'cleanblog_featured_image'     => esc_url($heroImg[0]),
-        'cleanblog_default_image'      => get_template_directory_uri() . '/components/header/images/default-hero.jpg'
+        'cleanblog_get_theme_mod'      => $heroImgDefault,
     );
     wp_localize_script('cleanblog-hero', 'cleanblog_hero_set', $heroSettings);
 }
