@@ -604,3 +604,21 @@ function is_search_has_no_results() {
     return 0 == $GLOBALS['wp_query']->found_posts && !is_404();
 }
 
+// 5.1- Search Results Page Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_results_page_text',
+    'label' => __('Search Results Page Title Text', 'the-clean-blog'),
+    'section' => 'search_pages_texts',
+    'default' => '',
+    'priority' => 5,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.search .page-header h1.page-title',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_search_has_results',
+));
+
