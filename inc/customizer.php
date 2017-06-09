@@ -595,3 +595,12 @@ Clean_Blog_Kirki::add_section( 'search_pages_texts', array(
     'theme_supports' => '', // Rarely needed.
 ) );
 
+function is_search_has_results() {
+    // Check if the search has results
+    return 0 != $GLOBALS['wp_query']->found_posts;
+}
+function is_search_has_no_results() {
+    // Check if the search has no results and is not 404
+    return 0 == $GLOBALS['wp_query']->found_posts && !is_404();
+}
+
