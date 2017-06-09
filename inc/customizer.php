@@ -166,3 +166,163 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'alpha' => true,
 ));
 
+// 2- Menu Colors Section - MOBILE
+Clean_Blog_Kirki::add_section( 'mobile-menu-colors', array(
+    'title'          => __( 'MOBILE Menu Colors' ),
+    'description'    => __( 'Change MOBILE Menu Colors', 'the-clean-blog' ),
+    'panel'          => 'cleanblog_theme',
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+// 2.1- Menu Bar Background Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_menu_bar_background_color',
+    'label' => __('Menu Bar Background Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#33414a',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => 'header.cb-nav',
+            'property' => 'background-color',
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 2.2- Menu Trigger Background Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_menu_trigger_background_color',
+    'label' => __('Menu Trigger Background Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#fff',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.cb-nav-trigger span',
+                '.cb-nav-trigger span:before',
+                '.cb-nav-trigger span:after',
+            ),
+            'property' => 'background-color',
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 2.3- Mobile Menu Background Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_menu_background_color',
+    'label' => __('Mobile Menu Background Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#1e262c',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.cb-main-nav',
+            'property' => 'background',
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 2.4- Mobile Menu Links Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_menu_links_color',
+    'label' => __('Mobile Menu Links Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#fff',
+    'priority' => 20,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.cb-main-nav a',
+            'property' => 'color',
+            'suffix' => '!important', // Added important to override default in style.css
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+        array(
+            'element' => array(
+                '.cb-main-nav .cb-subnav-trigger::before',
+                '.cb-main-nav .cb-subnav-trigger::after',
+            ),
+            'property' => 'background-color',
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 2.5- Mobile Sub Menu Background Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_sub_menu_background_color',
+    'label' => __('Mobile Sub Menu Background Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#1e262c',
+    'priority' => 25,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.cb-main-nav.moves-out',
+            'property' => 'background',
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 2.6- Sub Menu Links Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_sub_menu_links_color',
+    'label' => __('Sub Menu Links Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#fff',
+    'priority' => 30,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.sub-menu a',
+            'property' => 'color',
+            'suffix' => '!important', // Added important to override default in style.css
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 2.7- Sub Menu Go Back Arrow Color - MOBILE
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'mobile_sub_menugo-back_arrow_color',
+    'label' => __('Sub Menu Go Back Arrow Color', 'the-clean-blog'),
+    'section' => 'mobile-menu-colors',
+    'default' => '#485c68',
+    'priority' => 35,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.cb-main-nav .go-back a::before',
+                '.cb-main-nav .go-back a::after',
+            ),
+            'property' => 'background',
+            'media_query' => '@media (max-width: 1023px)',
+        ),
+    ),
+    'alpha' => true,
+));
+
