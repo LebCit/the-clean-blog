@@ -445,3 +445,21 @@ Clean_Blog_Kirki::add_section( 'header_background_images', array(
     'theme_supports' => '', // Rarely needed.
 ) );
 
+// 4.1- Deafult Header Background Image
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'image',
+    'settings' => 'default_header_background_image',
+    'label' => __('Deafult Header Background Image', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default'  => get_template_directory_uri() . '/components/header/images/default-hero.jpg',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '#masthead',
+            'property' => 'background-image',
+        ),
+    ),
+    'active_callback' => 'is_home',
+));
+
