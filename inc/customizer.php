@@ -549,3 +549,39 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_404',
 ));
 
+// 4.6- Error404 Page Title Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'error404_page_title_text',
+    'label' => __('Error404 Page Title Text', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default' => '',
+    'priority' => 30,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.error404 .intro-header .site-heading h1',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_404',
+));
+
+// 4.7- Error404 Page Subtitle Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'error404_page_subtitle_text',
+    'label' => __('Error404 Page Subtitle Text', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default' => '',
+    'priority' => 35,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.error404 .intro-header .site-heading h2',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_404',
+));
+
