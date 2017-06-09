@@ -435,3 +435,13 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     ),
 ));
 
+// 4- Header Background Image
+Clean_Blog_Kirki::add_section( 'header_background_images', array(
+    'title'          => __( 'Header Background Image & Texts' ),
+    'description'    => __( 'Change Default Image & Texts ', 'the-clean-blog' ),
+    'panel'          => 'cleanblog_theme',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
