@@ -326,3 +326,94 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'alpha' => true,
 ));
 
+// 3- Search Icon and Dropdown Section
+Clean_Blog_Kirki::add_section( 'search-icon-and-dropdown-colors', array(
+    'title'          => __( 'Search Icon and Dropdown Colors' ),
+    'description'    => __( 'Change Search Icon and Dropdown Colors', 'the-clean-blog' ),
+    'panel'          => 'cleanblog_theme',
+    'priority'       => 15,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+// 3.1- Search Icon Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'search_icon_color',
+    'label' => __('Search Icon Color', 'the-clean-blog'),
+    'section' => 'search-icon-and-dropdown-colors',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                'li.search-trigger',
+                'button.search-trigger',
+            ),
+            'property' => 'color',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 3.2- Search Icon Hover Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'search_icon_hover_color',
+    'label' => __('Search Icon Hover Color', 'the-clean-blog'),
+    'section' => 'search-icon-and-dropdown-colors',
+    'default' => '#d03b39',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                'li.search-trigger:hover',
+                'button.search-trigger:hover',
+            ),
+            'property' => 'color',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 3.3- Dropdown Search Background Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'dropdown_search_background_color',
+    'label' => __('Dropdown Search Background Color', 'the-clean-blog'),
+    'section' => 'search-icon-and-dropdown-colors',
+    'default' => '#486B82',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.search-dropdown',
+                '.search-dropdown input#s',
+            ),
+            'property' => 'background',
+        ),
+    ),
+    'alpha' => true,
+));
+
+// 3.4- Dropdown Search Placeholder Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'dropdown_search_placeholder_color',
+    'label' => __('Dropdown Search Placeholder Color', 'the-clean-blog'),
+    'section' => 'search-icon-and-dropdown-colors',
+    'default' => '#2B1A1A',
+    'priority' => 20,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.search-dropdown ::placeholder',
+            'property' => 'color',
+        ),
+    ),
+    'alpha' => true,
+));
+
