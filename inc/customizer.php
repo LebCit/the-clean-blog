@@ -488,3 +488,39 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_search',
 ));
 
+// 4.3- Search Page Title Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_page_title_text',
+    'label' => __('Search Page Title Text', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default' => '',
+    'priority' => 20,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.search .intro-header .site-heading h1',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_search',
+));
+
+// 4.4- Search Page Subtitle Text
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'text',
+    'settings' => 'search_page_subtitle_text',
+    'label' => __('Search Page Subtitle Text', 'the-clean-blog'),
+    'section' => 'header_background_images',
+    'default' => '',
+    'priority' => 25,
+    'transport' => 'postMessage',
+    'js_vars' => array(
+        array(
+            'element' => 'body.search .intro-header .site-heading h2',
+            'function' => 'html',
+        ),
+    ),
+    'active_callback' => 'is_search',
+));
+
