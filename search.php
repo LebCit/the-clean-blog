@@ -16,7 +16,15 @@ get_header();
         <?php if (have_posts()) : ?>
 
             <header class="page-header">
-                <h1 class="page-title"><?php printf(esc_html__('Search Results for: %s', 'the-clean-blog'), '<span>' . get_search_query() . '</span>'); ?></h1>
+                <h1 class="page-title">
+                    <?php
+                    $searchResults = get_theme_mod('search_results_page_text');
+                    if(empty($searchResults)){
+                        $searchResults = 'Search Results for :';
+                    }
+                    printf(esc_html__($searchResults .' %s', 'the-clean-blog'), '<span>' . get_search_query() . '</span>');
+                    ?>
+                </h1>
             </header>
             <?php
             /* Start the Loop */

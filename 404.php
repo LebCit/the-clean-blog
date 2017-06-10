@@ -15,10 +15,26 @@ get_header();
 
         <section class="error-404 not-found">
             <header class="page-header">
-                <h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'the-clean-blog'); ?></h1>
+                <h1 class="page-title">
+                    <?php
+                    $search404Tilte = get_theme_mod('search_404_page_title_text');
+                    if(empty($search404Tilte)){
+                        $search404Tilte = 'Oops! That page can&rsquo;t be found.';
+                    }
+                    esc_html_e($search404Tilte, 'the-clean-blog');
+                    ?>
+                </h1>
             </header>
             <div class="page-content">
-                <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'the-clean-blog'); ?></p>
+                <p>
+                    <?php
+                    $search404Paragraph = get_theme_mod('search_404_page_paragraph_text');
+                    if(empty($search404Paragraph)){
+                        $search404Paragraph = 'It looks like nothing was found at this location. Maybe try one of the links below or a search?';
+                    }
+                    esc_html_e($search404Paragraph, 'the-clean-blog');
+                    ?>
+                </p>
 
                 <?php
                 get_search_form();

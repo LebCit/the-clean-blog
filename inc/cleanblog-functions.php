@@ -33,6 +33,17 @@ function cleanblog_check_wp_version( $old_theme_name, $old_theme ) {
 add_action( 'after_switch_theme', 'cleanblog_check_wp_version', 10, 2 );
 
 /**
+ * Disable output of kirki styles if the plugin is disabled or removed.
+ */
+if( ! class_exists( 'Kirki' ) ) {
+    function cleanblog_remove_kirki_styles() {
+        wp_dequeue_style( 'the-clean-blog_no-kirki' );
+        wp_deregister_style( 'the-clean-blog_no-kirki' );
+    }
+    add_action( 'wp_enqueue_scripts', 'cleanblog_remove_kirki_styles', 20 );
+}
+
+/**
  * Localize hero.js to asynchronously load the header image.
  */
 function cleanblog_header_script() {
@@ -52,11 +63,15 @@ function cleanblog_header_script() {
     }
     
     $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
+    $heroImgDefault = get_theme_mod( 'default_header_background_image', '' );
+    if (empty($heroImgDefault)) {
+        $heroImgDefault = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
+    }
     $heroSettings = array (
         'cleanblog_hero_ajaxurl'       => esc_url(admin_url('admin-ajax.php')),
         'cleanblog_has_post_thumbnail' => has_post_thumbnail(),
         'cleanblog_featured_image'     => esc_url($heroImg[0]),
-        'cleanblog_default_image'      => get_template_directory_uri() . '/components/header/images/default-hero.jpg'
+        'cleanblog_get_theme_mod'      => $heroImgDefault,
     );
     wp_localize_script('cleanblog-hero', 'cleanblog_hero_set', $heroSettings);
 }
@@ -443,3 +458,15 @@ function cleanblog_copyright_date()
     }
     return $output;
 }
+
+/**
+ * Hooking in JS code to affect the controls in the customizer.
+ */
+function cleanblog_customizer_controls() {
+    wp_enqueue_script( 'cleanblog-customizer-controls', get_template_directory_uri() . '/assets/js/clean-blog-customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+    $customizerSettings = array (
+        'cleanblog_control_placeholder' => esc_html__( 'Replace Default Text', 'the-clean-blog' ),
+    );
+    wp_localize_script('cleanblog-customizer-controls', 'cleanblog_customizer_set', $customizerSettings);
+}
+add_action( 'customize_controls_enqueue_scripts', 'cleanblog_customizer_controls' );

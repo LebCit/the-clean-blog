@@ -11,7 +11,15 @@
 
 <section class="no-results not-found">
     <header class="page-header">
-        <h1 class="page-title"><?php esc_html_e('Nothing Found', 'the-clean-blog'); ?></h1>
+        <h1 class="page-title">
+            <?php
+            $searchNoResultsTitle = get_theme_mod('search_no_results_page_title_text');
+            if(empty($searchNoResultsTitle)){
+                $searchNoResultsTitle = 'Nothing Found';
+            }
+            esc_html_e($searchNoResultsTitle, 'the-clean-blog');
+            ?>
+        </h1>
     </header>
     <div class="page-content">
         <?php if (is_home() && current_user_can('publish_posts')) : ?>
@@ -20,7 +28,15 @@
 
         <?php elseif (is_search()) : ?>
 
-            <p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'the-clean-blog'); ?></p>
+            <p>
+                <?php
+                $searchNoResultsParagraph = get_theme_mod('search_no_results_page_paragraph_text');
+                if(empty($searchNoResultsParagraph)){
+                    $searchNoResultsParagraph = 'Sorry, but nothing matched your search terms. Please try again with some different keywords.';
+                }
+                esc_html_e($searchNoResultsParagraph, 'the-clean-blog');
+                ?>
+            </p>
             <?php
             get_search_form();
 

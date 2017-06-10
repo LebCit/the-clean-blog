@@ -30,7 +30,7 @@
                     });
                 } else {
                     $('#masthead').css({
-                        'background-image': 'url(' + cleanblog_hero_set.cleanblog_default_image + ')',
+                        'background-image': 'url(' . echo + cleanblog_hero_set.cleanblog_get_theme_mod + ')',
                         width: $(window).width(),
                         height: $(window).height()
                     });
