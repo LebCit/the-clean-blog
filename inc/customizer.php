@@ -694,3 +694,69 @@ Clean_Blog_Kirki::add_field('cleanblog', array(
     'active_callback' => 'is_404',
 ));
 
+// 6.1- Site Title and Description Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'site_title_description_color',
+    'label' => __('Site Title and Description Color', 'the-clean-blog'),
+    'section' => 'title_tagline',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.intro-header .site-heading',
+                '.intro-header .site-heading a',
+            ),
+            'property' => 'color',
+        ),
+    ),
+    'active_callback' => 'is_home',
+    'alpha' => true,
+));
+// 6.2- Site Title Hover Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'site_title_hover_color',
+    'label' => __('Site Title Hover Color', 'the-clean-blog'),
+    'section' => 'title_tagline',
+    'default' => 'rgba(255, 255, 255, 0.8)',
+    'priority' => 20,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                'h1.site-title a:focus',
+                'h1.site-title a:hover'
+                ),
+            'property' => 'color',
+        ),
+    ),
+    'active_callback' => 'is_home',
+    'alpha' => true,
+));
+// 6.3- Strike and Arrow Down Color
+Clean_Blog_Kirki::add_field('cleanblog', array(
+    'type' => 'color',
+    'settings' => 'strike_arrow_down_color',
+    'label' => __('Strike and Arrow Down Color', 'the-clean-blog'),
+    'section' => 'title_tagline',
+    'default' => '#fff',
+    'priority' => 25,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.strike i',
+            'property' => 'color',
+        ),
+        array(
+            'element' => array(
+                '.strike > span:before',
+                '.strike > span:after'
+                ),
+            'property' => 'background',
+        )
+    ),
+    'alpha' => true,
+));
