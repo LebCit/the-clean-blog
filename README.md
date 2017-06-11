@@ -157,6 +157,11 @@ But on desktop view, only the **First 5** will show up !
 
 Initial release
 
+## Copyright
+
+* The Clean Blog WordPress Theme, Copyright 2017 [LebCit](https://profiles.wordpress.org/lebcit)
+* The Clean Blog is distributed under the terms of the GNU GPL
+
 ## Credits
 
 * Based on [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog), (C) 2013-2016 [Blackrock Digital](https://github.com/BlackrockDigital), LLC., [MIT](http://opensource.org/licenses/MIT)
