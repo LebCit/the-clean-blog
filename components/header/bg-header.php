@@ -3,7 +3,7 @@
  * This file generates the background header image with the title and the subtitle.
  * 
  * The background image is added by using inline style.
- * @see cleanblog-functions.php | cleanblog_header_style()
+ * @see the-clean-blog-functions.php | thecleanblog_header_style()
  */
 ?>
 
@@ -40,7 +40,7 @@
                                 <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
                             <?php
                             endif; } elseif (is_single()) {
-                                cleanblog_posted_on();
+                                thecleanblog_posted_on();
                             }
                             ?>
                         </h2>

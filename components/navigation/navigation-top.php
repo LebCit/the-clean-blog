@@ -1,5 +1,5 @@
 <div class="cb-logo">
-    <?php cleanblog_the_custom_logo(); ?>
+    <?php thecleanblog_the_custom_logo(); ?>
 </div>
 
     <?php
@@ -8,7 +8,7 @@
             'container' => 'nav',
             'container_class' => 'cb-main-nav-wrapper',
             'menu_class' => 'cb-main-nav',
-            'fallback_cb' => 'cleanblog_fallback_menu',
+            'fallback_cb' => 'thecleanblog_fallback_menu',
             'depth' => 2
         ));
     ?>

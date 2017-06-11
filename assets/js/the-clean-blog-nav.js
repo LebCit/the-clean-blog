@@ -11,8 +11,8 @@ A BIG THANKS Goes To The Author Of This Article, Claudia Romano : https://twitte
   * EASIER THAN WRITING A WALKER !
  */
 jQuery('.cb-main-nav li:has(ul) > a').addClass('cb-subnav-trigger').wrapInner('<span/>');
-jQuery('.cb-main-nav li ul').prepend("<li class='go-back'><a href='#0'>" + cleanblog_nav_set.cleanblog_menu + "</a></li>")
-        .append("<li><a href='#0' class='placeholder'>" + cleanblog_nav_set.cleanblog_placeholder + "</a></li>");
+jQuery('.cb-main-nav li ul').prepend("<li class='go-back'><a href='#0'>" + thecleanblog_nav_set.thecleanblog_menu + "</a></li>")
+        .append("<li><a href='#0' class='placeholder'>" + thecleanblog_nav_set.thecleanblog_placeholder + "</a></li>");
 
 jQuery(document).ready(function ($) {
 

@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function cleanblog_wpcom_setup()
+function thecleanblog_wpcom_setup()
 {
     global $themecolors;
 
@@ -27,4 +27,4 @@ function cleanblog_wpcom_setup()
         );
     }
 }
-add_action('after_setup_theme', 'cleanblog_wpcom_setup');
+add_action('after_setup_theme', 'thecleanblog_wpcom_setup');

@@ -32,7 +32,7 @@ The **new** improved navigation with **one sub-menu depth**, can hold only 5 mai
 
 ### Does this theme support any plugins?
 
-Clean Blog includes support for Jetpack's Infinite Scroll as well as other features.
+The Clean Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 ### How to use the lightbox on galleries ?
 
@@ -75,7 +75,7 @@ But on desktop view, only the **First 5** will show up !
 ### 17.05.18 =
 * Released: May 18, 2017
 - Added new logic to Header Search Dropdown on resize.
-- Changed nicename to nickname in cleanblog_posted_on().
+- Changed nicename to nickname in thecleanblog_posted_on().
 - Remove default -webkit-tap-highlight-color.
 - Some Code Formatting.
 - Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
@@ -98,12 +98,12 @@ But on desktop view, only the **First 5** will show up !
 * Released: February 20, 2017
 - Added AJAX to contact form
 - Added useful comments to contact-form.js
-- Removed unnecessary code from contact-form.js and cleanblog-functions.php
+- Removed unnecessary code from contact-form.js and the-clean-blog-functions.php
 - Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.02.15 =
 * Released: February 15, 2017
-- Changed cleanblog_posted_on() function
+- Changed thecleanblog_posted_on() function
 - Changed Theme URI
 - Added Contact Form Template + validate, sanitize an escape data
 - Added Contact Form Styles
