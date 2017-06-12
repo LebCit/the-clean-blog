@@ -154,10 +154,17 @@ function thecleanblog_custom_excerpt_length($length)
 }
 add_filter('excerpt_length', 'thecleanblog_custom_excerpt_length', 999);
 
-function thecleanblog_excerpt_more($more)
-{
-    return sprintf(' <a class="read-more" href="%1$s">%2$s</a>', get_permalink(get_the_ID()), __('Read More', 'the-clean-blog')
+function thecleanblog_excerpt_more($link) {
+    if ( is_admin() ) {
+        return $link;
+    }
+
+    $link = sprintf(' <a class="read-more" href="%1$s">%2$s</a>',
+        esc_url(get_permalink(get_the_ID())),
+        /* translators: %s: Name of current post */
+        sprintf( __( 'Read More<span class="screen-reader-text"> "%s"</span>', 'the-clean-blog' ), get_the_title( get_the_ID() ) )
     );
+    return $link;
 }
 add_filter('excerpt_more', 'thecleanblog_excerpt_more');
 
