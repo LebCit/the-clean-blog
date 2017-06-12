@@ -318,16 +318,32 @@ function thecleanblog_social_media()
 {
 
     /* store social site names in array */
-    $social_sites = array('email', 'twitter', 'facebook', 'github', 'instagram', 'youtube', 'google-plus', 'flickr', 'pinterest', 'tumblr', 'dribbble', 'linkedin', 'rss');
-
-    return $social_sites;
+    $social_sites = array(
+        'email'         => 'thecleanblog_email',
+        'twitter'       => 'thecleanblog_twitter',
+        'facebook'      => 'thecleanblog_facebook',
+        'github'        => 'thecleanblog_github',
+        'instagram'     => 'thecleanblog_instagram',
+        'youtube'       => 'thecleanblog_youtube',
+        'google-plus'   => 'thecleanblog_googleplus',
+        'flickr'        => 'thecleanblog_flickr',
+        'pinterest'     => 'thecleanblog_pinterest',
+        'tumblr'        => 'thecleanblog_tumblr',
+        'dribbble'      => 'thecleanblog_dribbble',
+        'linkedin'      => 'thecleanblog_linkedin',
+        'rss'           => 'thecleanblog_rss'
+    );
+    
+    // Filtering the function, allowing user(s) to add more social sites in child theme.
+    return apply_filters( 'thecleanblog_social_media', $social_sites );
 }
 
 /**
- * Add settings to create various social media text areas.
+ * Add settings to create various social media text areas in the Customizer.
  */
 function thecleanblog_social_sites($wp_customize)
 {
+    // Section
     $wp_customize->add_section('thecleanblog_social_settings', array(
         'title' => __('Social Media Icons', 'the-clean-blog'),
         'priority' => 30,
@@ -337,17 +353,49 @@ function thecleanblog_social_sites($wp_customize)
     $social_sites = thecleanblog_social_media();
     $priority = 5;
 
-    foreach ($social_sites as $social_site) {
-        $wp_customize->add_setting("$social_site", array(
+    // Create a setting and control for each social site.
+    foreach ($social_sites as $social_site => $value) {
+
+        if ( $social_site == 'email' ) {
+            $label = esc_attr__('Email URL', 'the-clean-blog');
+        } elseif ( $social_site == 'twitter' ) {
+            $label = esc_attr__('Twitter URL', 'the-clean-blog');
+        } elseif ( $social_site == 'facebook' ) {
+            $label = esc_attr__('Facebook URL', 'the-clean-blog');
+        } elseif ( $social_site == 'github' ) {
+            $label = esc_attr__('GitHub URL', 'the-clean-blog');
+        } elseif ( $social_site == 'instagram' ) {
+            $label = esc_attr__('Instagram URL', 'the-clean-blog');
+        } elseif ( $social_site == 'youtube' ) {
+            $label = esc_attr__('YouTube URL', 'the-clean-blog');
+        } elseif ( $social_site == 'google-plus' ) {
+            $label = esc_attr__('Google Plus URL', 'the-clean-blog');
+        } elseif ( $social_site == 'flickr' ) {
+            $label = esc_attr__('Flickr URL', 'the-clean-blog');
+        } elseif ( $social_site == 'pinterest' ) {
+            $label = esc_attr__('Pinterest URL', 'the-clean-blog');
+        } elseif ( $social_site == 'tumblr' ) {
+            $label = esc_attr__('Tumblr URL', 'the-clean-blog');
+        } elseif ( $social_site == 'dribbble' ) {
+            $label = esc_attr__('Dribble URL', 'the-clean-blog');
+        } elseif ( $social_site == 'linkedin' ) {
+            $label = esc_attr__('LinkedIn URL', 'the-clean-blog');
+        } elseif ( $social_site == 'rss' ) {
+            $label = esc_attr__('RSS URL', 'the-clean-blog');
+        }
+        
+        // Setting
+        $wp_customize->add_setting($social_site, array(
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'esc_url_raw'
         ));
 
+        // Control
         $wp_customize->add_control($social_site, array(
-            'label' => ucwords(esc_attr("$social_site URL:", 'social_icon')),
-            'section' => 'thecleanblog_social_settings',
             'type' => 'text',
+            'label' => $label,
+            'section' => 'thecleanblog_social_settings',
             'priority' => $priority,
         ));
 
@@ -364,7 +412,7 @@ function thecleanblog_social_media_icons()
     $social_sites = thecleanblog_social_media();
 
     /* any inputs that aren't empty are stored in $active_sites array */
-    foreach ($social_sites as $social_site) {
+    foreach ($social_sites as $social_site => $profile) {
         if (strlen(get_theme_mod($social_site)) > 0) {
             $active_sites[] = $social_site;
         }
@@ -374,7 +422,7 @@ function thecleanblog_social_media_icons()
     if (!empty($active_sites)) {
         echo "<ul class='list-inline text-center'>";
 
-        foreach ($active_sites as $active_site) {
+        foreach ($active_sites as $key => $active_site) {
 
             /* setup the class */
             $class = 'fa fa-' . $active_site . ' fa-stack-1x fa-inverse';
