@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-11 21:59+0000\n"
+"POT-Creation-Date: 2017-06-12 21:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -56,11 +56,11 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:141 components/navigation/navigation-top.php:36
 msgid "Menu"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:142
 msgid "Placeholder"
 msgstr ""
 
@@ -327,72 +327,114 @@ msgstr ""
 msgid "Create a new menu"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:155 inc/the-clean-blog-functions.php:159
-msgid "Search for:"
+#. %s: Name of current post
+#: inc/the-clean-blog-functions.php:165
+#, php-format
+msgid "Read More<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:157
-msgid "Search ..."
-msgstr ""
-
-#: inc/the-clean-blog-functions.php:162
-msgid "Search"
-msgstr ""
-
-#: inc/the-clean-blog-functions.php:188
-msgid "Read More"
-msgstr ""
-
-#: inc/the-clean-blog-functions.php:223
+#: inc/the-clean-blog-functions.php:201
 msgid "SHARE :"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:254
+#: inc/the-clean-blog-functions.php:232
 msgid "Comment"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:266
+#: inc/the-clean-blog-functions.php:244
 msgid "Name *"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:267
+#: inc/the-clean-blog-functions.php:245
 msgid "Email *"
 msgstr ""
 
 #. %s: comment author link
-#: inc/the-clean-blog-functions.php:292
+#: inc/the-clean-blog-functions.php:270
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
 #. 1: comment date, 2: comment time
-#: inc/the-clean-blog-functions.php:301
+#: inc/the-clean-blog-functions.php:279
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:304
+#: inc/the-clean-blog-functions.php:282
 msgid "Edit"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:308
+#: inc/the-clean-blog-functions.php:286
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:354
+#: inc/the-clean-blog-functions.php:348
 msgid "Social Media Icons"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:410
+#: inc/the-clean-blog-functions.php:360
+msgid "Email URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:362
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:364
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:366
+msgid "GitHub URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:368
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:370
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:372
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:374
+msgid "Flickr URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:376
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:378
+msgid "Tumblr URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:380
+msgid "Dribble URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:382
+msgid "LinkedIn URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:384
+msgid "RSS URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:436
 msgid "email icon"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:422
+#: inc/the-clean-blog-functions.php:448
 #, php-format
 msgid "%s icon"
 msgstr ""
 
-#: inc/the-clean-blog-functions.php:468
+#: inc/the-clean-blog-functions.php:494
 msgid "Replace Default Text"
 msgstr ""
 
