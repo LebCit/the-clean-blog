@@ -20,7 +20,7 @@
                         placeholder="<?php
                             $placeholder = get_theme_mod('dropdown_search_placeholder_text');
                             if(empty($placeholder)){
-                                $placeholder = 'Search ...';
+                                $placeholder = 'Search &hellip;';
                             }
                             echo esc_html_x($placeholder, 'placeholder', 'the-clean-blog') 
                         ?>"
