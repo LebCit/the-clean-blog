@@ -33,4 +33,4 @@
             </button>
         </form>
     </div>
-<a href="#0" class="cb-nav-trigger">Menu<span></span></a>
+<a href="#0" class="cb-nav-trigger"><?php esc_html__('Menu', 'the-clean-blog')?><span></span></a>
