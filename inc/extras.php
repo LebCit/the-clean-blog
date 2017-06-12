@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function cleanblog_body_classes($classes)
+function thecleanblog_body_classes($classes)
 {
     // Adds a class of group-blog to blogs with more than 1 published author.
     if (is_multi_author()) {
@@ -27,4 +27,4 @@ function cleanblog_body_classes($classes)
 
     return $classes;
 }
-add_filter('body_class', 'cleanblog_body_classes');
+add_filter('body_class', 'thecleanblog_body_classes');

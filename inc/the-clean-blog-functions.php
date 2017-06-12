@@ -1,6 +1,6 @@
 <?php
 /**
- * Clean Blog custom functions and definitions.
+ * The Clean Blog custom functions and definitions.
  *
  * @package The_Clean_Blog
  */
@@ -8,20 +8,20 @@
 /**
  * Prevent theme activation if WordPress version is less than 4.7 !
  */
-function cleanblog_check_wp_version( $old_theme_name, $old_theme ) {
+function thecleanblog_check_wp_version( $old_theme_name, $old_theme ) {
     
     global $wp_version;
     if ( $wp_version < 4.7 && current_user_can( 'edit_theme_options' ) ) :
 
       // Info message: Theme not activated
-      function cleanblog_not_activated_admin_notice() {
+      function thecleanblog_not_activated_admin_notice() {
         echo '<div class="error notice">';
             echo '<h2>';
                 esc_html_e( 'Theme not activated: this theme requires at least WordPress Version 4.7 !', 'the-clean-blog' );
             echo '</h2>';
         echo '</div>';
       }
-      add_action( 'admin_notices', 'cleanblog_not_activated_admin_notice' );
+      add_action( 'admin_notices', 'thecleanblog_not_activated_admin_notice' );
 
       // Switch back to previous theme
       switch_theme( $old_theme->stylesheet );
@@ -30,29 +30,29 @@ function cleanblog_check_wp_version( $old_theme_name, $old_theme ) {
     endif;
 
 }
-add_action( 'after_switch_theme', 'cleanblog_check_wp_version', 10, 2 );
+add_action( 'after_switch_theme', 'thecleanblog_check_wp_version', 10, 2 );
 
 /**
  * Disable output of kirki styles if the plugin is disabled or removed.
  */
 if( ! class_exists( 'Kirki' ) ) {
-    function cleanblog_remove_kirki_styles() {
+    function thecleanblog_remove_kirki_styles() {
         wp_dequeue_style( 'the-clean-blog_no-kirki' );
         wp_deregister_style( 'the-clean-blog_no-kirki' );
     }
-    add_action( 'wp_enqueue_scripts', 'cleanblog_remove_kirki_styles', 20 );
+    add_action( 'wp_enqueue_scripts', 'thecleanblog_remove_kirki_styles', 20 );
 }
 
 /**
  * Localize hero.js to asynchronously load the header image.
  */
-function cleanblog_header_script() {
+function thecleanblog_header_script() {
     
     // Adding custom javascript file to handle the header image.
     if (is_404() || is_search()) {
-        wp_dequeue_script('cleanblog-hero');
+        wp_dequeue_script('thecleanblog-hero');
     } else {
-        wp_enqueue_script('cleanblog-hero', get_theme_file_uri('/assets/js/hero.js'), array('jquery'), '', true);
+        wp_enqueue_script('thecleanblog-hero', get_theme_file_uri('/assets/js/the-clean-blog-hero.js'), array('jquery'), '', true);
     }
     
     // Declare $post global if used outside of the loop.
@@ -68,14 +68,14 @@ function cleanblog_header_script() {
         $heroImgDefault = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
     }
     $heroSettings = array (
-        'cleanblog_hero_ajaxurl'       => esc_url(admin_url('admin-ajax.php')),
-        'cleanblog_has_post_thumbnail' => has_post_thumbnail(),
-        'cleanblog_featured_image'     => esc_url($heroImg[0]),
-        'cleanblog_get_theme_mod'      => $heroImgDefault,
+        'thecleanblog_hero_ajaxurl'       => esc_url(admin_url('admin-ajax.php')),
+        'thecleanblog_has_post_thumbnail' => has_post_thumbnail(),
+        'thecleanblog_featured_image'     => esc_url($heroImg[0]),
+        'thecleanblog_get_theme_mod'      => $heroImgDefault,
     );
-    wp_localize_script('cleanblog-hero', 'cleanblog_hero_set', $heroSettings);
+    wp_localize_script('thecleanblog-hero', 'thecleanblog_hero_set', $heroSettings);
 }
-add_action('wp_enqueue_scripts', 'cleanblog_header_script');
+add_action('wp_enqueue_scripts', 'thecleanblog_header_script');
 
 /**
  * Set background image for the header.
@@ -84,7 +84,7 @@ add_action('wp_enqueue_scripts', 'cleanblog_header_script');
  * Add inline style to the backgroung header image.
  * @link https://developer.wordpress.org/reference/functions/wp_add_inline_style/
  */
-function cleanblog_header_style() {
+function thecleanblog_header_style() {
     // Declare $post global if used outside of the loop.
     $post = get_post();
     // Check if post is object otherwise we're not in singular post.
@@ -109,17 +109,17 @@ function cleanblog_header_style() {
             }
         ';
     }
-    wp_add_inline_style('cleanblog-main-style', $custom_header_style);
+    wp_add_inline_style('thecleanblog-main-style', $custom_header_style);
 }
-add_action('wp_enqueue_scripts', 'cleanblog_header_style');
-add_action('wp_ajax_cleanblog_header_style', 'cleanblog_header_style');
-add_action('wp_ajax_nopriv_cleanblog_header_style', 'cleanblog_header_style');
+add_action('wp_enqueue_scripts', 'thecleanblog_header_style');
+add_action('wp_ajax_thecleanblog_header_style', 'thecleanblog_header_style');
+add_action('wp_ajax_nopriv_thecleanblog_header_style', 'thecleanblog_header_style');
 
 /**
  * Provide a fallback menu featuring a 'Home' link, if no other menu has been provided.
  * Add 'Create a new menu' link only if the current_user_can('edit_theme_options').
  */
-function cleanblog_fallback_menu() {
+function thecleanblog_fallback_menu() {
     $html = '<nav class="cb-main-nav-wrapper">';
         $html .= '<ul class="cb-main-nav">';
             $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
@@ -140,40 +140,11 @@ function cleanblog_fallback_menu() {
 }
 
 /**
- * Generate custom search form
- *
- * @param string $form Form HTML.
- * @return string Modified form HTML.
- * 
- * @link https://developer.wordpress.org/reference/functions/get_search_form/#comment-369
- * 
- */
-function cleanblog_search_form( $form ) {
-    $form = 
-        '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '" >
-            <label>
-                <span class="screen-reader-text">' . esc_attr__('Search for:', 'the-clean-blog') . '</span>
-                <input type="search" class="search-field"
-                       placeholder="' . esc_attr__('Search ...', 'the-clean-blog') . '" '
-                    . 'value="' . get_search_query() . '" name="s" id="s" required '
-                    . 'title="' . esc_attr__('Search for:', 'the-clean-blog') . '" />
-            </label>
-            <button type="submit" class="search-submit"
-                    value="'. esc_attr__('Search', 'the-clean-blog') .'" />
-                <i class="icon-search"></i>
-            </button>
-        </form>';
- 
-    return $form;
-}
-add_filter( 'get_search_form', 'cleanblog_search_form' );
-
-/**
  * Customizimg the excerpt function.
  *
  * @link https://developer.wordpress.org/reference/functions/the_excerpt/
  */
-function cleanblog_custom_excerpt_length($length)
+function thecleanblog_custom_excerpt_length($length)
 {
     if ( is_admin() ) {
         return $length;
@@ -181,14 +152,21 @@ function cleanblog_custom_excerpt_length($length)
         return 15;
     }
 }
-add_filter('excerpt_length', 'cleanblog_custom_excerpt_length', 999);
+add_filter('excerpt_length', 'thecleanblog_custom_excerpt_length', 999);
 
-function cleanblog_excerpt_more($more)
-{
-    return sprintf(' <a class="read-more" href="%1$s">%2$s</a>', get_permalink(get_the_ID()), __('Read More', 'the-clean-blog')
+function thecleanblog_excerpt_more($link) {
+    if ( is_admin() ) {
+        return $link;
+    }
+
+    $link = sprintf(' <a class="read-more" href="%1$s">%2$s</a>',
+        esc_url(get_permalink(get_the_ID())),
+        /* translators: %s: Name of current post */
+        sprintf( __( 'Read More<span class="screen-reader-text"> "%s"</span>', 'the-clean-blog' ), get_the_title( get_the_ID() ) )
     );
+    return $link;
 }
-add_filter('excerpt_more', 'cleanblog_excerpt_more');
+add_filter('excerpt_more', 'thecleanblog_excerpt_more');
 
 /**
  * Add social sharing icons to posts.
@@ -196,37 +174,37 @@ add_filter('excerpt_more', 'cleanblog_excerpt_more');
  * Thanks to App Shah
  * @link http://crunchify.com/how-to-create-social-sharing-button-without-any-plugin-and-script-loading-wordpress-speed-optimization-goal/
  */
-function cleanblog_social_sharing_buttons($content) {
+function thecleanblog_social_sharing_buttons($content) {
     global $post, $variable;
     if(is_single()){
 
         // Get current post URL.
-        $cleanblogURL = urlencode(get_permalink());
+        $thecleanblogURL = urlencode(get_permalink());
 
         // Get current post title.
-        $cleanblogTitle = str_replace( ' ', '%20', the_title_attribute('echo=0'));
+        $thecleanblogTitle = str_replace( ' ', '%20', the_title_attribute('echo=0'));
 
         // Get Post Thumbnail for pinterest.
-        $cleanblogThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+        $thecleanblogThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
         // Construct sharing URL without using any script
-        $emailURL = 'mailto:?subject=' . $cleanblogTitle . '&body=Check out this post: '. $cleanblogURL;
-        $twitterURL = 'https://twitter.com/intent/tweet?text='.$cleanblogTitle.'&amp;url='.$cleanblogURL;
-        $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$cleanblogURL;
-        $googleURL = 'https://plus.google.com/share?url='.$cleanblogURL;
-        $pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$cleanblogURL.'&amp;media='.$cleanblogThumbnail[0].'&amp;description='.$cleanblogTitle;
-        $whatsappURL = 'whatsapp://send?text='.$cleanblogTitle . ' ' . $cleanblogURL;        
+        $emailURL = 'mailto:?subject=' . $thecleanblogTitle . '&body=Check out this post: '. $thecleanblogURL;
+        $twitterURL = 'https://twitter.com/intent/tweet?text='.$thecleanblogTitle.'&amp;url='.$thecleanblogURL;
+        $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$thecleanblogURL;
+        $googleURL = 'https://plus.google.com/share?url='.$thecleanblogURL;
+        $pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$thecleanblogURL.'&amp;media='.$thecleanblogThumbnail[0].'&amp;description='.$thecleanblogTitle;
+        $whatsappURL = 'whatsapp://send?text='.$thecleanblogTitle . ' ' . $thecleanblogURL;        
 
         // Add sharing button at the end of post's content.
         $variable .= '<div class="panel-footer">';
         $variable .= '<ul class="social-network social-circle">';
         $variable .= '<li><span>' . esc_html__('SHARE :', 'the-clean-blog') . '</span></li>';
-        $variable .= '<li><a class="cleanblog-email" href="'.$emailURL.'" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>';
-        $variable .= '<li><a class="cleanblog-twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
-        $variable .= '<li><a class="cleanblog-facebook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';        
-        $variable .= '<li><a class="cleanblog-googleplus" href="'.$googleURL.'" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>';        
-        $variable .= '<li><a class="cleanblog-pinterest" href="'.$pinterestURL.'" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>';
-        $variable .= '<li><a class="cleanblog-whatsapp" href="'.$whatsappURL.'" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>';
+        $variable .= '<li><a class="thecleanblog-email" href="'.$emailURL.'" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>';
+        $variable .= '<li><a class="thecleanblog-twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
+        $variable .= '<li><a class="thecleanblog-facebook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';        
+        $variable .= '<li><a class="thecleanblog-googleplus" href="'.$googleURL.'" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>';        
+        $variable .= '<li><a class="thecleanblog-pinterest" href="'.$pinterestURL.'" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>';
+        $variable .= '<li><a class="thecleanblog-whatsapp" href="'.$whatsappURL.'" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>';
         $variable .= '</ul>';
         $variable .= '</div>';
 
@@ -236,7 +214,7 @@ function cleanblog_social_sharing_buttons($content) {
         return $content;
     }
 }
-add_filter( 'the_content', 'cleanblog_social_sharing_buttons');
+add_filter( 'the_content', 'thecleanblog_social_sharing_buttons');
 
 /**
  * Use placeholders instead of labels in comment form.
@@ -249,17 +227,17 @@ add_filter( 'the_content', 'cleanblog_social_sharing_buttons');
 /**
  * Change comment form textarea to use placeholder.
  */
-function cleanblog_comment_textarea_placeholder($args)
+function thecleanblog_comment_textarea_placeholder($args)
 {
     $args['comment_field'] = str_replace('textarea', 'textarea placeholder="' . esc_attr__('Comment', 'the-clean-blog') .'" class="form-control"', $args['comment_field']);
     return $args;
 }
-add_filter('comment_form_defaults', 'cleanblog_comment_textarea_placeholder');
+add_filter('comment_form_defaults', 'thecleanblog_comment_textarea_placeholder');
 
 /**
  * Comment Form Fields Placeholder.
  */
-function cleanblog_comment_form_fields($fields)
+function thecleanblog_comment_form_fields($fields)
 {
     unset($fields['url']);
     foreach ($fields as &$field) {
@@ -268,7 +246,7 @@ function cleanblog_comment_form_fields($fields)
     }
     return $fields;
 }
-add_filter('comment_form_default_fields', 'cleanblog_comment_form_fields');
+add_filter('comment_form_default_fields', 'thecleanblog_comment_form_fields');
 
 /**
  * Editing wp_list_comments() output.
@@ -276,7 +254,7 @@ add_filter('comment_form_default_fields', 'cleanblog_comment_form_fields');
  * Thanks to Bruno Kos
  * @link http://bbird.me/editing-wp_list_comments-output/
  */
-function cleanblog_comments($comment, $depth, $args)
+function thecleanblog_comments($comment, $depth, $args)
 {
     $tag = ('div' === $args['style']) ? 'div' : 'li'; ?>
 <?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class($this->has_children ? 'parent' : '', $comment); ?>>
@@ -336,57 +314,105 @@ function cleanblog_comments($comment, $depth, $args)
 /**
  * Create and return an array containing the names of the social sites.
  */
-function cleanblog_social_media()
+function thecleanblog_social_media()
 {
 
     /* store social site names in array */
-    $social_sites = array('email', 'twitter', 'facebook', 'github', 'instagram', 'youtube', 'google-plus', 'flickr', 'pinterest', 'tumblr', 'dribbble', 'linkedin', 'rss');
-
-    return $social_sites;
+    $social_sites = array(
+        'email'         => 'thecleanblog_email',
+        'twitter'       => 'thecleanblog_twitter',
+        'facebook'      => 'thecleanblog_facebook',
+        'github'        => 'thecleanblog_github',
+        'instagram'     => 'thecleanblog_instagram',
+        'youtube'       => 'thecleanblog_youtube',
+        'google-plus'   => 'thecleanblog_googleplus',
+        'flickr'        => 'thecleanblog_flickr',
+        'pinterest'     => 'thecleanblog_pinterest',
+        'tumblr'        => 'thecleanblog_tumblr',
+        'dribbble'      => 'thecleanblog_dribbble',
+        'linkedin'      => 'thecleanblog_linkedin',
+        'rss'           => 'thecleanblog_rss'
+    );
+    
+    // Filtering the function, allowing user(s) to add more social sites in child theme.
+    return apply_filters( 'thecleanblog_social_media', $social_sites );
 }
 
 /**
- * Add settings to create various social media text areas.
+ * Add settings to create various social media text areas in the Customizer.
  */
-function cleanblog_social_sites($wp_customize)
+function thecleanblog_social_sites($wp_customize)
 {
-    $wp_customize->add_section('cleanblog_social_settings', array(
+    // Section
+    $wp_customize->add_section('thecleanblog_social_settings', array(
         'title' => __('Social Media Icons', 'the-clean-blog'),
         'priority' => 30,
         'active_callback' => 'is_front_page',
     ));
 
-    $social_sites = cleanblog_social_media();
+    $social_sites = thecleanblog_social_media();
     $priority = 5;
 
-    foreach ($social_sites as $social_site) {
-        $wp_customize->add_setting("$social_site", array(
+    // Create a setting and control for each social site.
+    foreach ($social_sites as $social_site => $value) {
+
+        if ( $social_site == 'email' ) {
+            $label = esc_attr__('Email URL', 'the-clean-blog');
+        } elseif ( $social_site == 'twitter' ) {
+            $label = esc_attr__('Twitter URL', 'the-clean-blog');
+        } elseif ( $social_site == 'facebook' ) {
+            $label = esc_attr__('Facebook URL', 'the-clean-blog');
+        } elseif ( $social_site == 'github' ) {
+            $label = esc_attr__('GitHub URL', 'the-clean-blog');
+        } elseif ( $social_site == 'instagram' ) {
+            $label = esc_attr__('Instagram URL', 'the-clean-blog');
+        } elseif ( $social_site == 'youtube' ) {
+            $label = esc_attr__('YouTube URL', 'the-clean-blog');
+        } elseif ( $social_site == 'google-plus' ) {
+            $label = esc_attr__('Google Plus URL', 'the-clean-blog');
+        } elseif ( $social_site == 'flickr' ) {
+            $label = esc_attr__('Flickr URL', 'the-clean-blog');
+        } elseif ( $social_site == 'pinterest' ) {
+            $label = esc_attr__('Pinterest URL', 'the-clean-blog');
+        } elseif ( $social_site == 'tumblr' ) {
+            $label = esc_attr__('Tumblr URL', 'the-clean-blog');
+        } elseif ( $social_site == 'dribbble' ) {
+            $label = esc_attr__('Dribble URL', 'the-clean-blog');
+        } elseif ( $social_site == 'linkedin' ) {
+            $label = esc_attr__('LinkedIn URL', 'the-clean-blog');
+        } elseif ( $social_site == 'rss' ) {
+            $label = esc_attr__('RSS URL', 'the-clean-blog');
+        }
+        
+        // Setting
+        $wp_customize->add_setting($social_site, array(
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'esc_url_raw'
         ));
 
+        // Control
         $wp_customize->add_control($social_site, array(
-            'label' => ucwords(esc_attr("$social_site URL:", 'social_icon')),
-            'section' => 'cleanblog_social_settings',
             'type' => 'text',
+            'label' => $label,
+            'section' => 'thecleanblog_social_settings',
             'priority' => $priority,
         ));
 
         $priority = $priority + 5;
     }
 }
-add_action('customize_register', 'cleanblog_social_sites');
+add_action('customize_register', 'thecleanblog_social_sites');
 
 /**
  * Get user input from the Customizer and output the linked social media icons.
  */
-function cleanblog_social_media_icons()
+function thecleanblog_social_media_icons()
 {
-    $social_sites = cleanblog_social_media();
+    $social_sites = thecleanblog_social_media();
 
     /* any inputs that aren't empty are stored in $active_sites array */
-    foreach ($social_sites as $social_site) {
+    foreach ($social_sites as $social_site => $profile) {
         if (strlen(get_theme_mod($social_site)) > 0) {
             $active_sites[] = $social_site;
         }
@@ -396,7 +422,7 @@ function cleanblog_social_media_icons()
     if (!empty($active_sites)) {
         echo "<ul class='list-inline text-center'>";
 
-        foreach ($active_sites as $active_site) {
+        foreach ($active_sites as $key => $active_site) {
 
             /* setup the class */
             $class = 'fa fa-' . $active_site . ' fa-stack-1x fa-inverse';
@@ -436,7 +462,7 @@ function cleanblog_social_media_icons()
  *
  * @link http://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  */
-function cleanblog_copyright_date()
+function thecleanblog_copyright_date()
 {
     global $wpdb;
     $copyright_dates = $wpdb->get_results("
@@ -462,11 +488,11 @@ function cleanblog_copyright_date()
 /**
  * Hooking in JS code to affect the controls in the customizer.
  */
-function cleanblog_customizer_controls() {
-    wp_enqueue_script( 'cleanblog-customizer-controls', get_template_directory_uri() . '/assets/js/clean-blog-customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+function thecleanblog_customizer_controls() {
+    wp_enqueue_script( 'thecleanblog-customizer-controls', get_template_directory_uri() . '/assets/js/the-clean-blog-customizer.js', array( 'jquery', 'customize-controls' ), false, true );
     $customizerSettings = array (
-        'cleanblog_control_placeholder' => esc_html__( 'Replace Default Text', 'the-clean-blog' ),
+        'thecleanblog_control_placeholder' => esc_html__( 'Replace Default Text', 'the-clean-blog' ),
     );
-    wp_localize_script('cleanblog-customizer-controls', 'cleanblog_customizer_set', $customizerSettings);
+    wp_localize_script('thecleanblog-customizer-controls', 'thecleanblog_customizer_set', $customizerSettings);
 }
-add_action( 'customize_controls_enqueue_scripts', 'cleanblog_customizer_controls' );
+add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customizer_controls' );

@@ -42,7 +42,7 @@ get_header();
                 the_widget('WP_Widget_Recent_Posts');
 
                 // Only show the widget if site has multiple categories.
-                if (cleanblog_categorized_blog()) :
+                if (thecleanblog_categorized_blog()) :
 
                     ?>
 

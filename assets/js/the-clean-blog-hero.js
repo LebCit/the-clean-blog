@@ -17,20 +17,20 @@
     function fullscreen() {
         $.ajax({
             type: 'POST',
-            url: cleanblog_hero_set.cleanblog_hero_ajaxurl,
+            url: thecleanblog_hero_set.thecleanblog_hero_ajaxurl,
             data: {
-                action : 'cleanblog_header_style'
+                action : 'thecleanblog_header_style'
             },
             beforeSend : function(){
-                if (cleanblog_hero_set.cleanblog_has_post_thumbnail){
+                if (thecleanblog_hero_set.thecleanblog_has_post_thumbnail){
                     $('#masthead').css({
-                        'background-image': 'url(' + cleanblog_hero_set.cleanblog_featured_image + ')',
+                        'background-image': 'url(' + thecleanblog_hero_set.thecleanblog_featured_image + ')',
                         width: $(window).width(),
                         height: $(window).height()
                     });
                 } else {
                     $('#masthead').css({
-                        'background-image': 'url(' . echo + cleanblog_hero_set.cleanblog_get_theme_mod + ')',
+                        'background-image': 'url(' . echo + thecleanblog_hero_set.thecleanblog_get_theme_mod + ')',
                         width: $(window).width(),
                         height: $(window).height()
                     });

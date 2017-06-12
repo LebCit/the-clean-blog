@@ -39,7 +39,7 @@ get_header();
 
             endwhile;
 
-            cleanblog_posts_navigation();
+            thecleanblog_posts_navigation();
 
         else :
 

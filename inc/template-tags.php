@@ -6,12 +6,12 @@
  *
  * @package The_Clean_Blog
  */
-if (!function_exists('cleanblog_posted_on')) :
+if (!function_exists('thecleanblog_posted_on')) :
 
     /**
      * Prints HTML with meta information for the current post-date/time and author.
      */
-    function cleanblog_posted_on()
+    function thecleanblog_posted_on()
     {
         global $post;
         $author_id = $post->post_author;
@@ -39,18 +39,18 @@ if (!function_exists('cleanblog_posted_on')) :
     }
 endif;
 
-if (!function_exists('cleanblog_entry_footer')) :
+if (!function_exists('thecleanblog_entry_footer')) :
 
     /**
      * Prints HTML with meta information for the categories, tags and comments.
      */
-    function cleanblog_entry_footer()
+    function thecleanblog_entry_footer()
     {
         // Hide category and tag text for pages.
         if ('post' === get_post_type()) {
             /* translators: used between list items, there is a space after the comma */
             $categories_list = get_the_category_list(esc_html__(', ', 'the-clean-blog'));
-            if ($categories_list && cleanblog_categorized_blog()) {
+            if ($categories_list && thecleanblog_categorized_blog()) {
                 printf('<span class="cat-links">' . esc_html__('Posted in : %1$s', 'the-clean-blog') . '</span><br><br>', $categories_list); // WPCS: XSS OK.
             }
 
@@ -76,12 +76,12 @@ if (!function_exists('cleanblog_entry_footer')) :
     }
 endif;
 
-if (!function_exists('cleanblog_posts_navigation')) :
+if (!function_exists('thecleanblog_posts_navigation')) :
 
     /**
      * Displays the navigation to next/previous set of posts, when applicable.
      */
-    function cleanblog_posts_navigation()
+    function thecleanblog_posts_navigation()
     {
         // Don't print empty markup if there's only one page.
         if ($GLOBALS['wp_query']->max_num_pages < 2) {
@@ -101,12 +101,12 @@ if (!function_exists('cleanblog_posts_navigation')) :
 endif;
 
 
-if (!function_exists('cleanblog_post_navigation')) :
+if (!function_exists('thecleanblog_post_navigation')) :
 
     /**
      * Display navigation to next/previous post when applicable.
      */
-    function cleanblog_post_navigation()
+    function thecleanblog_post_navigation()
     {
         // Don't print empty markup if there's nowhere to navigate.
         $previous = (is_attachment()) ? get_post(get_post()->post_parent) : get_adjacent_post(false, '', true);
@@ -134,9 +134,9 @@ endif;
  *
  * @return bool
  */
-function cleanblog_categorized_blog()
+function thecleanblog_categorized_blog()
 {
-    if (false === ($all_the_cool_cats = get_transient('cleanblog_categories'))) {
+    if (false === ($all_the_cool_cats = get_transient('thecleanblog_categories'))) {
         // Create an array of all the categories that are attached to posts.
         $all_the_cool_cats = get_categories(array(
             'fields' => 'ids',
@@ -148,28 +148,28 @@ function cleanblog_categorized_blog()
         // Count the number of categories that are attached to the posts.
         $all_the_cool_cats = count($all_the_cool_cats);
 
-        set_transient('cleanblog_categories', $all_the_cool_cats);
+        set_transient('thecleanblog_categories', $all_the_cool_cats);
     }
 
     if ($all_the_cool_cats > 1) {
-        // This blog has more than 1 category so cleanblog_categorized_blog should return true.
+        // This blog has more than 1 category so thecleanblog_categorized_blog should return true.
         return true;
     } else {
-        // This blog has only 1 category so cleanblog_categorized_blog should return false.
+        // This blog has only 1 category so thecleanblog_categorized_blog should return false.
         return false;
     }
 }
 
 /**
- * Flush out the transients used in cleanblog_categorized_blog.
+ * Flush out the transients used in thecleanblog_categorized_blog.
  */
-function cleanblog_category_transient_flusher()
+function thecleanblog_category_transient_flusher()
 {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
     // Like, beat it. Dig?
-    delete_transient('cleanblog_categories');
+    delete_transient('thecleanblog_categories');
 }
-add_action('edit_category', 'cleanblog_category_transient_flusher');
-add_action('save_post', 'cleanblog_category_transient_flusher');
+add_action('edit_category', 'thecleanblog_category_transient_flusher');
+add_action('save_post', 'thecleanblog_category_transient_flusher');

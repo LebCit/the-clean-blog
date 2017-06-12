@@ -591,7 +591,7 @@ li.search-trigger:hover {
 }
 /* Disable WhatsApp button on Desktop */
 @media screen and (min-width: 1024px) {
-    .cleanblog-whatsapp {
+    .thecleanblog-whatsapp {
 	display: none !important;
     }
 }
@@ -608,30 +608,30 @@ li.search-trigger:hover {
 .social-network span {
     color: #fff;
 }
-.social-network a.cleanblog-email:hover {
+.social-network a.thecleanblog-email:hover {
     background-color: #783bd2;
 }
-.social-network a.cleanblog-facebook:hover {
+.social-network a.thecleanblog-facebook:hover {
     background-color:#3b5998;
 }
-.social-network a.cleanblog-twitter:hover {
+.social-network a.thecleanblog-twitter:hover {
     background-color:#55acee;
 }
-.social-network a.cleanblog-googleplus:hover {
+.social-network a.thecleanblog-googleplus:hover {
     background-color:#dd4b39;
 }
-.social-network a.cleanblog-pinterest:hover {
+.social-network a.thecleanblog-pinterest:hover {
     background-color:#cb2027;
 }
-.social-network a.cleanblog-whatsapp:hover {
+.social-network a.thecleanblog-whatsapp:hover {
     background-color:#4dc247;
 }
-.social-network a.cleanblog-email:hover i,
-.social-network a.cleanblog-facebook:hover i,
-.social-network a.cleanblog-twitter:hover i,
-.social-network a.cleanblog-googleplus:hover i,
-.social-network a.cleanblog-pinterest:hover i,
-.social-network a.cleanblog-whatsapp:hover i {
+.social-network a.thecleanblog-email:hover i,
+.social-network a.thecleanblog-facebook:hover i,
+.social-network a.thecleanblog-twitter:hover i,
+.social-network a.thecleanblog-googleplus:hover i,
+.social-network a.thecleanblog-pinterest:hover i,
+.social-network a.thecleanblog-whatsapp:hover i {
     color:#fff;
 }
 .social-circle li a {

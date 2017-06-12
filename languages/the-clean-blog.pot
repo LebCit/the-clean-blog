@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 13:12+0000\n"
+"POT-Creation-Date: 2017-06-12 21:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,22 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: 404.php:18
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: 404.php:21
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-
-#: 404.php:34
+#: 404.php:50
 msgid "Most Used Categories"
 msgstr ""
 
 #. %1$s: smiley
-#: 404.php:52
+#: 404.php:68
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
@@ -66,11 +56,11 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:141 components/navigation/navigation-top.php:36
 msgid "Menu"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:142
 msgid "Placeholder"
 msgstr ""
 
@@ -78,87 +68,184 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: search.php:19
-#, php-format
-msgid "Search Results for: %s"
+#: inc/customizer.php:45
+msgid "The Clean Blog Theme"
 msgstr ""
 
-#: inc/cleanblog-functions.php:20
+#: inc/customizer.php:46
+msgid "My Description"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid "Change DESKTOP Menu Colors"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Menu Background Color"
+msgstr ""
+
+#: inc/customizer.php:82
+msgid "Menu Links Color"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid "Selected Link Arrow Color"
+msgstr ""
+
+#: inc/customizer.php:133
+msgid "Sub Menu Background Color"
+msgstr ""
+
+#: inc/customizer.php:153 inc/customizer.php:291
+msgid "Sub Menu Links Color"
+msgstr ""
+
+#: inc/customizer.php:172
+msgid "Change MOBILE Menu Colors"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "Menu Bar Background Color"
+msgstr ""
+
+#: inc/customizer.php:202
+msgid "Menu Trigger Background Color"
+msgstr ""
+
+#: inc/customizer.php:225
+msgid "Mobile Menu Background Color"
+msgstr ""
+
+#: inc/customizer.php:244
+msgid "Mobile Menu Links Color"
+msgstr ""
+
+#: inc/customizer.php:272
+msgid "Mobile Sub Menu Background Color"
+msgstr ""
+
+#: inc/customizer.php:311
+msgid "Sub Menu Go Back Arrow Color"
+msgstr ""
+
+#: inc/customizer.php:332
+msgid "Change Search Icon and Dropdown Colors"
+msgstr ""
+
+#: inc/customizer.php:343
+msgid "Search Icon Color"
+msgstr ""
+
+#: inc/customizer.php:364
+msgid "Search Icon Hover Color"
+msgstr ""
+
+#: inc/customizer.php:385
+msgid "Dropdown Search Background Color"
+msgstr ""
+
+#: inc/customizer.php:406
+msgid "Dropdown Search Placeholder Color"
+msgstr ""
+
+#: inc/customizer.php:424
+msgid "Dropdown Search Placeholder Text"
+msgstr ""
+
+#: inc/customizer.php:441
+msgid "Change Default Image & Texts "
+msgstr ""
+
+#: inc/customizer.php:452
+msgid "Deafult Header Background Image"
+msgstr ""
+
+#: inc/customizer.php:470
+msgid "Search Header Background Image"
+msgstr ""
+
+#: inc/customizer.php:495
+msgid "Search Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:513
+msgid "Search Page Subtitle Text"
+msgstr ""
+
+#: inc/customizer.php:531
+msgid "Error404 Header Background Image"
+msgstr ""
+
+#: inc/customizer.php:556
+msgid "Error404 Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:574
+msgid "Error404 Page Subtitle Text"
+msgstr ""
+
+#: inc/customizer.php:591
+msgid "Change Default Search Texts "
+msgstr ""
+
+#: inc/customizer.php:611
+msgid "Search Results Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:629
+msgid "Search No Results Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:647
+msgid "Search No Results Page Paragraph Text"
+msgstr ""
+
+#: inc/customizer.php:665
+msgid "Search 404 Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:683
+msgid "Search 404 Page Paragraph Text"
+msgstr ""
+
+#: inc/customizer.php:701
+msgid "Site Title and Description Color"
+msgstr ""
+
+#: inc/customizer.php:722
+msgid "Site Title Hover Color"
+msgstr ""
+
+#: inc/customizer.php:743
+msgid "Strike and Arrow Down Color"
+msgstr ""
+
+#: inc/include-kirki.php:54
 msgid ""
-"Theme not activated: this theme requires at least WordPress Version 4.7 !"
+"A plugin is required to take advantage of this theme's features in the "
+"customizer."
 msgstr ""
 
-#: inc/cleanblog-functions.php:108
-msgid "Home"
+#: inc/include-kirki.php:55
+msgid "Install Kirki Toolkit now"
 msgstr ""
 
-#: inc/cleanblog-functions.php:114
-msgid "Create a new menu"
+#: inc/include-kirki.php:56
+msgid "Install Now"
 msgstr ""
 
-#: inc/cleanblog-functions.php:136 inc/cleanblog-functions.php:140
-msgid "Search for:"
+#: inc/include-kirki.php:59
+msgid ""
+"You have installed Kirki. Activate it to take advantage of this theme's "
+"features in the customizer."
 msgstr ""
 
-#: inc/cleanblog-functions.php:138
-msgid "Search ..."
+#: inc/include-kirki.php:60
+msgid "Activate Kirki Toolkit now"
 msgstr ""
 
-#: inc/cleanblog-functions.php:143
-msgid "Search"
-msgstr ""
-
-#: inc/cleanblog-functions.php:169
-msgid "Read More"
-msgstr ""
-
-#: inc/cleanblog-functions.php:204
-msgid "SHARE :"
-msgstr ""
-
-#: inc/cleanblog-functions.php:235
-msgid "Comment"
-msgstr ""
-
-#: inc/cleanblog-functions.php:247
-msgid "Name *"
-msgstr ""
-
-#: inc/cleanblog-functions.php:248
-msgid "Email *"
-msgstr ""
-
-#. %s: comment author link
-#: inc/cleanblog-functions.php:273
-#, php-format
-msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
-
-#. 1: comment date, 2: comment time
-#: inc/cleanblog-functions.php:282
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: inc/cleanblog-functions.php:285
-msgid "Edit"
-msgstr ""
-
-#: inc/cleanblog-functions.php:289
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/cleanblog-functions.php:335
-msgid "Social Media Icons"
-msgstr ""
-
-#: inc/cleanblog-functions.php:391
-msgid "email icon"
-msgstr ""
-
-#: inc/cleanblog-functions.php:403
-#, php-format
-msgid "%s icon"
+#: inc/include-kirki.php:61
+msgid "Activate Now"
 msgstr ""
 
 #: inc/template-tags.php:22
@@ -227,34 +314,137 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: components/header/bg-404.php:14
-msgid "Wrong Archives Row !"
+#: inc/the-clean-blog-functions.php:20
+msgid ""
+"Theme not activated: this theme requires at least WordPress Version 4.7 !"
 msgstr ""
 
-#: components/header/bg-404.php:20
-msgid "Try to search below"
+#: inc/the-clean-blog-functions.php:127
+msgid "Home"
 msgstr ""
 
-#: components/header/bg-search.php:14
-msgid "Searching gives all answers"
+#: inc/the-clean-blog-functions.php:133
+msgid "Create a new menu"
 msgstr ""
 
-#: components/header/bg-search.php:20
-msgid "KEEP SEARCHING !"
+#. %s: Name of current post
+#: inc/the-clean-blog-functions.php:165
+#, php-format
+msgid "Read More<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:201
+msgid "SHARE :"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:232
+msgid "Comment"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:244
+msgid "Name *"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:245
+msgid "Email *"
+msgstr ""
+
+#. %s: comment author link
+#: inc/the-clean-blog-functions.php:270
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#. 1: comment date, 2: comment time
+#: inc/the-clean-blog-functions.php:279
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:282
+msgid "Edit"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:286
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:348
+msgid "Social Media Icons"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:360
+msgid "Email URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:362
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:364
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:366
+msgid "GitHub URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:368
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:370
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:372
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:374
+msgid "Flickr URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:376
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:378
+msgid "Tumblr URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:380
+msgid "Dribble URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:382
+msgid "LinkedIn URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:384
+msgid "RSS URL"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:436
+msgid "email icon"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:448
+#, php-format
+msgid "%s icon"
+msgstr ""
+
+#: inc/the-clean-blog-functions.php:494
+msgid "Replace Default Text"
 msgstr ""
 
 #: components/navigation/navigation-top.php:18
-#: components/navigation/navigation-top.php:22
+#: components/navigation/navigation-top.php:28
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: components/navigation/navigation-top.php:20
-msgctxt "placeholder"
-msgid "Search ..."
-msgstr ""
-
-#: components/navigation/navigation-top.php:25
+#: components/navigation/navigation-top.php:31
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -263,23 +453,13 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: components/post/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: components/post/content-none.php:19
+#: components/post/content-none.php:27
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: components/post/content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: components/post/content-none.php:31
+#: components/post/content-none.php:47
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."

@@ -1,3 +1,3 @@
 <footer class="entry-footer">
-    <?php cleanblog_entry_footer(); ?>
+    <?php thecleanblog_entry_footer(); ?>
 </footer><!-- .entry-footer -->

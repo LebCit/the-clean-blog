@@ -13,12 +13,12 @@
  * See: https://jetpack.me/support/infinite-scroll/
  * See: https://jetpack.me/support/responsive-videos/
  */
-function cleanblog_jetpack_setup()
+function thecleanblog_jetpack_setup()
 {
     // Add theme support for Infinite Scroll.
     add_theme_support('infinite-scroll', array(
         'container' => 'main',
-        'render' => 'cleanblog_infinite_scroll_render',
+        'render' => 'thecleanblog_infinite_scroll_render',
         'footer' => 'page',
     ));
 
@@ -28,12 +28,12 @@ function cleanblog_jetpack_setup()
     // Add theme support for Social Menus
     add_theme_support('jetpack-social-menu');
 }
-add_action('after_setup_theme', 'cleanblog_jetpack_setup');
+add_action('after_setup_theme', 'thecleanblog_jetpack_setup');
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function cleanblog_infinite_scroll_render()
+function thecleanblog_infinite_scroll_render()
 {
     while (have_posts()) {
         the_post();
@@ -44,7 +44,7 @@ function cleanblog_infinite_scroll_render()
     }
 }
 
-function cleanblog_social_menu()
+function thecleanblog_social_menu()
 {
     if (!function_exists('jetpack_social_menu')) {
         return;

@@ -1,5 +1,5 @@
 <div class="cb-logo">
-    <?php cleanblog_the_custom_logo(); ?>
+    <?php thecleanblog_the_custom_logo(); ?>
 </div>
 
     <?php
@@ -8,7 +8,7 @@
             'container' => 'nav',
             'container_class' => 'cb-main-nav-wrapper',
             'menu_class' => 'cb-main-nav',
-            'fallback_cb' => 'cleanblog_fallback_menu',
+            'fallback_cb' => 'thecleanblog_fallback_menu',
             'depth' => 2
         ));
     ?>
@@ -20,7 +20,7 @@
                         placeholder="<?php
                             $placeholder = get_theme_mod('dropdown_search_placeholder_text');
                             if(empty($placeholder)){
-                                $placeholder = 'Search ...';
+                                $placeholder = 'Search &hellip;';
                             }
                             echo esc_html_x($placeholder, 'placeholder', 'the-clean-blog') 
                         ?>"
@@ -33,4 +33,4 @@
             </button>
         </form>
     </div>
-<a href="#0" class="cb-nav-trigger">Menu<span></span></a>
+<a href="#0" class="cb-nav-trigger"><?php esc_html__('Menu', 'the-clean-blog')?><span></span></a>
