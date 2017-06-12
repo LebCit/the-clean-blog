@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.7.5  
-Stable tag: 17.05.22  
+Tested up to: WordPress 4.8  
+Stable tag: 17.06.13  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,23 @@ You can add as many main/children items as you want.
 But on desktop view, only the **First 5** will show up !
 
 ## Changelog
+
+### 17.06.13 =
+* Released: June 13, 2017
+- Adding Theme Copyright.
+- Added missing translation.
+- Added Prefix To google Fonts.
+- Fixed Theme's Prefix.
+- Integrated Kirki to theme.
+- Modified excerpt_more filter.
+- Modified Social Media Functions.
+- Removed comment-list from add_theme_support( 'html5' ).
+- Removed custom search form.
+- Removed the REMOVE WP EMOJI ACTIONS.
+- Removed wpcom.php
+- Replaced ... by &hellip;
+- Updated .pot
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.05.22 =
 * Released: May 22, 2017
