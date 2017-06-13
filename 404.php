@@ -19,9 +19,10 @@ get_header();
                     <?php
                     $search404Tilte = get_theme_mod('search_404_page_title_text');
                     if(empty($search404Tilte)){
-                        $search404Tilte = 'Oops! That page can&rsquo;t be found.';
+                        $search404Tilte = esc_html_e('Oops! That page can&rsquo;t be found.', 'the-clean-blog');
+                    } else {
+                        echo esc_html($search404Tilte);
                     }
-                    esc_html_e($search404Tilte, 'the-clean-blog');
                     ?>
                 </h1>
             </header>
@@ -30,9 +31,10 @@ get_header();
                     <?php
                     $search404Paragraph = get_theme_mod('search_404_page_paragraph_text');
                     if(empty($search404Paragraph)){
-                        $search404Paragraph = 'It looks like nothing was found at this location. Maybe try one of the links below or a search?';
+                        $search404Paragraph = esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'the-clean-blog');
+                    } else {
+                        echo esc_html($search404Paragraph);
                     }
-                    esc_html_e($search404Paragraph, 'the-clean-blog');
                     ?>
                 </p>
 

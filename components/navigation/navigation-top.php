@@ -20,9 +20,11 @@
                         placeholder="<?php
                             $placeholder = get_theme_mod('dropdown_search_placeholder_text');
                             if(empty($placeholder)){
-                                $placeholder = 'Search &hellip;';
+                                $placeholder = esc_html_x('Search &hellip;', 'placeholder', 'the-clean-blog');
+                                echo esc_attr($placeholder);
+                            } else {
+                                echo esc_attr($placeholder);
                             }
-                            echo esc_html_x($placeholder, 'placeholder', 'the-clean-blog') 
                         ?>"
                         value="<?php echo get_search_query() ?>" name="s" id="s" required
                         title="<?php echo esc_attr_x('Search for:', 'label', 'the-clean-blog') ?>" />

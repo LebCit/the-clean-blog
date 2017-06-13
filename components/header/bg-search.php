@@ -18,11 +18,12 @@ if (empty($heroImgSearch)) {
                     <header class="entry-header">
                         <h1 class="entry-title">
                             <?php
-                            $searchTitle = get_theme_mod('search_page_title_text', '');
+                            $searchTitle = get_theme_mod('search_page_title_text');
                             if(empty($searchTitle)){
-                                $searchTitle = 'Searching gives all answers';
+                                $searchTitle = esc_html_e('Searching gives all answers', 'the-clean-blog');
+                            } else {
+                                echo esc_html($searchTitle);
                             }
-                            esc_html_e($searchTitle, 'the-clean-blog')
                             ?>
                         </h1>
                         <div class="strike">
@@ -32,11 +33,12 @@ if (empty($heroImgSearch)) {
                         </div>
                         <h2 class="subheading">
                             <?php
-                            $searchSubtitle = get_theme_mod('search_page_subtitle_text', '');
+                            $searchSubtitle = get_theme_mod('search_page_subtitle_text');
                             if(empty($searchSubtitle)){
-                                $searchSubtitle = 'KEEP SEARCHING !';
+                                $searchSubtitle = esc_html_e('KEEP SEARCHING !', 'the-clean-blog');
+                            } else {
+                                echo esc_html($searchSubtitle);
                             }
-                            esc_html_e($searchSubtitle, 'the-clean-blog')
                             ?>
                         </h2>
                     </header>

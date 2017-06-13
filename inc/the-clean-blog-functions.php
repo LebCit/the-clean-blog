@@ -63,7 +63,7 @@ function thecleanblog_header_script() {
     }
     
     $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), '');
-    $heroImgDefault = get_theme_mod( 'default_header_background_image', '' );
+    $heroImgDefault = get_theme_mod('default_header_background_image');
     if (empty($heroImgDefault)) {
         $heroImgDefault = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
     }
@@ -136,7 +136,7 @@ function thecleanblog_fallback_menu() {
             }
         $html .= '</ul>';
     $html .= '</nav>';
-    echo $html;
+    echo $html; /* WPCS: xss ok. */
 }
 
 /**

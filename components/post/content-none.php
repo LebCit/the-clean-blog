@@ -15,9 +15,10 @@
             <?php
             $searchNoResultsTitle = get_theme_mod('search_no_results_page_title_text');
             if(empty($searchNoResultsTitle)){
-                $searchNoResultsTitle = 'Nothing Found';
+                $searchNoResultsTitle = esc_html_e('Nothing Found', 'the-clean-blog');
+            } else {
+                echo esc_html($searchNoResultsTitle);
             }
-            esc_html_e($searchNoResultsTitle, 'the-clean-blog');
             ?>
         </h1>
     </header>
@@ -32,9 +33,10 @@
                 <?php
                 $searchNoResultsParagraph = get_theme_mod('search_no_results_page_paragraph_text');
                 if(empty($searchNoResultsParagraph)){
-                    $searchNoResultsParagraph = 'Sorry, but nothing matched your search terms. Please try again with some different keywords.';
+                    $searchNoResultsParagraph = esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'the-clean-blog');
+                } else {
+                    echo esc_html($searchNoResultsParagraph);
                 }
-                esc_html_e($searchNoResultsParagraph, 'the-clean-blog');
                 ?>
             </p>
             <?php

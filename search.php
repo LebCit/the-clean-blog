@@ -20,9 +20,10 @@ get_header();
                     <?php
                     $searchResults = get_theme_mod('search_results_page_text');
                     if(empty($searchResults)){
-                        $searchResults = 'Search Results for :';
+                        $searchResults = printf(esc_html__('Search Results for: %s', 'the-clean-blog'), '<span>' . get_search_query() . '</span>');
+                    } else {
+                        printf(esc_html($searchResults .' %s'), '<span>' . get_search_query() . '</span>');
                     }
-                    printf(esc_html__($searchResults .' %s', 'the-clean-blog'), '<span>' . get_search_query() . '</span>');
                     ?>
                 </h1>
             </header>

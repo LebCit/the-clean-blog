@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-12 21:49+0000\n"
+"POT-Creation-Date: 2017-06-13 23:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,12 +14,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: 404.php:50
+#: 404.php:22
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:34
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:52
 msgid "Most Used Categories"
 msgstr ""
 
 #. %1$s: smiley
-#: 404.php:68
+#: 404.php:70
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
@@ -56,7 +66,7 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: functions.php:141 components/navigation/navigation-top.php:36
+#: functions.php:141 components/navigation/navigation-top.php:38
 msgid "Menu"
 msgstr ""
 
@@ -68,12 +78,21 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: search.php:23
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
 #: inc/customizer.php:45
 msgid "The Clean Blog Theme"
 msgstr ""
 
 #: inc/customizer.php:46
 msgid "My Description"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "DESKTOP Menu Colors"
 msgstr ""
 
 #: inc/customizer.php:52
@@ -98,6 +117,10 @@ msgstr ""
 
 #: inc/customizer.php:153 inc/customizer.php:291
 msgid "Sub Menu Links Color"
+msgstr ""
+
+#: inc/customizer.php:171
+msgid "MOBILE Menu Colors"
 msgstr ""
 
 #: inc/customizer.php:172
@@ -128,6 +151,10 @@ msgstr ""
 msgid "Sub Menu Go Back Arrow Color"
 msgstr ""
 
+#: inc/customizer.php:331
+msgid "Search Icon and Dropdown Colors"
+msgstr ""
+
 #: inc/customizer.php:332
 msgid "Change Search Icon and Dropdown Colors"
 msgstr ""
@@ -150,6 +177,10 @@ msgstr ""
 
 #: inc/customizer.php:424
 msgid "Dropdown Search Placeholder Text"
+msgstr ""
+
+#: inc/customizer.php:440
+msgid "Header Background Image & Texts"
 msgstr ""
 
 #: inc/customizer.php:441
@@ -182,6 +213,10 @@ msgstr ""
 
 #: inc/customizer.php:574
 msgid "Error404 Page Subtitle Text"
+msgstr ""
+
+#: inc/customizer.php:590
+msgid "Search Pages Texts"
 msgstr ""
 
 #: inc/customizer.php:591
@@ -438,13 +473,34 @@ msgstr ""
 msgid "Replace Default Text"
 msgstr ""
 
+#: components/header/bg-404.php:23
+msgid "Wrong Archives Row !"
+msgstr ""
+
+#: components/header/bg-404.php:38
+msgid "Try to search below"
+msgstr ""
+
+#: components/header/bg-search.php:23
+msgid "Searching gives all answers"
+msgstr ""
+
+#: components/header/bg-search.php:38
+msgid "KEEP SEARCHING !"
+msgstr ""
+
 #: components/navigation/navigation-top.php:18
-#: components/navigation/navigation-top.php:28
+#: components/navigation/navigation-top.php:30
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: components/navigation/navigation-top.php:31
+#: components/navigation/navigation-top.php:23
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: components/navigation/navigation-top.php:33
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -453,13 +509,23 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: components/post/content-none.php:27
+#: components/post/content-none.php:18
+msgid "Nothing Found"
+msgstr ""
+
+#: components/post/content-none.php:28
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: components/post/content-none.php:47
+#: components/post/content-none.php:36
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: components/post/content-none.php:49
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."

@@ -48,7 +48,7 @@ The_Clean_Blog_Kirki::add_panel( 'thecleanblog_theme', array(
 
 // 1- Menu Colors Section - DESKTOP
 The_Clean_Blog_Kirki::add_section( 'menu-colors', array(
-    'title'          => __( 'DESKTOP Menu Colors' ),
+    'title'          => __( 'DESKTOP Menu Colors', 'the-clean-blog' ),
     'description'    => __( 'Change DESKTOP Menu Colors', 'the-clean-blog' ),
     'panel'          => 'thecleanblog_theme',
     'priority'       => 5,
@@ -168,7 +168,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
 
 // 2- Menu Colors Section - MOBILE
 The_Clean_Blog_Kirki::add_section( 'mobile-menu-colors', array(
-    'title'          => __( 'MOBILE Menu Colors' ),
+    'title'          => __( 'MOBILE Menu Colors', 'the-clean-blog' ),
     'description'    => __( 'Change MOBILE Menu Colors', 'the-clean-blog' ),
     'panel'          => 'thecleanblog_theme',
     'priority'       => 10,
@@ -328,7 +328,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
 
 // 3- Search Icon and Dropdown Section
 The_Clean_Blog_Kirki::add_section( 'search-icon-and-dropdown-colors', array(
-    'title'          => __( 'Search Icon and Dropdown Colors' ),
+    'title'          => __( 'Search Icon and Dropdown Colors', 'the-clean-blog' ),
     'description'    => __( 'Change Search Icon and Dropdown Colors', 'the-clean-blog' ),
     'panel'          => 'thecleanblog_theme',
     'priority'       => 15,
@@ -437,7 +437,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
 
 // 4- Header Background Image
 The_Clean_Blog_Kirki::add_section( 'header_background_images', array(
-    'title'          => __( 'Header Background Image & Texts' ),
+    'title'          => __( 'Header Background Image & Texts', 'the-clean-blog' ),
     'description'    => __( 'Change Default Image & Texts ', 'the-clean-blog' ),
     'panel'          => 'thecleanblog_theme',
     'priority'       => 20,
@@ -587,7 +587,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
 
 // 5- Search Pages Texts
 The_Clean_Blog_Kirki::add_section( 'search_pages_texts', array(
-    'title'          => __( 'Search Pages Texts' ),
+    'title'          => __( 'Search Pages Texts', 'the-clean-blog' ),
     'description'    => __( 'Change Default Search Texts ', 'the-clean-blog' ),
     'panel'          => 'thecleanblog_theme',
     'priority'       => 25,
