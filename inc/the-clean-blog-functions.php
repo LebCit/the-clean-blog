@@ -168,6 +168,32 @@ function thecleanblog_search_form( $form ) {
 }
 add_filter( 'get_search_form', 'thecleanblog_search_form' );
 
+function thecleanblog_header_search_form( $form ) {
+    $placeholder = get_theme_mod('dropdown_search_placeholder_text');
+    if (empty($placeholder)) {
+        $placeholder = esc_html_x('Search &hellip;', 'placeholder', 'the-clean-blog');
+    } else {
+        $placeholder = esc_attr($placeholder);
+    }
+    $form = 
+        '<form role="search" method="get" class="search-form" action="' . esc_url(home_url('/')) . '" >
+            <label>
+                <span class="screen-reader-text">' . esc_html_x('Search for:', 'label', 'the-clean-blog') . '</span>
+                <input type="search" class="search-field"
+                       placeholder="' . $placeholder . '" '
+                    . 'value="' . get_search_query() . '" name="s" id="header-search" required '
+                    . 'title="' . esc_attr_x('Search for:', 'label', 'the-clean-blog') . '" />
+            </label>
+            <button type="submit" class="search-submit"
+                    value="'. esc_attr_x('Search', 'submit button', 'the-clean-blog') .'" />
+                <i class="icon-search"></i>
+            </button>
+        </form>';
+ 
+    return $form;
+}
+
+/**
  * Customizimg the excerpt function.
  *
  * @link https://developer.wordpress.org/reference/functions/the_excerpt/
