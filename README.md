@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-menu, editor-style, featured-image-header,
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.8  
-Stable tag: 17.06.14  
+Stable tag: 17.06.19  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,15 @@ You can add as many main/children items as you want.
 But on desktop view, only the **First 5** will show up !
 
 ## Changelog
+
+### 17.06.19 =
+* Released: June 19, 2017
+- Corrected bootstrap handle.
+- Generating Custom Search Forms.
+- Replaced ... by &hellip;
+- Targeting Header Search Form by NEW ID.
+- Updated .pot
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.06.14 =
 * Released: June 14, 2017
