@@ -327,7 +327,7 @@ margin-top: 46px;
     display: block;
     margin: 0 72px 0 0;
 }
-.search-dropdown input#s {
+.search-dropdown input#header-search {
     border:none!important;
     height:80px;
     line-height:80px;
@@ -399,7 +399,7 @@ input:required {
     outline: none;
 }
 @media (max-width:480px) {
-    .search-dropdown input#s {
+    .search-dropdown input#header-search {
         font-size:22px!important;
     }
 }

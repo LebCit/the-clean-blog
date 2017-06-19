@@ -428,7 +428,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'transport' => 'postMessage',
     'js_vars' => array(
         array(
-            'element' => '.search-dropdown input#s',
+            'element' => '.search-dropdown input#header-search',
             'function' => 'html',
             'attr' => 'placeholder',
         ),
