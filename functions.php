@@ -118,7 +118,7 @@ function thecleanblog_scripts()
 {
     wp_enqueue_style('thecleanblog-style', get_stylesheet_uri());
 
-    wp_enqueue_style('bootstrap-style', get_theme_file_uri() . '/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap', get_theme_file_uri() . '/css/bootstrap.min.css');
     
     wp_enqueue_style('thecleanblog-nav-style', get_theme_file_uri('/css/the-clean-blog-nav-style.css'));
 
@@ -134,7 +134,7 @@ function thecleanblog_scripts()
 
     wp_enqueue_script('thecleanblog-skip-link-focus-fix', get_theme_file_uri('/assets/js/skip-link-focus-fix.js'), array(), '20151215', true);
 
-    wp_enqueue_script('bootstrap-script', get_theme_file_uri('/assets/js/bootstrap.min.js'), array('jquery'), '3.3.7', true);
+    wp_enqueue_script('bootstrap', get_theme_file_uri('/assets/js/bootstrap.min.js'), array('jquery'), '3.3.7', true);
     
     wp_enqueue_script('thecleanblog-nav-script', get_theme_file_uri('/assets/js/the-clean-blog-nav.js'), array('jquery'), '', true);
     $navSettings = array (
