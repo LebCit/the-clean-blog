@@ -67,8 +67,16 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'transport' => 'auto',
     'output' => array(
         array(
-            'element' => 'header.cb-nav',
+            'element' => array(
+                'header.cb-nav',
+                'header.cb-nav.is-fixed.is-visible',
+            ),
             'property' => 'background-color',
+            'media_query' => '@media (min-width: 1024px)',
+        ),
+        array(
+            'element' => 'header.cb-nav.is-fixed.is-visible',
+            'property' => 'border-bottom',
             'media_query' => '@media (min-width: 1024px)',
         ),
     ),
