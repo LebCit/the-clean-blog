@@ -605,7 +605,7 @@ The_Clean_Blog_Kirki::add_section( 'search_pages_texts', array(
 
 function is_search_has_results() {
     // Check if the search has results
-    return 0 != $GLOBALS['wp_query']->found_posts;
+    return 0 != $GLOBALS['wp_query']->found_posts && is_search();
 }
 function is_search_has_no_results() {
     // Check if the search has no results and is not 404
