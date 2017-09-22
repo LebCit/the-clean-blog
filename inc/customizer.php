@@ -13,6 +13,7 @@
 function thecleanblog_customize_register($wp_customize)
 {
     $wp_customize->get_section('background_image')->title = __( 'Background Image/Color', 'the-clean-blog' );
+    $wp_customize->remove_section( 'colors' );
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
