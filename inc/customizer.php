@@ -45,7 +45,7 @@ The_Clean_Blog_Kirki::add_config( 'thecleanblog', array(
 The_Clean_Blog_Kirki::add_panel( 'thecleanblog_theme', array(
     'priority'    => 10,
     'title'       => __( 'The Clean Blog Theme', 'the-clean-blog' ),
-    'description' => __( 'My Description', 'the-clean-blog' ),
+    'description' => __( 'Customize The Clean Blog Theme', 'the-clean-blog' ),
 ) );
 
 // 1- Menu Colors Section - DESKTOP
