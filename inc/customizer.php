@@ -16,6 +16,7 @@ function thecleanblog_customize_register($wp_customize)
     $wp_customize->remove_section( 'colors' );
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
+    $wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 }
 add_action('customize_register', 'thecleanblog_customize_register');
 
