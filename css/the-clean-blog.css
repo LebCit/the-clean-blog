@@ -221,7 +221,9 @@ footer .copyright {
 .pager li > a:focus {
     color: white;
     background-color: #0085A1;
-    border: 1px solid #0085A1;
+    border: 1px;
+    border-style: solid;
+    border-color: #0085A1;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
