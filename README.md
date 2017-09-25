@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.8  
-Stable tag: 17.06.26  
+Tested up to: WordPress 4.8.2  
+Stable tag: 17.09.25  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,19 @@ You can add as many main/children items as you want.
 But on desktop view, only the **First 5** will show up !
 
 ## Changelog
+
+### 17.09.25 =
+* Released: September 25, 2017
+- Added BODY COLORS panel to Customizer
+- Changed title's section from Background Image to Background Image/Color.
+- Changed The Clean Blog Theme panel description.
+- Changed all color controls type from 'color' to 'color-alpha'.
+- Moved background_color control to background_image section.
+- Removed Header text color setting.
+- Removed section colors from Customizer.
+- Updated .pot
+- Updated theme tags
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.06.26 =
 * Released: June 26, 2017
