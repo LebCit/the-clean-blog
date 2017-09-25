@@ -60,7 +60,7 @@ The_Clean_Blog_Kirki::add_section( 'menu-colors', array(
 
 // 1.1- Menu Background Color - DESKTOP
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'menu_background_color',
     'label' => __('Menu Background Color', 'the-clean-blog'),
     'section' => 'menu-colors',
@@ -82,12 +82,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (min-width: 1024px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 1.2- Menu Links Color - DESKTOP
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'menu_links_color',
     'label' => __('Menu Links Color', 'the-clean-blog'),
     'section' => 'menu-colors',
@@ -110,12 +109,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (min-width: 1024px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 1.3- Selected Link Arrow Color - DESKTOP
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'selected_link_arrow_color',
     'label' => __('Selected Link Arrow Color', 'the-clean-blog'),
     'section' => 'menu-colors',
@@ -133,12 +131,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (min-width: 1024px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 1.4- Sub Menu Background Color - DESKTOP
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'sub_menu_background_color',
     'label' => __('Sub Menu Background Color', 'the-clean-blog'),
     'section' => 'menu-colors',
@@ -153,12 +150,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         ),
     ),
     'active_callback' => '@media (min-width: 1024px)',
-    'alpha' => true,
 ));
 
 // 1.5- Sub Menu Links Color - DESKTOP
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'sub_menu_links_color',
     'label' => __('Sub Menu Links Color', 'the-clean-blog'),
     'section' => 'menu-colors',
@@ -173,7 +169,6 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (min-width: 1024px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2- Menu Colors Section - MOBILE
@@ -188,7 +183,7 @@ The_Clean_Blog_Kirki::add_section( 'mobile-menu-colors', array(
 
 // 2.1- Menu Bar Background Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_menu_bar_background_color',
     'label' => __('Menu Bar Background Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -202,12 +197,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2.2- Menu Trigger Background Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_menu_trigger_background_color',
     'label' => __('Menu Trigger Background Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -225,12 +219,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2.3- Mobile Menu Background Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_menu_background_color',
     'label' => __('Mobile Menu Background Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -244,12 +237,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2.4- Mobile Menu Links Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_menu_links_color',
     'label' => __('Mobile Menu Links Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -272,12 +264,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2.5- Mobile Sub Menu Background Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_sub_menu_background_color',
     'label' => __('Mobile Sub Menu Background Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -291,12 +282,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2.6- Sub Menu Links Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_sub_menu_links_color',
     'label' => __('Sub Menu Links Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -311,12 +301,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 2.7- Sub Menu Go Back Arrow Color - MOBILE
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'mobile_sub_menugo-back_arrow_color',
     'label' => __('Sub Menu Go Back Arrow Color', 'the-clean-blog'),
     'section' => 'mobile-menu-colors',
@@ -333,7 +322,6 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'media_query' => '@media (max-width: 1023px)',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 3- Search Icon and Dropdown Section
@@ -348,7 +336,7 @@ The_Clean_Blog_Kirki::add_section( 'search-icon-and-dropdown-colors', array(
 
 // 3.1- Search Icon Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'search_icon_color',
     'label' => __('Search Icon Color', 'the-clean-blog'),
     'section' => 'search-icon-and-dropdown-colors',
@@ -364,12 +352,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'color',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 3.2- Search Icon Hover Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'search_icon_hover_color',
     'label' => __('Search Icon Hover Color', 'the-clean-blog'),
     'section' => 'search-icon-and-dropdown-colors',
@@ -385,12 +372,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'color',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 3.3- Dropdown Search Background Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'dropdown_search_background_color',
     'label' => __('Dropdown Search Background Color', 'the-clean-blog'),
     'section' => 'search-icon-and-dropdown-colors',
@@ -406,12 +392,11 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'background',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 3.4- Dropdown Search Placeholder Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'dropdown_search_placeholder_color',
     'label' => __('Dropdown Search Placeholder Color', 'the-clean-blog'),
     'section' => 'search-icon-and-dropdown-colors',
@@ -424,7 +409,6 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'color',
         ),
     ),
-    'alpha' => true,
 ));
 
 // 3.5- Dropdown Search Placeholder Text
@@ -706,7 +690,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
 
 // 6.1- Site Title and Description Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'site_title_description_color',
     'label' => __('Site Title and Description Color', 'the-clean-blog'),
     'section' => 'title_tagline',
@@ -723,11 +707,10 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         ),
     ),
     'active_callback' => 'is_home',
-    'alpha' => true,
 ));
 // 6.2- Site Title Hover Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'site_title_hover_color',
     'label' => __('Site Title Hover Color', 'the-clean-blog'),
     'section' => 'title_tagline',
@@ -744,11 +727,10 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         ),
     ),
     'active_callback' => 'is_home',
-    'alpha' => true,
 ));
 // 6.3- Strike and Arrow Down Color
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
-    'type' => 'color',
+    'type' => 'color-alpha',
     'settings' => 'strike_arrow_down_color',
     'label' => __('Strike and Arrow Down Color', 'the-clean-blog'),
     'section' => 'title_tagline',
@@ -768,5 +750,4 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'background',
         )
     ),
-    'alpha' => true,
 ));
