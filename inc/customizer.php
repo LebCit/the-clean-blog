@@ -751,3 +751,914 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         )
     ),
 ));
+
+// 7- BODY COLORS !
+The_Clean_Blog_Kirki::add_panel( 'body_colors', array(
+    'title'          => __( 'BODY COLORS !', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Body Colors', 'the-clean-blog' ),
+    'panel'          => 'thecleanblog_theme',
+) );
+
+// 7.1- Body Background Color
+The_Clean_Blog_Kirki::add_section( 'body_background_color', array(
+    'title'          => __( 'Body Background Color', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Background Body Color', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+    'priority'       => 5,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.1.1- Body Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'body_background_color',
+    'label' => __('Body Background Color', 'the-clean-blog'),
+    'section' => 'body_background_color',
+    'default' => '#f2f2f2',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.cb-main-content',
+            'property' => 'background-color',
+        ),
+    ),
+));
+
+// 7.2- Posts Colors
+The_Clean_Blog_Kirki::add_section( 'posts_colors', array(
+    'title'          => __( 'Posts Colors', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Posts Colors', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.2.1- Post Title Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'post_title_color',
+    'label' => __('Post Title Color', 'the-clean-blog'),
+    'section' => 'posts_colors',
+    'default' => '#333333',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                'h2.entry-title a',
+                'h2.entry-title'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.2.2- Post Title Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'post_title_hover_color',
+    'label' => __('Post Title Hover Color', 'the-clean-blog'),
+    'section' => 'posts_colors',
+    'default' => '#0085A1',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                'h2.post-title a:hover',
+                'h2.post-title a:focus'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.2.3- Post Paragraphs Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'post_paragraphs_color',
+    'label' => __('Post Paragraphs Color', 'the-clean-blog'),
+    'section' => 'posts_colors',
+    'default' => '#333333',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.entry-summary > p',
+                '.entry-content > p',
+                'h3.post-subtitle'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.2.4- Read More Link Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'read_more_color',
+    'label' => __('Read More Link Color', 'the-clean-blog'),
+    'section' => 'posts_colors',
+    'default' => '#333333',
+    'priority' => 20,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => 'a.read-more',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.2.5- Read More Link Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'read_more_hover_color',
+    'label' => __('Read More Link Hover Color', 'the-clean-blog'),
+    'section' => 'posts_colors',
+    'default' => '#337ab7',
+    'priority' => 25,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                'a.read-more:hover',
+                'a.read-more:focus'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.2.6- Byline&Posted Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'byline_posted_color',
+    'label' => __('Byline&Posted Color', 'the-clean-blog'),
+    'section' => 'posts_colors',
+    'default' => '#777777',
+    'priority' => 30,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.post-preview .post-meta',
+                '.search .post-meta'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+
+// 7.3- Links Colors
+The_Clean_Blog_Kirki::add_section( 'links_colors', array(
+    'title'          => __( 'Links Colors', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Links Colors', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+    'priority'       => 15,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.3.1- Body Links Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'body_links_color',
+    'label' => __('Body Links Color', 'the-clean-blog'),
+    'section' => 'links_colors',
+    'default' => '#333333',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '#content .author.vcard a',
+                '#content .posted-on a',
+                '#content .cat-links a',
+                '#content .tags-links a',
+                '#content .page-links a'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.3.2- Body Links Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'body_links_hover_color',
+    'label' => __('Body Links Hover Color', 'the-clean-blog'),
+    'section' => 'links_colors',
+    'default' => '#0085A1',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '#content .author.vcard a:hover',
+                '#content .posted-on a:hover',
+                '#content .cat-links a:hover',
+                '#content .tags-links a:hover',
+                '#content .page-links a:hover'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+
+// 7.4- Horizontal Rule Colors
+The_Clean_Blog_Kirki::add_section( 'horizontal_rule_colors', array(
+    'title'          => __( 'Horizontal Rule Colors', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Horizontal Rule Colors', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.4.1- Horizontal Rule Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'horizontal_rule_color',
+    'label' => __('Horizontal Rule Color', 'the-clean-blog'),
+    'section' => 'horizontal_rule_colors',
+    'default' => 'rgb(140, 139, 139)',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => 'hr',
+            'property' => 'border-top-color',
+        ),
+    ),
+));
+// 7.4.2- Horizontal Rule Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'horizontal_rule_background_color',
+    'label' => __('Horizontal Rule Background Color', 'the-clean-blog'),
+    'section' => 'horizontal_rule_colors',
+    'default' => '#fff',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => 'hr',
+            'property' => 'background-color',
+        ),
+    ),
+));
+
+// 7.5- Pagination Colors
+The_Clean_Blog_Kirki::add_section( 'pagination_colors', array(
+    'title'          => __( 'Pagination Colors', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Pagination Colors', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+    'priority'       => 25,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.5.1- Pagination Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pagination_background_color',
+    'label' => __('Pagination Background Color', 'the-clean-blog'),
+    'section' => 'pagination_colors',
+    'default' => '#ffffff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.pager li > a',
+                '.pager li > span'
+            ),
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.5.2- Pagination Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pagination_hover_color',
+    'label' => __('Pagination Hover Color', 'the-clean-blog'),
+    'section' => 'pagination_colors',
+    'default' => '#0085A1',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.pager li > a:hover',
+                '.pager li > a:focus'
+            ),
+            'property' => 'background-color',
+        ),
+        array(
+            'element' => array(
+                '.pager li > a:hover',
+                '.pager li > a:focus'
+            ),
+            'property' => 'border-color',
+        ),
+    ),
+));
+// 7.5.3- Pagination Text Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pagination_text_color',
+    'label' => __('Pagination Text Color', 'the-clean-blog'),
+    'section' => 'pagination_colors',
+    'default' => '#333333',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.pager li > a',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.5.4- Pagination Text Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pagination_text_hover_color',
+    'label' => __('Pagination Text Hover Color', 'the-clean-blog'),
+    'section' => 'pagination_colors',
+    'default' => '#ffffff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => array(
+                '.pager li > a:hover',
+                '.pager li > a:focus'
+            ),
+            'property' => 'color',
+        ),
+    ),
+));
+
+// 7.6- Social Sharing Colors
+The_Clean_Blog_Kirki::add_panel( 'social_sharing_colors', array(
+    'title'          => __( 'Posts Social Sharing Colors', 'the-clean-blog' ),
+    'description'    => __( 'Change Posts Default Social Sharing Colors', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+) );
+// 7.6.1- Social Sharing Background Color
+The_Clean_Blog_Kirki::add_section( 'social_sharing_background', array(
+    'title'          => __( 'Social Sharing Background', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Social Sharing Background Color', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 5,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.1.1- Social Sharing Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'social_sharing_background_color',
+    'label' => __('Social Sharing Background Color', 'the-clean-blog'),
+    'section' => 'social_sharing_background',
+    'default' => '#403439',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.panel-footer',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.2- Social Sharing Text
+The_Clean_Blog_Kirki::add_section( 'social_sharing_text', array(
+    'title'          => __( 'Social Sharing Text', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Social Sharing Text Color', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.2.1- Social Sharing Text Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'social_sharing_text_color',
+    'label' => __('Social Sharing Text Color', 'the-clean-blog'),
+    'section' => 'social_sharing_text',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network span',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.3- Email Icon
+The_Clean_Blog_Kirki::add_section( 'email_icon', array(
+    'title'          => __( 'Email Icon', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Email Icon Colors', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 15,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.3.1- Email Icon Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'email_icon_color',
+    'label' => __('Email Icon Color', 'the-clean-blog'),
+    'section' => 'email_icon',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-email i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.3.2- Email Icon Background Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'email_icon_background_hover_color',
+    'label' => __('Email Icon Background Hover Color', 'the-clean-blog'),
+    'section' => 'email_icon',
+    'default' => '#783bd2',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-email:hover',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.3.3- Email Icon Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'email_icon_hover_color',
+    'label' => __('Email Icon Hover Color', 'the-clean-blog'),
+    'section' => 'email_icon',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-email:hover i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.4- Twitter Icon
+The_Clean_Blog_Kirki::add_section( 'twitter_icon', array(
+    'title'          => __( 'Twitter Icon', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Twitter Icon Colors', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.4.1- Twitter Icon Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'twitter_icon_color',
+    'label' => __('Twitter Icon Color', 'the-clean-blog'),
+    'section' => 'twitter_icon',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-twitter i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.4.2- Twitter Icon Background Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'twitter_icon_background_hover_color',
+    'label' => __('Twitter Icon Background Hover Color', 'the-clean-blog'),
+    'section' => 'twitter_icon',
+    'default' => '#55acee',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-twitter:hover',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.4.3- Twitter Icon Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'twitter_icon_hover_color',
+    'label' => __('Twitter Icon Hover Color', 'the-clean-blog'),
+    'section' => 'twitter_icon',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-twitter:hover i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.5- Facebook Icon
+The_Clean_Blog_Kirki::add_section( 'facebook_icon', array(
+    'title'          => __( 'Facebook Icon', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Facebook Icon Colors', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.5.1- Facebook Icon Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'facebook_icon_color',
+    'label' => __('Facebook Icon Color', 'the-clean-blog'),
+    'section' => 'facebook_icon',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-facebook i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.5.2- Facebook Icon Background Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'facebook_icon_background_hover_color',
+    'label' => __('Facebook Icon Background Hover Color', 'the-clean-blog'),
+    'section' => 'facebook_icon',
+    'default' => '#3b5998',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-facebook:hover',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.5.3- Facebook Icon Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'facebook_icon_hover_color',
+    'label' => __('Facebook Icon Hover Color', 'the-clean-blog'),
+    'section' => 'facebook_icon',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-facebook:hover i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.6- Google Plus Icon
+The_Clean_Blog_Kirki::add_section( 'googleplus_icon', array(
+    'title'          => __( 'Google Plus Icon', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Google Plus Icon Colors', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.6.1- Google Plus Icon Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'googleplus_icon_color',
+    'label' => __('Google Plus Icon Color', 'the-clean-blog'),
+    'section' => 'googleplus_icon',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-googleplus i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.6.2- Google Plus Icon Background Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'googleplus_icon_background_hover_color',
+    'label' => __('Google Plus Icon Background Hover Color', 'the-clean-blog'),
+    'section' => 'googleplus_icon',
+    'default' => '#dd4b39',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-googleplus:hover',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.6.3- Google Plus Icon Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'googleplus_icon_hover_color',
+    'label' => __('Google Plus Icon Hover Color', 'the-clean-blog'),
+    'section' => 'googleplus_icon',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-googleplus:hover i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.7- Pinterest Icon
+The_Clean_Blog_Kirki::add_section( 'pinterest_icon', array(
+    'title'          => __( 'Pinterest Icon', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Pinterest Icon Colors', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.7.1- Pinterest Icon Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pinterest_icon_color',
+    'label' => __('Pinterest Icon Color', 'the-clean-blog'),
+    'section' => 'pinterest_icon',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-pinterest i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.7.2- Pinterest Icon Background Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pinterest_icon_background_hover_color',
+    'label' => __('Pinterest Icon Background Hover Color', 'the-clean-blog'),
+    'section' => 'pinterest_icon',
+    'default' => '#cb2027',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-pinterest:hover',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.7.3- Pinterest Icon Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'pinterest_icon_hover_color',
+    'label' => __('Pinterest Icon Hover Color', 'the-clean-blog'),
+    'section' => 'pinterest_icon',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-pinterest:hover i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.8- WhatsApp Icon
+The_Clean_Blog_Kirki::add_section( 'whatsapp_icon', array(
+    'title'          => __( 'WhatsApp Icon (Tablet / Mobile)', 'the-clean-blog' ),
+    'description'    => __( 'Change Default WhatsApp Icon Colors', 'the-clean-blog' ),
+    'panel'          => 'social_sharing_colors',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.6.8.1- WhatsApp Icon Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'whatsapp_icon_color',
+    'label' => __('WhatsApp Icon Color', 'the-clean-blog'),
+    'section' => 'whatsapp_icon',
+    'default' => '#fff',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-whatsapp i',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.6.8.2- WhatsApp Icon Background Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'whatsapp_icon_background_hover_color',
+    'label' => __('WhatsApp Icon Background Hover Color', 'the-clean-blog'),
+    'section' => 'whatsapp_icon',
+    'default' => '#4dc247',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-whatsapp:hover',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.6.8.3- WhatsApp Icon Hover Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'whatsapp_icon_hover_color',
+    'label' => __('WhatsApp Icon Hover Color', 'the-clean-blog'),
+    'section' => 'whatsapp_icon',
+    'default' => '#fff',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.social-network a.thecleanblog-whatsapp:hover i',
+            'property' => 'color',
+        ),
+    ),
+));
+
+// 7.7- Comments Colors
+The_Clean_Blog_Kirki::add_panel( 'comments_colors', array(
+    'title'          => __( 'Posts Comments Colors', 'the-clean-blog' ),
+    'description'    => __( 'Change Posts Default Comments Colors', 'the-clean-blog' ),
+    'panel'          => 'body_colors',
+) );
+// 7.7.1- Comments Title & Notes
+The_Clean_Blog_Kirki::add_section( 'comments_title_notes', array(
+    'title'          => __( 'Comments Title & Notes', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Comments Title & Notes Colors', 'the-clean-blog' ),
+    'panel'          => 'comments_colors',
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.7.1.1- Comments Title Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_title_color',
+    'label' => __('Comments Title Color', 'the-clean-blog'),
+    'section' => 'comments_title_notes',
+    'default' => '#333333',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '#reply-title',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.7.1.2- Comments Notes Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_notes_color',
+    'label' => __('Comments Notes Color', 'the-clean-blog'),
+    'section' => 'comments_title_notes',
+    'default' => '#333333',
+    'priority' => 10,
+    'tooltip' => 'This control affects : "Your email address will not be published. Required fields are marked *"',
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.comment-notes',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.7.2- Comments Boxes
+The_Clean_Blog_Kirki::add_section( 'comments_boxes', array(
+    'title'          => __( 'Comments Boxes', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Comments Boxes Colors', 'the-clean-blog' ),
+    'panel'          => 'comments_colors',
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.7.2.1- Comments Placeholders Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_placeholders_color',
+    'label' => __('Comments Placeholders Color', 'the-clean-blog'),
+    'section' => 'comments_boxes',
+    'default' => '#999999',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '#commentform ::placeholder',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.7.2.2- Comments Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_background_color',
+    'label' => __('Comments Background Color', 'the-clean-blog'),
+    'section' => 'comments_boxes',
+    'default' => '#fff',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '#comments .form-control',
+            'property' => 'background-color',
+        ),
+    ),
+));
+// 7.7.2.3- Comments Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_focus_border_color',
+    'label' => __('Comments Focus Border Color', 'the-clean-blog'),
+    'section' => 'comments_boxes',
+    'default' => '#66afe9',
+    'priority' => 15,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '#comments .form-control:focus',
+            'property' => 'border-color',
+        ),
+    ),
+));
+// 7.7.3- Comments Submit Button Color
+The_Clean_Blog_Kirki::add_section( 'comments_submit_button_colors', array(
+    'title'          => __( 'Comments Submit Button Color', 'the-clean-blog' ),
+    'description'    => __( 'Change Default Comments Submit Button Colors', 'the-clean-blog' ),
+    'panel'          => 'comments_colors',
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+// 7.7.3.1- Comments Submit Text Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_submit_text_color',
+    'label' => __('Comments Submit Text Color', 'the-clean-blog'),
+    'section' => 'comments_submit_button_colors',
+    'default' => '#000008',
+    'priority' => 5,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.form-submit input[type="submit"]',
+            'property' => 'color',
+        ),
+    ),
+));
+// 7.7.3.2- Comments Submit Background Color
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'color-alpha',
+    'settings' => 'comments_submit_background_color',
+    'label' => __('Comments Submit Background Color', 'the-clean-blog'),
+    'section' => 'comments_submit_button_colors',
+    'default' => '#e6e6e6',
+    'priority' => 10,
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element' => '.form-submit input[type="submit"]',
+            'property' => 'background',
+        ),
+    ),
+));
+// 7.7.3.3- Comments Submit Borders Colors
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'multicolor',
+    'settings' => 'comments_submit_borders_colors',
+    'label' => __('Comments Submit Borders Colors', 'the-clean-blog'),
+    'section' => 'comments_submit_button_colors',
+    'default'     => array(
+        'border-top-color'    => '#ccc',
+        'border-right-color'   => '#ccc',
+        'border-bottom-color'  => '#bbb',
+        'border-left-color'  => '#ccc',
+    ),
+    'priority' => 15,
+    'transport' => 'auto',
+    'choices'     => array(
+        'border-top-color'    => esc_attr__( 'Border Top', 'the-clean-blog' ),
+        'border-right-color'   => esc_attr__( 'Border Right', 'the-clean-blog' ),
+        'border-bottom-color'  => esc_attr__( 'Border Bottom', 'the-clean-blog' ),
+        'border-left-color'  => esc_attr__( 'Border Left', 'the-clean-blog' ),
+    ),
+    'output' => array(
+        array(
+            'element' => '.form-submit input[type="submit"]',
+            'property' => 'border-color',
+        ),
+    ),
+));
