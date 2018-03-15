@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.8.2  
-Stable tag: 17.09.25  
+Tested up to: WordPress 4.9.4  
+Stable tag: 18.03.15  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,12 @@ You can add as many main/children items as you want.
 But on desktop view, only the **First 5** will show up !
 
 ## Changelog
+
+### 18.03.15 =
+* Released: March 15, 2018
+- Added Visible Edit Shortcuts in the Customizer Preview for blogname and blogdescription.
+- Corrected bootstrap wp_enqueue_style line.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 17.09.25 =
 * Released: September 25, 2017
