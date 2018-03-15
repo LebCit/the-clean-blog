@@ -118,7 +118,7 @@ function thecleanblog_scripts()
 {
     wp_enqueue_style('thecleanblog-style', get_stylesheet_uri());
 
-    wp_enqueue_style('bootstrap', get_theme_file_uri() . '/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap', get_theme_file_uri('/css/bootstrap.min.css'));
     
     wp_enqueue_style('thecleanblog-nav-style', get_theme_file_uri('/css/the-clean-blog-nav-style.css'));
 
