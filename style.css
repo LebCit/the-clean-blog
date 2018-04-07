@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
         ## Galleries
 ## Preloader
+## Unslider styles
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -960,4 +961,115 @@ body.preloader-site {
 }*/
 
 
+/*--------------------------------------------------------------
+## Unslider styles
+--------------------------------------------------------------*/
+
+/**
+* Set Unslider defaults before the DOM is ready !
+* This is done to prevent the first slide from being displayed at 90% for a second and then fill the slider's container.
+* By doing this, we force the container <ul class="tcb-slides unslider-wrap unslider-carousel">
+* to have a width of 100% before loading the slider itself (unslider-wrap & unslider-carousel are added when the slider  is loaded).
+* As a result, the first image will find a full width container to sit in and will not be shrinked for one second
+* waiting the slider container to be ready/loaded ;) Genius LebCit LOL
+*/
+.tcb-slides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100vh /* If animation is set to fade, we have to give the container a height */
+}
+
+.unslider {
+    overflow: auto;
+    margin: 0;
+    padding: 0
+}
+
+.unslider-wrap {
+    position: relative;
+}
+
+.unslider-wrap.unslider-carousel>li {
+    float: left
+}
+
+.unslider-vertical>ul {
+    height: 100%
+}
+
+.unslider-vertical li {
+    float: none;
+    width: 100%
+}
+
+.unslider-fade {
+    position: relative
+}
+
+.unslider-fade .unslider-wrap li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 8
+}
+
+.unslider-fade .unslider-wrap li.unslider-active {
+    z-index: 10
+}
+
+.unslider li,
+.unslider ol,
+.unslider ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none
+}
+
+.unslider-arrow {
+    position: absolute;
+    left: 20px;
+    z-index: 10; /* Changed from 2 to 10 so the arrows won't fade if we use the fade animation */
+    cursor: pointer;
+    top: 320px /* Put arrows inside slider at the same level of .strike bounce */
+}
+
+.unslider-arrow.next {
+    left: auto;
+    right: 20px;
+    background: url('css/icon/next.png') no-repeat;
+    width: 64px;
+    height: 64px
+}
+
+.unslider-arrow.prev {
+    background: url('css/icon/prev.png') no-repeat;
+    width: 64px;
+    height: 64px
+}
+
+.unslider-nav ol {
+  list-style: none;
+  text-align: center;
+}
+.unslider-nav ol li {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 4px;
+  background: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  text-indent: -999em;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+.unslider-nav ol li.unslider-active {
+  background: #fff;
+  cursor: default;
 }

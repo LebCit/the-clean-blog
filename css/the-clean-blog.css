@@ -59,7 +59,7 @@ hr.page-footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    position: relative;
+    /*position: relative; Removed to prevent background-image from flircking while sliding on Chrome*/
     overflow: hidden !important;
 }
 body.search .intro-header {
