@@ -67,16 +67,18 @@ jQuery(document).ready(function ($) {
     };
     
     // Add/Remove .bounce class from .strike on scroll if it's visible on screen
-    var $strike = $('.strike');
-    $(window).scroll(function (event) {
-        event.preventDefault;
-        if (!$('.fa-arrow-down').isOnScreen()) {
-            $strike.removeClass('bounce');
-        } else {
-            setTimeout(function () {
-                $strike.addClass('bounce');
-            }, 900);
-        }
+    $('.strike').each(function(){
+        $strike = $(this);
+        $(window).scroll(function (event) {
+            event.preventDefault;
+            if (!$('.fa-arrow-down').isOnScreen()) {
+                $strike.removeClass('bounce');
+            } else {
+                setTimeout(function () {
+                    $strike.addClass('bounce');
+                }, 900);
+            }
+        });
     });
     
     // Sub menu from mobile to desktop, Remove .bounce class from .strike on resize, even if it's visible on screen
@@ -162,7 +164,8 @@ jQuery(document).ready(function ($) {
 
     //8. Adjusting .entry-header h1 starting from 768px width
     function resizeH1() {
-        var $h1 = $('.entry-header h1');
+        $('.entry-header h1').each(function(){
+        $h1 = $(this);
         if (window.innerWidth >= 768) {
             /*
              * Since .site-heading is hidden by default in CSS
@@ -214,6 +217,7 @@ jQuery(document).ready(function ($) {
                 'align-items': ''
             });
         }
+        });
     }
     // Run the function on DOM ready
     resizeH1();
