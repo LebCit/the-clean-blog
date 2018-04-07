@@ -222,6 +222,10 @@ jQuery(document).ready(function ($) {
         e.preventDefault;
         resizeH1();
     });//End 8.
+    
+    //10. Activate the preloader
+    // Initialise loaders that are added after page load
+    $('.loader-inner').loaders();
     /* fadeOut() the preloader with setTimeout() on document ready() because it's faster then on window load() 
      * Call the php variable thecleanblog_set.thecleanblog_preloader_animation_time as the time parameter of setTimeout()
      * This php variable will allow us to define the time of the fadeOut() inside the Customizer
