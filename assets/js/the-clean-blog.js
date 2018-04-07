@@ -223,6 +223,55 @@ jQuery(document).ready(function ($) {
         resizeH1();
     });//End 8.
     
+    //9. Activate Unslider / Unslider settings
+    var slider = $('.tcb-slider');
+    
+    // Calculate the length of thecleanblog_slider_animation data, the length of the animation's name.
+    var animationNameLength = thecleanblog_set.thecleanblog_slider_animation.length;
+    // Depending on the length of the animation's name, set the animation type.
+    // Used apostrophes (') around numbers to exactly match the value, not only the number !
+    var animationType;
+    if (animationNameLength == '4') {
+        animationType = 'fade';
+    } else if (animationNameLength == '8') {
+        animationType = 'vertical';
+    } else if (animationNameLength == '10') {
+        animationType = 'horizontal';
+    }
+    
+    // Set the slider slides infinite loop to true or false (default : false = 0).
+    // Retrive the default value and assign it to a variable.
+    var slidesInfiniteLoopValue = thecleanblog_set.thecleanblog_slider_slides_loop.length;
+    // Depending on the value of the infinite loop, set the infinite loop to true or false.
+    var infiniteLoopTrueOrFalse;
+    if (slidesInfiniteLoopValue === 0) {
+        infiniteLoopTrueOrFalse = false;
+    } else if (animationType != 'fade') { // Disable infinite loop if the choosen animation is fade, because fade is infinite !
+        infiniteLoopTrueOrFalse = true;
+    }
+    slider.unslider({
+        autoplay: true,
+        nav: false,
+        arrows: {
+            prev: '<a class="unslider-arrow prev"> </a>',
+            next: '<a class="unslider-arrow next"> </a>'
+        },
+        animation: animationType,
+        infinite: infiniteLoopTrueOrFalse
+    });
+
+    // On mobile view, stop the slider when the mobile menu is opened then restart it when the mobile menu gets closed, only if the slider is activated.
+    var checkSliderActivation = thecleanblog_set.thecleanblog_slider_activated.length;
+    if (checkSliderActivation !== 0) {
+        $('.cb-nav-trigger').on('click', function (event) {
+            event.preventDefault();
+            slider.data('unslider').stop();
+            if (!$('header.cb-nav').hasClass('nav-is-visible')) {
+                slider.data('unslider').start();
+            }
+        });
+    }//End 9.
+    
     //10. Activate the preloader
     // Initialise loaders that are added after page load
     $('.loader-inner').loaders();
