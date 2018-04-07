@@ -222,4 +222,14 @@ jQuery(document).ready(function ($) {
         e.preventDefault;
         resizeH1();
     });//End 8.
+    /* fadeOut() the preloader with setTimeout() on document ready() because it's faster then on window load() 
+     * Call the php variable thecleanblog_set.thecleanblog_preloader_animation_time as the time parameter of setTimeout()
+     * This php variable will allow us to define the time of the fadeOut() inside the Customizer
+     */
+    setTimeout(function(){
+        $('.preloader-wrapper').fadeOut();
+    }, thecleanblog_set.thecleanblog_preloader_animation_time);
+    // Finally, when the preloader fadeOut(), remove the .preloader-site class from the body to prevent preloader's styles from affecting the body
+    $('body').removeClass('preloader-site');
+    //End 10.
 });
