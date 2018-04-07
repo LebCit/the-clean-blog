@@ -1669,4 +1669,446 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'border-color',
         ),
     ),
+
+// 9- Preloader Section and Settings
+The_Clean_Blog_Kirki::add_section( 'preloader_settings', array(
+    'title'          => __( 'Preloader Settings', 'the-clean-blog' ),
+    'description'    => __( 'Control LoadingOverlay settings', 'the-clean-blog' ),
+    'panel'          => 'thecleanblog_theme',
+    'priority'       => 30,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+// 9.1 Preloader Backgroung Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_background_color',
+    'label'       => __( 'Preloader Background Color', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '#ed5565',
+    'priority'    => 5,
+    'transport'   => 'refresh',
+    'output'    => array(
+        array(
+            'element'  => '.preloader-wrapper',
+            'property' => 'background',
+        ),
+    ),
+) );
+
+// 9.2 Preloader Animation
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type' => 'select',
+    'settings' => 'preloader_animation',
+    'label' => __('Choose Preloader Animation', 'the-clean-blog'),
+    'section' => 'preloader_settings',
+    'default'     => 'ball-pulse-rise',
+    'priority'    => 10,
+    'multiple'    => 1,
+    'choices'     => array(
+        'ball-pulse-rise'               => esc_attr__( 'Ball Pulse Rise', 'the-clean-blog' ),
+        'ball-pulse'                    => esc_attr__( 'Ball Pulse', 'the-clean-blog' ),
+        'ball-grid-pulse'               => esc_attr__( 'Ball Grid Pulse', 'the-clean-blog' ),
+        'ball-clip-rotate'              => esc_attr__( 'Ball Clip 1', 'the-clean-blog' ),
+        'ball-clip-rotate-pulse'        => esc_attr__( 'Ball Clip 2', 'the-clean-blog' ),
+        'square-spin'                   => esc_attr__( 'Square Spin', 'the-clean-blog' ),
+        'ball-clip-rotate-multiple'     => esc_attr__( 'Ball Clip 3', 'the-clean-blog' ),
+        'ball-rotate'                   => esc_attr__( 'Ball Rotate', 'the-clean-blog' ),
+        'cube-transition'               => esc_attr__( 'Cube Transition', 'the-clean-blog' ),
+        'ball-zig-zag'                  => esc_attr__( 'Ball Zigzag 1', 'the-clean-blog' ),
+        'ball-zig-zag-deflect'          => esc_attr__( 'Ball Zigzag 2', 'the-clean-blog' ),
+        'ball-triangle-path'            => esc_attr__( 'Ball Triangle', 'the-clean-blog' ),
+        'ball-scale'                    => esc_attr__( 'Ball Scale 1', 'the-clean-blog' ),
+        'line-scale'                    => esc_attr__( 'Line Scale 1', 'the-clean-blog' ),
+        'line-scale-party'              => esc_attr__( 'Line Scale 2', 'the-clean-blog' ),
+        'ball-scale-multiple'           => esc_attr__( 'Ball Scale 2', 'the-clean-blog' ),
+        'ball-pulse-sync'               => esc_attr__( 'Ball Pulse Sync', 'the-clean-blog' ),
+        'ball-beat'                     => esc_attr__( 'Ball Beat', 'the-clean-blog' ),
+        'line-scale-pulse-out'          => esc_attr__( 'Line Scale 3', 'the-clean-blog' ),
+        'line-scale-pulse-out-rapid'    => esc_attr__( 'Line Scale 4', 'the-clean-blog' ),
+        'ball-scale-ripple'             => esc_attr__( 'Ball Scale 3', 'the-clean-blog' ),
+        'ball-scale-ripple-multiple'    => esc_attr__( 'Ball Scale 4', 'the-clean-blog' ),
+        'ball-spin-fade-loader'         => esc_attr__( 'Ball Spin', 'the-clean-blog' ),
+        'line-spin-fade-loader'         => esc_attr__( 'Line Spin', 'the-clean-blog' ),
+        'triangle-skew-spin'            => esc_attr__( 'Triangle Spin', 'the-clean-blog' ),
+        'pacman'                        => esc_attr__( 'Pacman', 'the-clean-blog' ),
+        'ball-grid-beat'                => esc_attr__( 'Ball Grid Beat', 'the-clean-blog' ),
+        'ball-scale-random'             => esc_attr__( 'Ball Scale 5', 'the-clean-blog' ),
+    ),
+));
+
+// 9.3 Preloader Animation Color 1
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_color_1',
+    'label'       => esc_attr__( 'Preloader Animation Color Set 1', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '',
+    'priority'    => 15,
+    'transport'   => 'refresh',
+    'output'    => array(
+        array(
+            'element'  => '.loader-inner > div',
+            'property' => 'background-color',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is one of the following
+        array(
+            'setting'   => 'preloader_animation',
+            'operator'  => 'in',
+            'value'     => array('ball-pulse-rise', 'ball-pulse', 'ball-grid-pulse', 'square-spin', 'cube-transition', 'ball-zig-zag', 'ball-zig-zag-deflect', 'ball-scale', 'line-scale', 'line-scale-party', 'ball-scale-multiple', 'ball-pulse-sync', 'ball-beat', 'line-scale-pulse-out', 'line-scale-pulse-out-rapid', 'ball-spin-fade-loader', 'line-spin-fade-loader', 'ball-scale-random'),
+        ),
+    ),
+) );
+
+// 9.4 Preloader Animation Color 2
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_color_2',
+    'label'       => esc_attr__( 'Preloader Animation Color Set 2', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '2px solid #fff',
+    'priority'    => 20,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div',
+            'property' => 'border-color',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is one of the following
+        array(
+            'setting'   => 'preloader_animation',
+            'operator'	=> 'in',
+            'value'	=> array('ball-triangle-path', 'ball-scale-ripple', 'ball-scale-ripple-multiple'),
+        ),
+    ),
+) );
+
+// 9.5 Ball Clip 1 Colors
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'multicolor',
+    'settings'    => 'preloader_animation_ball_clip_1_colors',
+    'label'       => esc_attr__( 'Ball Clip 1 Colors', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '2px solid #fff #fff transparent #fff',
+    'choices'     => array(
+        'border-top-color'      => esc_attr__( 'Border Top Color', 'the-clean-blog' ),
+        'border-right-color'    => esc_attr__( 'Border Right Color', 'the-clean-blog' ),
+        'border-left-color'     => esc_attr__( 'Border Left Color', 'the-clean-blog' ),
+    ),
+    'default'     => array(
+        'border-top-color'      => '#fff',
+        'border-right-color'    => '#fff',
+        'border-left-color'     => '#fff',
+    ),
+    'priority'    => 25,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-clip-rotate'),
+        ),
+    ),
+) );
+
+// 9.6.1 Ball Rotate Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_ball_rotate_color',
+    'label'       => esc_attr__( 'Ball Rotate Color', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '#fff',
+    'priority'    => 30,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div',
+            'property' => 'background-color',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-rotate'),
+        ),
+    ),
+) );
+
+// 9.6.2 Balls Rotate Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_balls_rotate_color',
+    'label'       => esc_attr__( 'Balls Rotate Color', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => 'rgba(255, 255, 255, 0.8);',
+    'priority'    => 35,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => array('.loader-inner > div:before', '.loader-inner > div:after'),
+            'property' => 'background-color',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-rotate'),
+        ),
+    ),
+) );
+
+// 9.7 Triangle Spin Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_triangle_spin_color',
+    'label'       => esc_attr__( 'Triangle Spin Color', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '#fff',
+    'priority'    => 40,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div',
+            'property' => 'border-bottom-color',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('triangle-skew-spin'),
+        ),
+    ),
+) );
+
+// 9.8.1 Ball Clip 2 Internal Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_bal_clip_2_internal_color',
+    'label'       => esc_attr__( 'Ball Clip 2 Internal Color', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '#fff',
+    'priority'    => 45,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div:first-child',
+            'property' => 'background',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-clip-rotate-pulse'),
+        ),
+    ),
+) );
+
+// 9.8.2 Ball Clip 2 External Colors
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'multicolor',
+    'settings'    => 'preloader_animation_ball_clip_2_external_colors',
+    'label'       => esc_attr__( 'Ball Clip 2 External Colors', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '2px solid #fff transparent #fff transparent',
+    'choices'     => array(
+        'border-top-color'      => esc_attr__( 'Border Top Color', 'the-clean-blog' ),
+        'border-bottom-color'    => esc_attr__( 'Border Bottom Color', 'the-clean-blog' ),
+    ),
+    'default'     => array(
+        'border-top-color'      => '#fff',
+        'border-bottom-color'   => '#fff',
+    ),
+    'priority'    => 50,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div:last-child',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-clip-rotate-pulse'),
+        ),
+    ),
+) );
+
+// 9.9.1 Ball Clip 3 Internal Colors
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'multicolor',
+    'settings'    => 'preloader_animation_ball_clip_3_internal_colors',
+    'label'       => esc_attr__( 'Ball Clip 3 Internal Colors', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '2px solid #fff transparent #fff transparent',
+    'choices'     => array(
+        'border-top-color'      => esc_attr__( 'Border Top Color', 'the-clean-blog' ),
+        'border-bottom-color'    => esc_attr__( 'Border Bottom Color', 'the-clean-blog' ),
+    ),
+    'default'     => array(
+        'border-top-color'      => '#fff',
+        'border-bottom-color'   => '#fff',
+    ),
+    'priority'    => 55,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div:last-child',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-clip-rotate-multiple'),
+        ),
+    ),
+) );
+
+// 9.9.2 Ball Clip 3 External Colors
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'multicolor',
+    'settings'    => 'preloader_animation_ball_clip_3_external_colors',
+    'label'       => esc_attr__( 'Ball Clip 3 External Colors', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '2px solid transparent #fff transparent #fff',
+    'choices'     => array(
+        'border-right-color'    => esc_attr__( 'Border Right Color', 'the-clean-blog' ),
+        'border-left-color'     => esc_attr__( 'Border Left Color', 'the-clean-blog' ),
+    ),
+    'default'     => array(
+        'border-right-color'  => '#fff',
+        'border-left-color'   => '#fff',
+    ),
+    'priority'  => 60,
+    'transport' => 'refresh',
+    'output'    => array(
+        array(
+            'element'  => '.loader-inner > div',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('ball-clip-rotate-multiple'),
+        ),
+    ),
+) );
+
+// 9.10.1 Pacman Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'multicolor',
+    'settings'    => 'preloader_animation_pacman_color',
+    'label'       => esc_attr__( 'Pacman Color', 'the-clean-blog' ),
+    'description' => esc_attr__( 'PLEASE CHOOSE THE SAME COLOR FOR THE PACMAN OR IT WILL NOT WORK !', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '25px solid #fff transparent #fff #fff',
+    'choices'     => array(
+        'border-top-color'      => esc_attr__( 'Border Top Color', 'the-clean-blog' ),
+        'border-bottom-color'   => esc_attr__( 'Border Bottom Color', 'the-clean-blog' ),
+        'border-left-color'     => esc_attr__( 'Border Left Color', 'the-clean-blog' ),
+    ),
+    'default'     => array(
+        'border-top-color'      => '#fff',
+        'border-bottom-color'   => '#fff',
+        'border-left-color'     => '#fff',
+    ),
+    'priority'    => 65,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => array('.loader-inner > div:first-of-type', '.loader-inner > div:nth-child(2)'),
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('pacman'),
+        ),
+    ),
+) );
+
+// 9.10.2 Pacman Balls Color
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'color-alpha',
+    'settings'    => 'preloader_animation_pacman_balls_color',
+    'label'       => esc_attr__( 'Pacman Balls Color', 'the-clean-blog' ),
+    'description' => esc_attr__( 'For a better animation, please choose the same color as the pacman !', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '#fff',
+    'priority'    => 70,
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner > div:nth-child(n+3)',
+            'property' => 'background-color',
+        ),
+    ),
+    'active_callback'   => array( // Display this control if the animation is this one
+        array(
+            'setting'	=> 'preloader_animation',
+            'operator'  => 'in',
+            'value'	=> array('pacman'),
+        ),
+    ),
+) );
+
+// 9.11 Choose Preloader Animation Dimension
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'        => 'slider',
+    'settings'    => 'preloader_animation_dimension',
+    'label'       => __( 'Choose Preloader Animation Dimension', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => 1,
+    'priority'    => 75,
+    'choices'     => array(
+        'min'  => '0.5',
+        'max'  => '2.5',
+        'step' => '0.5',
+    ),
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.loader-inner',
+            'property' => 'transform',
+            'value_pattern' => 'scale($ , $)'
+        ),
+    ),
+));
+
+// 9.12 Set Preloader Animation Time
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'        => 'slider',
+    'settings'    => 'preloader_animation_time',
+    'label'       => __( 'Set Preloader Animation Time', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => 1500,
+    'priority'    => 80,
+    'choices'     => array(
+        'min'  => '500',
+        'max'  => '3000',
+        'step' => '500',
+    ),
+    'transport'   => 'refresh',
+    'output'      => array(
+        array(
+            'element'  => '.preloader-wrapper',
+            'property' => ' transition-duration',            
+            'value_pattern' => '$',
+        ),
+    ),
 ));
