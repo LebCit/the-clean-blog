@@ -7,6 +7,7 @@
  */
 ?>
 
+<?php if ( false == get_theme_mod( 'activate_slider', false ) || is_singular() || is_archive() ) : ?>
 <header id="masthead" class="site-header intro-header" role="banner">
     <div class="container">
         <div class="row">
@@ -50,3 +51,6 @@
         </div>
     </div>
 </header>
+<?php else :
+    get_template_part('components/header/bg', 'slider');
+endif;
