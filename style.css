@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Infinite scroll
 # Media
         ## Galleries
+## Preloader
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -50,6 +51,8 @@ html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    overflow: scroll; /* Added to prevent the scrollbar (overflow-y) from pushing the preloader and the body */
+    overflow-x: hidden; /* Added to hide the overflow-x on the body when removing the .preloader-site class from it  */
 }
 
 body {
@@ -922,4 +925,39 @@ object {
 
 .gallery-caption {
     display: block;
+}
+
+/*--------------------------------------------------------------
+## Preloader
+
+* Thanks to King Rayhan 
+* @link https://medium.com/@kingrayhan/create-a-simple-preloader-with-jquery-c6efb03c7f23
+--------------------------------------------------------------*/
+body.preloader-site {
+    overflow: hidden;
+}
+
+.preloader-wrapper {
+    height: 100%;
+    width: 100%;
+    background: #ed5565;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+}
+
+.preloader-wrapper .preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*.loader-inner {
+  transform: scale(2.5, 2.5);
+}*/
+
+
 }
