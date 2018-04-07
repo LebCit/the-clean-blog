@@ -20,7 +20,18 @@
         <?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>
+    <body <?php body_class( "preloader-site" ); ?>> <!-- Add .preloader-site class to the body every time the page loads until the document is ready()  -->
+        
+        <!-- Preloader  -->
+        <div class="preloader-wrapper">
+            <div class="preloader">
+                <div class="loader">
+                    <div class="loader-inner <?php echo get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ); ?>"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader  -->
+        
         <div id="page" class="site">
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'the-clean-blog'); ?></a>
 
