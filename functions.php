@@ -148,6 +148,8 @@ function thecleanblog_scripts()
     wp_enqueue_script('loaders.css', get_theme_file_uri('/assets/js/loaders.css.js'), array('jquery'), '', true);
     
     wp_enqueue_script('thecleanblog-script', get_theme_file_uri('/assets/js/the-clean-blog.js'), array('jquery'), '', true);
+    
+    wp_enqueue_script('unslider', get_theme_file_uri('/assets/js/unslider.js'), array('jquery'), '2.0', true);
 
     wp_enqueue_script('footer-reveal', get_theme_file_uri('/assets/js/footer-reveal.min.js'), array('jquery'), '', true);
 
