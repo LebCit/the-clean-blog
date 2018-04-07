@@ -1669,6 +1669,124 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'property' => 'border-color',
         ),
     ),
+));
+
+// 8- Slider Section and Settings
+The_Clean_Blog_Kirki::add_section( 'slider_settings', array(
+    'title'          => __( 'Slider Settings', 'the-clean-blog' ),
+    'description'    => __( 'Control the slider settings', 'the-clean-blog' ),
+    'panel'          => 'thecleanblog_theme',
+    'priority'       => 25,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+// 8.1- Activate Slider !
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'        => 'switch',
+    'settings'    => 'activate_slider',
+    'label'       => __( 'Activate Slider', 'the-clean-blog' ),
+    'description' => __( 'You can choose to display on your homepage (Your latest posts) a static header background image or a slider of header background images of posts from a choosen category.', 'the-clean-blog' ),
+    'section'     => 'slider_settings',
+    'default'     => '0',
+    'priority'    => 5,
+    'choices'     => array(
+        'on'  => esc_attr__( 'Enable', 'the-clean-blog' ),
+        'off' => esc_attr__( 'Disable', 'the-clean-blog' ),
+    ),
+));
+
+// 8.2 Choose Slider Category
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'        => 'select',
+    'settings'    => 'slider_category',
+    'label'       => __( 'Choose a category', 'the-clean-blog' ),
+    'description' => __( 'Choose the category of posts for the slider.', 'the-clean-blog' ),
+    'tooltip'     => 'Please, be sure to have <b>AT LEAST ONE</b> post in the chosen category !',
+    'section'     => 'slider_settings',
+    'default'     => '',
+    'priority'    => 10,
+    'multiple'    => 1,
+    'choices'     => ( class_exists( 'Kirki_Helper' ) ) ? Kirki_Helper::get_terms( array( // Check if the class Kirki_Helper exists. This will prevent the theme on activation from returning a fatal error if the plugin is not yet installed !
+        'taxonomy'  => 'category',
+        'exclude'   => 1, /**   
+                           * Exclude uncategorized category from the dropdown categories because resizeH1() not working with it !
+                           * @see https://developer.wordpress.org/reference/functions/get_terms/
+                           * @see https://developer.wordpress.org/reference/classes/wp_term_query/__construct/    
+                           */
+    )) : array(),
+    'active_callback'   => array( // Do not display this control if the slider is disabled
+        array(
+          'setting'     => 'activate_slider',
+          'operator'    => '==',
+          'value'	=> true,
+        ),
+    ),
+));
+
+// 8.3 Choose Number of Posts for Slider
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'        => 'slider',
+    'settings'    => 'slider_number_of_posts',
+    'label'       => __( 'Set the number of posts/slides', 'the-clean-blog' ),
+    'description' => __( 'Set the number of posts/slides for the slider.', 'the-clean-blog' ),
+    'section'     => 'slider_settings',
+    'default'     => 2,
+    'priority'    => 15,
+    'choices'     => array(
+        'min'  => '2',
+        'max'  => '10',
+        'step' => '1',
+    ),
+    'active_callback'   => array( // Do not display this control if the slider is disabled
+        array(
+          'setting'	=> 'activate_slider',
+          'operator'    => '==',
+          'value'	=> true,
+        ),
+    ),
+));
+
+// 8.4 Choose Slider Animation
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'select',
+    'settings'    => 'slider_animation',
+    'label'       => __( 'Choose Slider Animation', 'the-clean-blog' ),
+    'section'     => 'slider_settings',
+    'default'     => 'horizontal',
+    'priority'    => 20,
+    'multiple'    => 1,
+    'choices'     => array(
+        'horizontal' => esc_attr__( 'horizontal', 'the-clean-blog' ),
+        'vertical' => esc_attr__( 'vertical', 'the-clean-blog' ),
+        'fade' => esc_attr__( 'fade', 'the-clean-blog' ),
+    ),
+    'active_callback'   => array( // Do not display this control if the slider is disabled
+        array(
+          'setting'	=> 'activate_slider',
+          'operator'    => '==',
+          'value'       => true,
+        ),
+    ),
+) );
+
+// 8.5 Slider Slides loop
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'toggle',
+    'settings'    => 'slider_slides_loop',
+    'label'       => __( 'Choose the slides loop', 'the-clean-blog' ),
+    'description' => __( 'Choose to make the slides loop infinitely or not.', 'the-clean-blog' ),
+    'section'     => 'slider_settings',
+    'default'     => '0',
+    'priority'    => 25,
+    'active_callback'   => array( // Do not display this control if the slider is disabled
+        array(
+          'setting'	=> 'activate_slider',
+          'operator'    => '==',
+          'value'	=> true,
+        ),
+    ),
+) );
 
 // 9- Preloader Section and Settings
 The_Clean_Blog_Kirki::add_section( 'preloader_settings', array(
