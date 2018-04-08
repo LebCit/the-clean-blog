@@ -5,8 +5,13 @@
  * The background image, for the first <li>, is added by using inline style.
  * @see the-clean-blog-functions.php | thecleanblog_header_style()
  */
+
+$horizontalSlidesDirection = get_theme_mod('slider_horizontal_slides_direction');
+if (!empty($horizontalSlidesDirection)) {
+    $horizontalSlidesDirection = 'rtl';
+}
 ?>
-<div class="tcb-slider">
+<div class="tcb-slider" dir="<?php echo esc_attr( $horizontalSlidesDirection ); ?>">
     <ul class="tcb-slides">
         <li>                   
             <header id="masthead" class="site-header intro-header" role="banner">

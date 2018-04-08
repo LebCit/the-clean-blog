@@ -1788,6 +1788,24 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     ),
 ) );
 
+// 8.6 Horizontal animation direction
+The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
+    'type'        => 'toggle',
+    'settings'    => 'slider_horizontal_slides_direction',
+    'label'       => __( 'Horizontal animation direction', 'the-clean-blog' ),
+    'description' => __( 'Change animation from right to left.', 'the-clean-blog' ),
+    'section'     => 'slider_settings',
+    'default'     => '0',
+    'priority'    => 30,
+    'active_callback'   => array( // Do not display this control if the slider is disabled
+        array(
+          'setting'	=> 'activate_slider',
+          'operator'    => '==',
+          'value'	=> true,
+        ),
+    ),
+) );
+
 // 9- Preloader Section and Settings
 The_Clean_Blog_Kirki::add_section( 'preloader_settings', array(
     'title'          => __( 'Preloader Settings', 'the-clean-blog' ),

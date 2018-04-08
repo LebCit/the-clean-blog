@@ -243,6 +243,19 @@ jQuery(document).ready(function ($) {
         animationType = 'horizontal';
     }
     
+    // Calculate the length of thecleanblog_slider_horizontal_slides_direction data, 0(LTR) or 1(RTL) (default is 0).
+    var horizontalSlidesDirection = thecleanblog_set.thecleanblog_slider_horizontal_slides_direction.length;
+    // Depending on the length of this data 0(LTR) or 1(RTL), set the default html for the right an left arrows of the slider.
+    var prevNext; var nextPrev;
+    // If RTL is choosen AND the animation is set to horizontal, invert the default classes of the arrows.
+    if ((horizontalSlidesDirection > 0) && (animationNameLength == '10')) {
+        prevNext = '<a class="unslider-arrow next"> </a>';
+        nextPrev = '<a class="unslider-arrow prev"> </a>';
+    } else { // Default classes for each arrow, prev for prev and next for next !
+        prevNext = '<a class="unslider-arrow prev"> </a>';
+        nextPrev = '<a class="unslider-arrow next"> </a>';
+    }
+    
     // Set the slider slides infinite loop to true or false (default : false = 0).
     // Retrive the default value and assign it to a variable.
     var slidesInfiniteLoopValue = thecleanblog_set.thecleanblog_slider_slides_loop.length;
@@ -257,8 +270,8 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         nav: false,
         arrows: {
-            prev: '<a class="unslider-arrow prev"> </a>',
-            next: '<a class="unslider-arrow next"> </a>'
+            prev: prevNext,
+            next: nextPrev
         },
         animation: animationType,
         infinite: infiniteLoopTrueOrFalse
