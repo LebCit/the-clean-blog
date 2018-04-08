@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 23:31+0000\n"
+"POT-Creation-Date: 2018-04-08 23:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -662,212 +662,220 @@ msgstr ""
 msgid "Choose to make the slides loop infinitely or not."
 msgstr ""
 
-#: inc/customizer.php:1793
+#: inc/customizer.php:1795
+msgid "Horizontal animation direction"
+msgstr ""
+
+#: inc/customizer.php:1796
+msgid "Change animation from right to left."
+msgstr ""
+
+#: inc/customizer.php:1811
 msgid "Preloader Settings"
 msgstr ""
 
-#: inc/customizer.php:1794
+#: inc/customizer.php:1812
 msgid "Control LoadingOverlay settings"
 msgstr ""
 
-#: inc/customizer.php:1805
+#: inc/customizer.php:1823
 msgid "Preloader Background Color"
 msgstr ""
 
-#: inc/customizer.php:1822
+#: inc/customizer.php:1840
 msgid "Choose Preloader Animation"
 msgstr ""
 
-#: inc/customizer.php:1828
+#: inc/customizer.php:1846
 msgid "Ball Pulse Rise"
 msgstr ""
 
-#: inc/customizer.php:1829
+#: inc/customizer.php:1847
 msgid "Ball Pulse"
 msgstr ""
 
-#: inc/customizer.php:1830
+#: inc/customizer.php:1848
 msgid "Ball Grid Pulse"
 msgstr ""
 
-#: inc/customizer.php:1831
+#: inc/customizer.php:1849
 msgid "Ball Clip 1"
 msgstr ""
 
-#: inc/customizer.php:1832
+#: inc/customizer.php:1850
 msgid "Ball Clip 2"
 msgstr ""
 
-#: inc/customizer.php:1833
+#: inc/customizer.php:1851
 msgid "Square Spin"
 msgstr ""
 
-#: inc/customizer.php:1834
+#: inc/customizer.php:1852
 msgid "Ball Clip 3"
 msgstr ""
 
-#: inc/customizer.php:1835
+#: inc/customizer.php:1853
 msgid "Ball Rotate"
 msgstr ""
 
-#: inc/customizer.php:1836
+#: inc/customizer.php:1854
 msgid "Cube Transition"
 msgstr ""
 
-#: inc/customizer.php:1837
+#: inc/customizer.php:1855
 msgid "Ball Zigzag 1"
 msgstr ""
 
-#: inc/customizer.php:1838
+#: inc/customizer.php:1856
 msgid "Ball Zigzag 2"
 msgstr ""
 
-#: inc/customizer.php:1839
+#: inc/customizer.php:1857
 msgid "Ball Triangle"
 msgstr ""
 
-#: inc/customizer.php:1840
+#: inc/customizer.php:1858
 msgid "Ball Scale 1"
 msgstr ""
 
-#: inc/customizer.php:1841
+#: inc/customizer.php:1859
 msgid "Line Scale 1"
 msgstr ""
 
-#: inc/customizer.php:1842
+#: inc/customizer.php:1860
 msgid "Line Scale 2"
 msgstr ""
 
-#: inc/customizer.php:1843
+#: inc/customizer.php:1861
 msgid "Ball Scale 2"
 msgstr ""
 
-#: inc/customizer.php:1844
+#: inc/customizer.php:1862
 msgid "Ball Pulse Sync"
 msgstr ""
 
-#: inc/customizer.php:1845
+#: inc/customizer.php:1863
 msgid "Ball Beat"
 msgstr ""
 
-#: inc/customizer.php:1846
+#: inc/customizer.php:1864
 msgid "Line Scale 3"
 msgstr ""
 
-#: inc/customizer.php:1847
+#: inc/customizer.php:1865
 msgid "Line Scale 4"
 msgstr ""
 
-#: inc/customizer.php:1848
+#: inc/customizer.php:1866
 msgid "Ball Scale 3"
 msgstr ""
 
-#: inc/customizer.php:1849
+#: inc/customizer.php:1867
 msgid "Ball Scale 4"
 msgstr ""
 
-#: inc/customizer.php:1850
+#: inc/customizer.php:1868
 msgid "Ball Spin"
 msgstr ""
 
-#: inc/customizer.php:1851
+#: inc/customizer.php:1869
 msgid "Line Spin"
 msgstr ""
 
-#: inc/customizer.php:1852
+#: inc/customizer.php:1870
 msgid "Triangle Spin"
 msgstr ""
 
-#: inc/customizer.php:1853
+#: inc/customizer.php:1871
 msgid "Pacman"
 msgstr ""
 
-#: inc/customizer.php:1854
+#: inc/customizer.php:1872
 msgid "Ball Grid Beat"
 msgstr ""
 
-#: inc/customizer.php:1855
+#: inc/customizer.php:1873
 msgid "Ball Scale 5"
 msgstr ""
 
-#: inc/customizer.php:1863
+#: inc/customizer.php:1881
 msgid "Preloader Animation Color Set 1"
 msgstr ""
 
-#: inc/customizer.php:1887
+#: inc/customizer.php:1905
 msgid "Preloader Animation Color Set 2"
 msgstr ""
 
-#: inc/customizer.php:1911
+#: inc/customizer.php:1929
 msgid "Ball Clip 1 Colors"
 msgstr ""
 
-#: inc/customizer.php:1915 inc/customizer.php:2044 inc/customizer.php:2075
-#: inc/customizer.php:2138
+#: inc/customizer.php:1933 inc/customizer.php:2062 inc/customizer.php:2093
+#: inc/customizer.php:2156
 msgid "Border Top Color"
 msgstr ""
 
-#: inc/customizer.php:1916 inc/customizer.php:2106
+#: inc/customizer.php:1934 inc/customizer.php:2124
 msgid "Border Right Color"
 msgstr ""
 
-#: inc/customizer.php:1917 inc/customizer.php:2107 inc/customizer.php:2140
+#: inc/customizer.php:1935 inc/customizer.php:2125 inc/customizer.php:2158
 msgid "Border Left Color"
 msgstr ""
 
-#: inc/customizer.php:1944
+#: inc/customizer.php:1962
 msgid "Ball Rotate Color"
 msgstr ""
 
-#: inc/customizer.php:1968
+#: inc/customizer.php:1986
 msgid "Balls Rotate Color"
 msgstr ""
 
-#: inc/customizer.php:1992
+#: inc/customizer.php:2010
 msgid "Triangle Spin Color"
 msgstr ""
 
-#: inc/customizer.php:2016
+#: inc/customizer.php:2034
 msgid "Ball Clip 2 Internal Color"
 msgstr ""
 
-#: inc/customizer.php:2040
+#: inc/customizer.php:2058
 msgid "Ball Clip 2 External Colors"
 msgstr ""
 
-#: inc/customizer.php:2045 inc/customizer.php:2076 inc/customizer.php:2139
+#: inc/customizer.php:2063 inc/customizer.php:2094 inc/customizer.php:2157
 msgid "Border Bottom Color"
 msgstr ""
 
-#: inc/customizer.php:2071
+#: inc/customizer.php:2089
 msgid "Ball Clip 3 Internal Colors"
 msgstr ""
 
-#: inc/customizer.php:2102
+#: inc/customizer.php:2120
 msgid "Ball Clip 3 External Colors"
 msgstr ""
 
-#: inc/customizer.php:2133
+#: inc/customizer.php:2151
 msgid "Pacman Color"
 msgstr ""
 
-#: inc/customizer.php:2134
+#: inc/customizer.php:2152
 msgid "PLEASE CHOOSE THE SAME COLOR FOR THE PACMAN OR IT WILL NOT WORK !"
 msgstr ""
 
-#: inc/customizer.php:2167
+#: inc/customizer.php:2185
 msgid "Pacman Balls Color"
 msgstr ""
 
-#: inc/customizer.php:2168
+#: inc/customizer.php:2186
 msgid "For a better animation, please choose the same color as the pacman !"
 msgstr ""
 
-#: inc/customizer.php:2192
+#: inc/customizer.php:2210
 msgid "Choose Preloader Animation Dimension"
 msgstr ""
 
-#: inc/customizer.php:2215
+#: inc/customizer.php:2233
 msgid "Set Preloader Animation Time"
 msgstr ""
 
@@ -1181,7 +1189,10 @@ msgid ""
 "based on your Site Title and the year's date of your first and last posts. "
 "The new improved navigation with one sub-menu depth on desktop and mobile "
 "can hold 5 main items and 5 children items on desktop. No limitation of "
-"items on mobile."
+"items on mobile. Unslider slider is fully integrated to the theme with "
+"powerful and cool controls from the Customizer ! A nice and stylish "
+"Preloader, 28 animations included, with tons of controls, allows you to "
+"provide your visitors a beautiful animation before loading the site."
 msgstr ""
 
 #. URI of the theme
