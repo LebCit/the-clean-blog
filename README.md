@@ -3,11 +3,11 @@
 ![Screenshot](https://github.com/LebCit/the-clean-blog/raw/master/screenshot.png "The Clean Blog Screenshot")
 
 Contributors: [LebCit](https://profiles.wordpress.org/lebcit)  
-Tags: blog, custom-background, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
+Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.9.4  
-Stable tag: 18.03.15  
+Tested up to: WordPress 4.9.5  
+Stable tag: 18.04.08  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,9 @@ The **defined featured image of a post or page turns into a responsive full scre
 **Header's background image** is retrieved with AJAX to speed time's load !  
 Galleries are displayed in a **responsive touch-friendly image lightbox** when images are linked to their respective media file.  
 The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.  
-The **new** improved navigation with **one sub-menu depth**, can hold only 5 main items and 5 children items on desktop. No limitation of items on mobile.
+The **new** improved navigation with **one sub-menu depth**, can hold only 5 main items and 5 children items on desktop. No limitation of items on mobile.  
+**Unslider** slider is fully integrated to the theme **with powerful and cool controls** from the Customizer !  
+A nice and stylish **Preloader**, 28 animations included, with tons of controls, allows you to provide your visitors a beautiful animation before loading the site.
 
 ## Installation
 
@@ -57,7 +59,22 @@ This is the normal behaviour of the menu starting from 1024px.
 You can add as many main/children items as you want.  
 But on desktop view, only the **First 5** will show up !
 
+### Where can I activate the slider ?
+
+Almost all of the theme controls are under **The Clean Blog Theme** panel in the Customizer.  
+Head over and start customizing the theme to make it looks and behave as you want !
+
 ## Changelog
+
+### 18.04.08 =
+* Released: April 08, 2018
+- Added preloader with 28 animations taken from [loaders.css](https://github.com/ConnorAtherton/loaders.css).
+- Added slider to the theme with [unslider](https://github.com/idiot/unslider).
+- Localized the-clean-blog.js to pass php variables to JS.
+- Modified resizeH1() function and bouncing logic to work with the slider.
+- Updated .pot file with new strings.
+- Updated theme tags.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.03.15 =
 * Released: March 15, 2018
@@ -232,7 +249,8 @@ Initial release
 * [jQuery ScrollUp](https://github.com/markgoodyear/scrollup), (C) [Mark Goodyear](https://github.com/markgoodyear), [MIT](http://opensource.org/licenses/MIT)
 * [footer-reveal.js](https://github.com/IainAndrew/footer-reveal), (C) [Iain Andrew](https://github.com/IainAndrew), [MIT](http://opensource.org/licenses/MIT)
 * [imageLightbox.js](https://github.com/osvaldasvalutis/imageLightbox.js), (C) 2014-2016 [Osvaldas Valutis](https://github.com/osvaldasvalutis), [MIT](http://opensource.org/licenses/MIT)
-* [jquery.validate.js](https://github.com/jquery-validation/jquery-validation), (C) 2013-2017 [Jörn Zaefferer](http://bassistance.de/), [MIT](http://opensource.org/licenses/MIT)
+* [loaders.css](https://github.com/ConnorAtherton/loaders.css), (C) 2016-2018 [Connor Atherton](https://connoratherton.com/), [MIT](http://opensource.org/licenses/MIT)
+* [Unslider](https://github.com/idiot/unslider), (C) 2012-2018 [Charlotte Swift](http://visualidiot.com), [WTFPL](http://www.wtfpl.net/)
 * Bundled header images :  
 [404-hero.jpg](https://unsplash.com/search/search?photo=JuFcQxgCXwA), (C) [Samuel Zeller](https://unsplash.com/@samuelzeller), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
 [search-hero.jpg](https://unsplash.com/search/search?photo=azbZUNpu1Ag), (C) [Saeed Mhmdi](https://unsplash.com/@saeedanathema), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
