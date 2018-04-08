@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-s
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.9.5  
-Stable tag: 18.04.08  
+Stable tag: 18.04.09  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,13 @@ Almost all of the theme controls are under **The Clean Blog Theme** panel in the
 Head over and start customizing the theme to make it looks and behave as you want !
 
 ## Changelog
+
+### 18.04.09 =
+* Released: April 09, 2018
+- Added RTL support on the horizontal animation of the slider.
+- Updated theme's description in style.css
+- Updated .pot file with new strings.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.04.08 =
 * Released: April 08, 2018
