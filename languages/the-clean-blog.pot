@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-08 23:46+0000\n"
+"POT-Creation-Date: 2018-04-15 02:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Placeholder"
 msgstr ""
 
-#: header.php:36
+#: header.php:49
 msgid "Skip to content"
 msgstr ""
 
@@ -614,268 +614,284 @@ msgid ""
 "from a choosen category."
 msgstr ""
 
-#: inc/customizer.php:1694
+#: inc/customizer.php:1694 inc/customizer.php:1823
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer.php:1695
+#: inc/customizer.php:1695 inc/customizer.php:1824
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:1703
+#: inc/customizer.php:1702
 msgid "Choose a category"
 msgstr ""
 
-#: inc/customizer.php:1704
+#: inc/customizer.php:1703
 msgid "Choose the category of posts for the slider."
 msgstr ""
 
-#: inc/customizer.php:1731
+#: inc/customizer.php:1729
 msgid "Set the number of posts/slides"
 msgstr ""
 
-#: inc/customizer.php:1732
+#: inc/customizer.php:1730
 msgid "Set the number of posts/slides for the slider."
 msgstr ""
 
-#: inc/customizer.php:1754
+#: inc/customizer.php:1751
 msgid "Choose Slider Animation"
 msgstr ""
 
-#: inc/customizer.php:1760
+#: inc/customizer.php:1757
 msgid "horizontal"
 msgstr ""
 
-#: inc/customizer.php:1761
+#: inc/customizer.php:1758
 msgid "vertical"
 msgstr ""
 
-#: inc/customizer.php:1762
+#: inc/customizer.php:1759
 msgid "fade"
 msgstr ""
 
-#: inc/customizer.php:1777
+#: inc/customizer.php:1773
 msgid "Choose the slides loop"
 msgstr ""
 
-#: inc/customizer.php:1778
+#: inc/customizer.php:1774
 msgid "Choose to make the slides loop infinitely or not."
 msgstr ""
 
-#: inc/customizer.php:1795
+#: inc/customizer.php:1790
 msgid "Horizontal animation direction"
 msgstr ""
 
-#: inc/customizer.php:1796
+#: inc/customizer.php:1791
 msgid "Change animation from right to left."
 msgstr ""
 
-#: inc/customizer.php:1811
+#: inc/customizer.php:1806
 msgid "Preloader Settings"
 msgstr ""
 
-#: inc/customizer.php:1812
+#: inc/customizer.php:1807
 msgid "Control LoadingOverlay settings"
 msgstr ""
 
-#: inc/customizer.php:1823
-msgid "Preloader Background Color"
+#: inc/customizer.php:1817
+msgid "Activate Preloader"
 msgstr ""
 
-#: inc/customizer.php:1840
-msgid "Choose Preloader Animation"
+#: inc/customizer.php:1818
+msgid "Choose to display a preloader or not !"
+msgstr ""
+
+#: inc/customizer.php:1835
+msgid "Preloader on Homepage Only"
+msgstr ""
+
+#: inc/customizer.php:1836
+msgid "Activate Preloader Only On Homepage"
 msgstr ""
 
 #: inc/customizer.php:1846
-msgid "Ball Pulse Rise"
-msgstr ""
-
-#: inc/customizer.php:1847
-msgid "Ball Pulse"
-msgstr ""
-
-#: inc/customizer.php:1848
-msgid "Ball Grid Pulse"
-msgstr ""
-
-#: inc/customizer.php:1849
-msgid "Ball Clip 1"
-msgstr ""
-
-#: inc/customizer.php:1850
-msgid "Ball Clip 2"
-msgstr ""
-
-#: inc/customizer.php:1851
-msgid "Square Spin"
-msgstr ""
-
-#: inc/customizer.php:1852
-msgid "Ball Clip 3"
-msgstr ""
-
-#: inc/customizer.php:1853
-msgid "Ball Rotate"
-msgstr ""
-
-#: inc/customizer.php:1854
-msgid "Cube Transition"
-msgstr ""
-
-#: inc/customizer.php:1855
-msgid "Ball Zigzag 1"
-msgstr ""
-
-#: inc/customizer.php:1856
-msgid "Ball Zigzag 2"
-msgstr ""
-
-#: inc/customizer.php:1857
-msgid "Ball Triangle"
-msgstr ""
-
-#: inc/customizer.php:1858
-msgid "Ball Scale 1"
-msgstr ""
-
-#: inc/customizer.php:1859
-msgid "Line Scale 1"
-msgstr ""
-
-#: inc/customizer.php:1860
-msgid "Line Scale 2"
-msgstr ""
-
-#: inc/customizer.php:1861
-msgid "Ball Scale 2"
-msgstr ""
-
-#: inc/customizer.php:1862
-msgid "Ball Pulse Sync"
+msgid "Preloader Background Color"
 msgstr ""
 
 #: inc/customizer.php:1863
-msgid "Ball Beat"
-msgstr ""
-
-#: inc/customizer.php:1864
-msgid "Line Scale 3"
-msgstr ""
-
-#: inc/customizer.php:1865
-msgid "Line Scale 4"
-msgstr ""
-
-#: inc/customizer.php:1866
-msgid "Ball Scale 3"
-msgstr ""
-
-#: inc/customizer.php:1867
-msgid "Ball Scale 4"
-msgstr ""
-
-#: inc/customizer.php:1868
-msgid "Ball Spin"
+msgid "Choose Preloader Animation"
 msgstr ""
 
 #: inc/customizer.php:1869
-msgid "Line Spin"
+msgid "Ball Beat"
 msgstr ""
 
 #: inc/customizer.php:1870
-msgid "Triangle Spin"
+msgid "Ball Clip 1"
 msgstr ""
 
 #: inc/customizer.php:1871
-msgid "Pacman"
+msgid "Ball Clip 2"
 msgstr ""
 
 #: inc/customizer.php:1872
-msgid "Ball Grid Beat"
+msgid "Ball Clip 3"
 msgstr ""
 
 #: inc/customizer.php:1873
-msgid "Ball Scale 5"
+msgid "Ball Grid Beat"
+msgstr ""
+
+#: inc/customizer.php:1874
+msgid "Ball Grid Pulse"
+msgstr ""
+
+#: inc/customizer.php:1875
+msgid "Ball Pulse"
+msgstr ""
+
+#: inc/customizer.php:1876
+msgid "Ball Pulse Rise"
+msgstr ""
+
+#: inc/customizer.php:1877
+msgid "Ball Pulse Sync"
+msgstr ""
+
+#: inc/customizer.php:1878
+msgid "Ball Rotate"
+msgstr ""
+
+#: inc/customizer.php:1879
+msgid "Ball Scale 1"
+msgstr ""
+
+#: inc/customizer.php:1880
+msgid "Ball Scale 2"
 msgstr ""
 
 #: inc/customizer.php:1881
+msgid "Ball Scale 3"
+msgstr ""
+
+#: inc/customizer.php:1882
+msgid "Ball Scale 4"
+msgstr ""
+
+#: inc/customizer.php:1883
+msgid "Ball Scale 5"
+msgstr ""
+
+#: inc/customizer.php:1884
+msgid "Ball Spin"
+msgstr ""
+
+#: inc/customizer.php:1885
+msgid "Ball Triangle"
+msgstr ""
+
+#: inc/customizer.php:1886
+msgid "Ball Zigzag 1"
+msgstr ""
+
+#: inc/customizer.php:1887
+msgid "Ball Zigzag 2"
+msgstr ""
+
+#: inc/customizer.php:1888
+msgid "Cube Transition"
+msgstr ""
+
+#: inc/customizer.php:1889
+msgid "Line Scale 1"
+msgstr ""
+
+#: inc/customizer.php:1890
+msgid "Line Scale 2"
+msgstr ""
+
+#: inc/customizer.php:1891
+msgid "Line Scale 3"
+msgstr ""
+
+#: inc/customizer.php:1892
+msgid "Line Scale 4"
+msgstr ""
+
+#: inc/customizer.php:1893
+msgid "Line Spin"
+msgstr ""
+
+#: inc/customizer.php:1894
+msgid "Pacman"
+msgstr ""
+
+#: inc/customizer.php:1895
+msgid "Square Spin"
+msgstr ""
+
+#: inc/customizer.php:1896
+msgid "Triangle Spin"
+msgstr ""
+
+#: inc/customizer.php:1904
 msgid "Preloader Animation Color Set 1"
 msgstr ""
 
-#: inc/customizer.php:1905
+#: inc/customizer.php:1927
 msgid "Preloader Animation Color Set 2"
 msgstr ""
 
-#: inc/customizer.php:1929
+#: inc/customizer.php:1950
 msgid "Ball Clip 1 Colors"
 msgstr ""
 
-#: inc/customizer.php:1933 inc/customizer.php:2062 inc/customizer.php:2093
-#: inc/customizer.php:2156
+#: inc/customizer.php:1954 inc/customizer.php:2078 inc/customizer.php:2108
+#: inc/customizer.php:2169
 msgid "Border Top Color"
 msgstr ""
 
-#: inc/customizer.php:1934 inc/customizer.php:2124
+#: inc/customizer.php:1955 inc/customizer.php:2138
 msgid "Border Right Color"
 msgstr ""
 
-#: inc/customizer.php:1935 inc/customizer.php:2125 inc/customizer.php:2158
+#: inc/customizer.php:1956 inc/customizer.php:2139 inc/customizer.php:2171
 msgid "Border Left Color"
 msgstr ""
 
-#: inc/customizer.php:1962
+#: inc/customizer.php:1982
 msgid "Ball Rotate Color"
 msgstr ""
 
-#: inc/customizer.php:1986
+#: inc/customizer.php:2005
 msgid "Balls Rotate Color"
 msgstr ""
 
-#: inc/customizer.php:2010
+#: inc/customizer.php:2028
 msgid "Triangle Spin Color"
 msgstr ""
 
-#: inc/customizer.php:2034
+#: inc/customizer.php:2051
 msgid "Ball Clip 2 Internal Color"
 msgstr ""
 
-#: inc/customizer.php:2058
+#: inc/customizer.php:2074
 msgid "Ball Clip 2 External Colors"
 msgstr ""
 
-#: inc/customizer.php:2063 inc/customizer.php:2094 inc/customizer.php:2157
+#: inc/customizer.php:2079 inc/customizer.php:2109 inc/customizer.php:2170
 msgid "Border Bottom Color"
 msgstr ""
 
-#: inc/customizer.php:2089
+#: inc/customizer.php:2104
 msgid "Ball Clip 3 Internal Colors"
 msgstr ""
 
-#: inc/customizer.php:2120
+#: inc/customizer.php:2134
 msgid "Ball Clip 3 External Colors"
 msgstr ""
 
-#: inc/customizer.php:2151
+#: inc/customizer.php:2164
 msgid "Pacman Color"
 msgstr ""
 
-#: inc/customizer.php:2152
+#: inc/customizer.php:2165
 msgid "PLEASE CHOOSE THE SAME COLOR FOR THE PACMAN OR IT WILL NOT WORK !"
 msgstr ""
 
-#: inc/customizer.php:2185
+#: inc/customizer.php:2197
 msgid "Pacman Balls Color"
 msgstr ""
 
-#: inc/customizer.php:2186
+#: inc/customizer.php:2198
 msgid "For a better animation, please choose the same color as the pacman !"
 msgstr ""
 
-#: inc/customizer.php:2210
+#: inc/customizer.php:2221
 msgid "Choose Preloader Animation Dimension"
 msgstr ""
 
-#: inc/customizer.php:2233
+#: inc/customizer.php:2244
 msgid "Set Preloader Animation Time"
 msgstr ""
 
@@ -1177,22 +1193,23 @@ msgstr ""
 
 #. Description of the theme
 msgid ""
-"The Clean Blog is a carefully styled Bootstrap blog theme, without sidebars, "
-"that is perfect for personal or company blogs. - Fully Responsive, with a "
-"Modern Design and a Distraction Free blog text optimized for legibility with "
-"a menu bar interface that conveniently appears when you scroll up ! - "
-"Defined featured image of a post or page turns into a responsive full screen "
-"custom parallax header background image ! - Galleries are displayed in a "
-"responsive touch-friendly image lightbox when images are linked to their "
-"respective media file. - The fixed/revealed footer displays social links "
-"controlled by the Customizer, and a dynamic copyright information line, "
-"based on your Site Title and the year's date of your first and last posts. "
-"The new improved navigation with one sub-menu depth on desktop and mobile "
-"can hold 5 main items and 5 children items on desktop. No limitation of "
-"items on mobile. Unslider slider is fully integrated to the theme with "
-"powerful and cool controls from the Customizer ! A nice and stylish "
-"Preloader, 28 animations included, with tons of controls, allows you to "
-"provide your visitors a beautiful animation before loading the site."
+"1- The Clean Blog is a carefully styled Bootstrap blog theme, without "
+"sidebars, that is perfect for personal or company blogs. 2- Fully Responsive,"
+" with a Modern Design and a Distraction Free blog text optimized for "
+"legibility with a menu bar interface that conveniently appears when you "
+"scroll up ! 3- Defined featured image of a post or page turns into a "
+"responsive full screen custom parallax header background image ! 4- "
+"Galleries are displayed in a responsive touch-friendly image lightbox when "
+"images are linked to their respective media file. 5- The fixed/revealed "
+"footer displays social links controlled by the Customizer, and a dynamic "
+"copyright information line, based on your Site Title and the year's date of "
+"your first and last posts. 6- The new improved navigation with one sub-menu "
+"depth on desktop and mobile can hold 5 main items and 5 children items on "
+"desktop. No limitation of items on mobile. 7- Unslider slider is fully "
+"integrated to the theme with powerful and cool controls from the Customizer !"
+" 8- A nice and stylish Preloader, 28 animations included, with tons of "
+"controls, allows you to provide your visitors a beautiful animation before "
+"loading the site."
 msgstr ""
 
 #. URI of the theme
