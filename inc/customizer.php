@@ -1679,6 +1679,7 @@ The_Clean_Blog_Kirki::add_section( 'slider_settings', array(
     'priority'       => 25,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
+    'active_callback' => 'is_home',
 ) );
 
 // 8.1- Activate Slider !
