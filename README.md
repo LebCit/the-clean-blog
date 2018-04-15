@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-s
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.9.5  
-Stable tag: 18.04.09  
+Stable tag: 18.04.15  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,12 +59,21 @@ This is the normal behaviour of the menu starting from 1024px.
 You can add as many main/children items as you want.  
 But on desktop view, only the **First 5** will show up !
 
-### Where can I activate the slider ?
+### Where can I activate the slider and the preloader ?
 
 Almost all of the theme controls are under **The Clean Blog Theme** panel in the Customizer.  
 Head over and start customizing the theme to make it looks and behave as you want !
 
 ## Changelog
+
+### 18.04.15 =
+* Released: April 15, 2018
+- Added active_callback to Slider Section.
+- Added New Controls to the preloader.
+- Modified the-clean-blog-nav.js
+- Updated theme's description in style.css
+- Updated .pot file with new strings.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.04.09 =
 * Released: April 09, 2018
