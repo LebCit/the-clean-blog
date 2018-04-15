@@ -83,7 +83,7 @@ jQuery(document).ready(function ($) {
     $('.cb-nav-trigger').on('click', function (event) {
         event.preventDefault();
         // Disable page scroll while viewing the menu
-        $('body').css('overflow', 'hidden');
+        $('html').css('overflow', 'hidden');
         // Disable all click events while viewing the menu except on the menu
         $('body, .search-trigger').css('pointer-events', 'none');
         $('.cb-nav-trigger, .cb-main-nav').css('pointer-events', 'auto');
@@ -99,7 +99,7 @@ jQuery(document).ready(function ($) {
         if ($('header.cb-nav').hasClass('nav-is-visible')) {
             $('.moves-out').removeClass('moves-out');
             // Enable page scroll after closing the menu
-            $('body').css('overflow', 'auto');
+            $('html').css('overflow', 'auto');
             // Enable the click events after closing the menu
             $('body, .search-trigger').css('pointer-events', 'auto');
             // Give back the arrown down the bouncing effect after 300ms
