@@ -1681,7 +1681,6 @@ The_Clean_Blog_Kirki::add_section( 'slider_settings', array(
     'theme_supports' => '', // Rarely needed.
     'active_callback' => 'is_home',
 ) );
-
 // 8.1- Activate Slider !
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'type'        => 'switch',
@@ -1696,7 +1695,6 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         'off' => esc_attr__( 'Disable', 'the-clean-blog' ),
     ),
 ));
-
 // 8.2 Choose Slider Category
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'type'        => 'select',
@@ -1718,13 +1716,12 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     )) : array(),
     'active_callback'   => array( // Do not display this control if the slider is disabled
         array(
-          'setting'     => 'activate_slider',
-          'operator'    => '==',
-          'value'	=> true,
+            'setting'   => 'activate_slider',
+            'operator'  => '==',
+            'value'     => true,
         ),
     ),
 ));
-
 // 8.3 Choose Number of Posts for Slider
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'type'        => 'slider',
@@ -1741,13 +1738,12 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     ),
     'active_callback'   => array( // Do not display this control if the slider is disabled
         array(
-          'setting'	=> 'activate_slider',
-          'operator'    => '==',
-          'value'	=> true,
+            'setting'	=> 'activate_slider',
+            'operator'  => '==',
+            'value'     => true,
         ),
     ),
 ));
-
 // 8.4 Choose Slider Animation
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'select',
@@ -1764,13 +1760,12 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     ),
     'active_callback'   => array( // Do not display this control if the slider is disabled
         array(
-          'setting'	=> 'activate_slider',
-          'operator'    => '==',
-          'value'       => true,
+            'setting'	=> 'activate_slider',
+            'operator'  => '==',
+            'value'     => true,
         ),
     ),
 ) );
-
 // 8.5 Slider Slides loop
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'toggle',
@@ -1782,13 +1777,12 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'priority'    => 25,
     'active_callback'   => array( // Do not display this control if the slider is disabled
         array(
-          'setting'	=> 'activate_slider',
-          'operator'    => '==',
-          'value'	=> true,
+            'setting'	=> 'activate_slider',
+            'operator'  => '==',
+            'value'	=> true,
         ),
     ),
 ) );
-
 // 8.6 Horizontal animation direction
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'toggle',
@@ -1800,9 +1794,9 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'priority'    => 30,
     'active_callback'   => array( // Do not display this control if the slider is disabled
         array(
-          'setting'	=> 'activate_slider',
-          'operator'    => '==',
-          'value'	=> true,
+            'setting'	=> 'activate_slider',
+            'operator'  => '==',
+            'value'	=> true,
         ),
     ),
 ) );
@@ -1816,15 +1810,14 @@ The_Clean_Blog_Kirki::add_section( 'preloader_settings', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-
-// 9.1 Preloader Backgroung Color
+// 9.3 Preloader Backgroung Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_background_color',
     'label'       => __( 'Preloader Background Color', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '#ed5565',
-    'priority'    => 5,
+    'priority'    => 15,
     'transport'   => 'refresh',
     'output'    => array(
         array(
@@ -1833,56 +1826,54 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.2 Preloader Animation
+// 9.4 Preloader Animation
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'type' => 'select',
     'settings' => 'preloader_animation',
     'label' => __('Choose Preloader Animation', 'the-clean-blog'),
     'section' => 'preloader_settings',
     'default'     => 'ball-pulse-rise',
-    'priority'    => 10,
+    'priority'    => 20,
     'multiple'    => 1,
     'choices'     => array(
-        'ball-pulse-rise'               => esc_attr__( 'Ball Pulse Rise', 'the-clean-blog' ),
-        'ball-pulse'                    => esc_attr__( 'Ball Pulse', 'the-clean-blog' ),
-        'ball-grid-pulse'               => esc_attr__( 'Ball Grid Pulse', 'the-clean-blog' ),
+        'ball-beat'                     => esc_attr__( 'Ball Beat', 'the-clean-blog' ),
         'ball-clip-rotate'              => esc_attr__( 'Ball Clip 1', 'the-clean-blog' ),
         'ball-clip-rotate-pulse'        => esc_attr__( 'Ball Clip 2', 'the-clean-blog' ),
-        'square-spin'                   => esc_attr__( 'Square Spin', 'the-clean-blog' ),
         'ball-clip-rotate-multiple'     => esc_attr__( 'Ball Clip 3', 'the-clean-blog' ),
-        'ball-rotate'                   => esc_attr__( 'Ball Rotate', 'the-clean-blog' ),
-        'cube-transition'               => esc_attr__( 'Cube Transition', 'the-clean-blog' ),
-        'ball-zig-zag'                  => esc_attr__( 'Ball Zigzag 1', 'the-clean-blog' ),
-        'ball-zig-zag-deflect'          => esc_attr__( 'Ball Zigzag 2', 'the-clean-blog' ),
-        'ball-triangle-path'            => esc_attr__( 'Ball Triangle', 'the-clean-blog' ),
-        'ball-scale'                    => esc_attr__( 'Ball Scale 1', 'the-clean-blog' ),
-        'line-scale'                    => esc_attr__( 'Line Scale 1', 'the-clean-blog' ),
-        'line-scale-party'              => esc_attr__( 'Line Scale 2', 'the-clean-blog' ),
-        'ball-scale-multiple'           => esc_attr__( 'Ball Scale 2', 'the-clean-blog' ),
+        'ball-grid-beat'                => esc_attr__( 'Ball Grid Beat', 'the-clean-blog' ),
+        'ball-grid-pulse'               => esc_attr__( 'Ball Grid Pulse', 'the-clean-blog' ),
+        'ball-pulse'                    => esc_attr__( 'Ball Pulse', 'the-clean-blog' ),
+        'ball-pulse-rise'               => esc_attr__( 'Ball Pulse Rise', 'the-clean-blog' ),
         'ball-pulse-sync'               => esc_attr__( 'Ball Pulse Sync', 'the-clean-blog' ),
-        'ball-beat'                     => esc_attr__( 'Ball Beat', 'the-clean-blog' ),
-        'line-scale-pulse-out'          => esc_attr__( 'Line Scale 3', 'the-clean-blog' ),
-        'line-scale-pulse-out-rapid'    => esc_attr__( 'Line Scale 4', 'the-clean-blog' ),
+        'ball-rotate'                   => esc_attr__( 'Ball Rotate', 'the-clean-blog' ),
+        'ball-scale'                    => esc_attr__( 'Ball Scale 1', 'the-clean-blog' ),
+        'ball-scale-multiple'           => esc_attr__( 'Ball Scale 2', 'the-clean-blog' ),
         'ball-scale-ripple'             => esc_attr__( 'Ball Scale 3', 'the-clean-blog' ),
         'ball-scale-ripple-multiple'    => esc_attr__( 'Ball Scale 4', 'the-clean-blog' ),
-        'ball-spin-fade-loader'         => esc_attr__( 'Ball Spin', 'the-clean-blog' ),
-        'line-spin-fade-loader'         => esc_attr__( 'Line Spin', 'the-clean-blog' ),
-        'triangle-skew-spin'            => esc_attr__( 'Triangle Spin', 'the-clean-blog' ),
-        'pacman'                        => esc_attr__( 'Pacman', 'the-clean-blog' ),
-        'ball-grid-beat'                => esc_attr__( 'Ball Grid Beat', 'the-clean-blog' ),
         'ball-scale-random'             => esc_attr__( 'Ball Scale 5', 'the-clean-blog' ),
+        'ball-spin-fade-loader'         => esc_attr__( 'Ball Spin', 'the-clean-blog' ),
+        'ball-triangle-path'            => esc_attr__( 'Ball Triangle', 'the-clean-blog' ),
+        'ball-zig-zag'                  => esc_attr__( 'Ball Zigzag 1', 'the-clean-blog' ),
+        'ball-zig-zag-deflect'          => esc_attr__( 'Ball Zigzag 2', 'the-clean-blog' ),
+        'cube-transition'               => esc_attr__( 'Cube Transition', 'the-clean-blog' ),
+        'line-scale'                    => esc_attr__( 'Line Scale 1', 'the-clean-blog' ),
+        'line-scale-party'              => esc_attr__( 'Line Scale 2', 'the-clean-blog' ),
+        'line-scale-pulse-out'          => esc_attr__( 'Line Scale 3', 'the-clean-blog' ),
+        'line-scale-pulse-out-rapid'    => esc_attr__( 'Line Scale 4', 'the-clean-blog' ),
+        'line-spin-fade-loader'         => esc_attr__( 'Line Spin', 'the-clean-blog' ),
+        'pacman'                        => esc_attr__( 'Pacman', 'the-clean-blog' ),
+        'square-spin'                   => esc_attr__( 'Square Spin', 'the-clean-blog' ),
+        'triangle-skew-spin'            => esc_attr__( 'Triangle Spin', 'the-clean-blog' ),
     ),
 ));
-
-// 9.3 Preloader Animation Color 1
+// 9.5 Preloader Animation Color 1
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_color_1',
     'label'       => esc_attr__( 'Preloader Animation Color Set 1', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '',
-    'priority'    => 15,
+    'priority'    => 25,
     'transport'   => 'refresh',
     'output'    => array(
         array(
@@ -1898,15 +1889,14 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.4 Preloader Animation Color 2
+// 9.6 Preloader Animation Color 2
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_color_2',
     'label'       => esc_attr__( 'Preloader Animation Color Set 2', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '2px solid #fff',
-    'priority'    => 20,
+    'priority'    => 30,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -1922,8 +1912,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.5 Ball Clip 1 Colors
+// 9.7.1 Ball Clip 1 Colors
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'multicolor',
     'settings'    => 'preloader_animation_ball_clip_1_colors',
@@ -1940,7 +1929,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         'border-right-color'    => '#fff',
         'border-left-color'     => '#fff',
     ),
-    'priority'    => 25,
+    'priority'    => 35,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -1955,15 +1944,14 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.6.1 Ball Rotate Color
+// 9.7.2 Ball Rotate Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_ball_rotate_color',
     'label'       => esc_attr__( 'Ball Rotate Color', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '#fff',
-    'priority'    => 30,
+    'priority'    => 40,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -1979,15 +1967,14 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.6.2 Balls Rotate Color
+// 9.7.3 Balls Rotate Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_balls_rotate_color',
     'label'       => esc_attr__( 'Balls Rotate Color', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => 'rgba(255, 255, 255, 0.8);',
-    'priority'    => 35,
+    'priority'    => 45,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2003,15 +1990,14 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.7 Triangle Spin Color
+// 9.8 Triangle Spin Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_triangle_spin_color',
     'label'       => esc_attr__( 'Triangle Spin Color', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '#fff',
-    'priority'    => 40,
+    'priority'    => 50,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2027,15 +2013,14 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.8.1 Ball Clip 2 Internal Color
+// 9.9.1 Ball Clip 2 Internal Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_bal_clip_2_internal_color',
     'label'       => esc_attr__( 'Ball Clip 2 Internal Color', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '#fff',
-    'priority'    => 45,
+    'priority'    => 55,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2051,8 +2036,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.8.2 Ball Clip 2 External Colors
+// 9.9.2 Ball Clip 2 External Colors
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'multicolor',
     'settings'    => 'preloader_animation_ball_clip_2_external_colors',
@@ -2067,7 +2051,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         'border-top-color'      => '#fff',
         'border-bottom-color'   => '#fff',
     ),
-    'priority'    => 50,
+    'priority'    => 60,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2082,8 +2066,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.9.1 Ball Clip 3 Internal Colors
+// 9.10.1 Ball Clip 3 Internal Colors
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'multicolor',
     'settings'    => 'preloader_animation_ball_clip_3_internal_colors',
@@ -2098,7 +2081,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         'border-top-color'      => '#fff',
         'border-bottom-color'   => '#fff',
     ),
-    'priority'    => 55,
+    'priority'    => 65,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2113,8 +2096,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.9.2 Ball Clip 3 External Colors
+// 9.10.2 Ball Clip 3 External Colors
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'multicolor',
     'settings'    => 'preloader_animation_ball_clip_3_external_colors',
@@ -2129,7 +2111,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         'border-right-color'  => '#fff',
         'border-left-color'   => '#fff',
     ),
-    'priority'  => 60,
+    'priority'  => 70,
     'transport' => 'refresh',
     'output'    => array(
         array(
@@ -2144,8 +2126,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.10.1 Pacman Color
+// 9.11.1 Pacman Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'multicolor',
     'settings'    => 'preloader_animation_pacman_color',
@@ -2163,7 +2144,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         'border-bottom-color'   => '#fff',
         'border-left-color'     => '#fff',
     ),
-    'priority'    => 65,
+    'priority'    => 75,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2178,8 +2159,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.10.2 Pacman Balls Color
+// 9.11.2 Pacman Balls Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
     'settings'    => 'preloader_animation_pacman_balls_color',
@@ -2187,7 +2167,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'description' => esc_attr__( 'For a better animation, please choose the same color as the pacman !', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => '#fff',
-    'priority'    => 70,
+    'priority'    => 80,
     'transport'   => 'refresh',
     'output'      => array(
         array(
@@ -2203,15 +2183,14 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
         ),
     ),
 ) );
-
-// 9.11 Choose Preloader Animation Dimension
+// 9.12 Choose Preloader Animation Dimension
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'type'        => 'slider',
     'settings'    => 'preloader_animation_dimension',
     'label'       => __( 'Choose Preloader Animation Dimension', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => 1,
-    'priority'    => 75,
+    'priority'    => 85,
     'choices'     => array(
         'min'  => '0.5',
         'max'  => '2.5',
@@ -2226,15 +2205,14 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         ),
     ),
 ));
-
-// 9.12 Set Preloader Animation Time
+// 9.13 Set Preloader Animation Time
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
     'type'        => 'slider',
     'settings'    => 'preloader_animation_time',
     'label'       => __( 'Set Preloader Animation Time', 'the-clean-blog' ),
     'section'     => 'preloader_settings',
     'default'     => 1500,
-    'priority'    => 80,
+    'priority'    => 90,
     'choices'     => array(
         'min'  => '500',
         'max'  => '3000',
