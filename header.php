@@ -23,13 +23,26 @@
     <body <?php body_class( "preloader-site" ); ?>> <!-- Add .preloader-site class to the body every time the page loads until the document is ready()  -->
         
         <!-- Preloader  -->
-        <div class="preloader-wrapper">
-            <div class="preloader">
-                <div class="loader">
-                    <div class="loader-inner <?php echo get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ); ?>"></div>
+        <?php
+        if ( get_theme_mod( 'activate_preloader_homepage' ) == true ) {
+            if ( is_home() ) { ?>
+                <div class="preloader-wrapper">
+                    <div class="preloader">
+                        <div class="loader">
+                            <div class="loader-inner <?php echo get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ); ?>"></div>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+        } elseif ( get_theme_mod( 'activate_preloader' ) == true ) { ?>
+            <div class="preloader-wrapper">
+                <div class="preloader">
+                    <div class="loader">
+                        <div class="loader-inner <?php echo get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ); ?>"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
         <!-- Preloader  -->
         
         <div id="page" class="site">

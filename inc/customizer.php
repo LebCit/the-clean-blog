@@ -1810,6 +1810,35 @@ The_Clean_Blog_Kirki::add_section( 'preloader_settings', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+// 9.1- Activate Preloader !
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'        => 'switch',
+    'settings'    => 'activate_preloader',
+    'label'       => __( 'Activate Preloader', 'the-clean-blog' ),
+    'description' => __( 'Choose to display a preloader or not !', 'the-clean-blog' ),
+    'section'     => 'preloader_settings',
+    'default'     => '0',
+    'priority'    => 5,
+    'choices'     => array(
+        'on'  => esc_attr__( 'Enable', 'the-clean-blog' ),
+        'off' => esc_attr__( 'Disable', 'the-clean-blog' ),
+    ),
+));
+function is_preloader_activated() {
+    // Check if the preloader is activated
+    return get_theme_mod( 'activate_preloader' ) == true;
+}
+// 9.2- Preloader on Homepage Only !
+The_Clean_Blog_Kirki::add_field('thecleanblog', array(
+    'type'           => 'toggle',
+    'settings'       => 'activate_preloader_homepage',
+    'label'          => __( 'Preloader on Homepage Only', 'the-clean-blog' ),
+    'description'    => __( 'Activate Preloader Only On Homepage', 'the-clean-blog' ),
+    'section'        => 'preloader_settings',
+    'default'        => '0',
+    'priority'       => 10,
+    'active_callback' => 'is_preloader_activated',
+));
 // 9.3 Preloader Backgroung Color
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
     'type'        => 'color-alpha',
@@ -1825,6 +1854,7 @@ The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
             'property' => 'background',
         ),
     ),
+    'active_callback' => 'is_preloader_activated',
 ) );
 // 9.4 Preloader Animation
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
@@ -1865,6 +1895,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
         'square-spin'                   => esc_attr__( 'Square Spin', 'the-clean-blog' ),
         'triangle-skew-spin'            => esc_attr__( 'Triangle Spin', 'the-clean-blog' ),
     ),
+    'active_callback' => 'is_preloader_activated',
 ));
 // 9.5 Preloader Animation Color 1
 The_Clean_Blog_Kirki::add_field( 'thecleanblog', array(
@@ -2204,6 +2235,7 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'value_pattern' => 'scale($ , $)'
         ),
     ),
+    'active_callback' => 'is_preloader_activated',
 ));
 // 9.13 Set Preloader Animation Time
 The_Clean_Blog_Kirki::add_field('thecleanblog', array(
@@ -2226,4 +2258,5 @@ The_Clean_Blog_Kirki::add_field('thecleanblog', array(
             'value_pattern' => '$',
         ),
     ),
+    'active_callback' => 'is_preloader_activated',
 ));
