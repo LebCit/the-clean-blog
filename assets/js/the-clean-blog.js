@@ -276,7 +276,7 @@ jQuery(document).ready(function ($) {
         animation: animationType,
         infinite: infiniteLoopTrueOrFalse
     });
-
+    
     // If the slider slides infinite loop is true, force the second and last background header image to resize depending on $(window) size.
     if (infiniteLoopTrueOrFalse === true) {
         var $this = $('.unslider-clone').siblings(':first').children();
