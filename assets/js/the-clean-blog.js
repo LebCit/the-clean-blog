@@ -299,6 +299,18 @@ jQuery(document).ready(function ($) {
                 slider.data('unslider').start();
             }
         });
+    }
+    // Restart the slider if we go from mobile TO DESKTOP VIEW !
+    if (checkSliderActivation !== 0) {
+        $(window).on('resize', function () {
+            if (window.innerWidth >= 1024) {
+                slider.data('unslider').start();
+            /* Stop the slider if we go from desktop TO MOBILE VIEW && Sub menu from desktop to mobile */
+            } else if (window.innerWidth < 1024 && $('header.cb-nav').hasClass('nav-is-visible')) {
+                slider.data('unslider').stop();
+            }
+        });
+        
     }//End 9.
     
     //10. Activate the preloader
