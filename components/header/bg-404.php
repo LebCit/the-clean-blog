@@ -26,7 +26,7 @@ if (empty($heroImgError404)) {
                             }
                             ?>
                         </h1>
-                        <div class="strike">
+						<div class="strike bounce">
                             <span>
                                 <a href="#content"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
                             </span>
