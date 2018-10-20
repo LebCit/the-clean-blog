@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-s
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.9.5  
-Stable tag: 18.04.15  
+Stable tag: 18.05.09  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,18 @@ Almost all of the theme controls are under **The Clean Blog Theme** panel in the
 Head over and start customizing the theme to make it looks and behave as you want !
 
 ## Changelog
+
+### 18.05.09 =
+* Released: May 09, 2018
+- Added .bounce class to arrow-down icon on search and 404 pages.
+- Changed default-hero image.
+- Changed default screenshot.
+- Corrected #masthead responsiveness.
+- Corrected slider behaviour on resize.
+- Modified Preloader Control for homepage.
+- Modified the-clean-blog-nav.js
+- Some Code Formatting.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.04.15 =
 * Released: April 15, 2018
