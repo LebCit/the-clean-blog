@@ -277,7 +277,19 @@ jQuery(document).ready(function ($) {
         infinite: infiniteLoopTrueOrFalse
     });
 
-    // On mobile view, stop the slider when the mobile menu is opened then restart it when the mobile menu gets closed, only if the slider is activated.
+    // If the slider slides infinite loop is true, force the second and last background header image to resize depending on $(window) size.
+    if (infiniteLoopTrueOrFalse === true) {
+        var $this = $('.unslider-clone').siblings(':first').children();
+        var $that = $('.unslider-clone').siblings(':last-child').children();
+        $(window).on('resize', function () {
+            $this.add($that).css({
+                'width': $(window).width(),
+                'height': $(window).height()
+            });
+        });
+    }
+
+    // On Mobile View, stop the slider when the mobile menu is opened then restart it when the mobile menu gets closed, only if the slider is activated.
     var checkSliderActivation = thecleanblog_set.thecleanblog_slider_activated.length;
     if (checkSliderActivation !== 0) {
         $('.cb-nav-trigger').on('click', function (event) {
