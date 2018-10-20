@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
 
             // 1- Main menu from mobile to desktop.
             $('header.cb-nav, .cb-main-nav, .cb-main-content').removeClass('nav-is-visible');
-            $('body').css('overflow-y', 'auto');
+            $('html').css('overflow-y', 'auto');
             $('body').css('pointer-events', 'auto');
             $('.search-trigger').css('pointer-events', 'auto');
             $('.strike').addClass('bounce');
@@ -60,7 +60,7 @@ jQuery(document).ready(function ($) {
                     $('.cb-main-nav').children().show();
                     $(this).off('click.goBackOrClose');
                 });
-                $('body').css('overflow', 'hidden');
+                $('html').css('overflow', 'hidden');
                 if ($(document).scrollTop() >= 300) {
                     $('#scroll-up').hide();
                 }
