@@ -24,8 +24,9 @@
         
         <!-- Preloader  -->
         <?php
-        if ( get_theme_mod( 'activate_preloader_homepage' ) == true ) {
-            if ( is_home() ) { ?>
+		if ( get_theme_mod( 'activate_preloader' ) == true && get_theme_mod( 'activate_preloader_homepage' ) == true ) {
+			if ( is_home() ) {
+				?>
                 <div class="preloader-wrapper">
                     <div class="preloader">
                         <div class="loader">
