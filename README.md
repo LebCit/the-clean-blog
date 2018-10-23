@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.9.5  
-Stable tag: 18.05.09  
+Tested up to: WordPress 4.9.8  
+Stable tag: 18.10.23  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,11 @@ Almost all of the theme controls are under **The Clean Blog Theme** panel in the
 Head over and start customizing the theme to make it looks and behave as you want !
 
 ## Changelog
+
+### 18.10.23 =
+* Released: October 23, 2018
+- PHP Code Formatting using phpcs and phpcbf.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.05.09 =
 * Released: May 09, 2018
@@ -282,5 +287,5 @@ Initial release
 * Bundled header images :  
 [404-hero.jpg](https://unsplash.com/search/search?photo=JuFcQxgCXwA), (C) [Samuel Zeller](https://unsplash.com/@samuelzeller), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
 [search-hero.jpg](https://unsplash.com/search/search?photo=azbZUNpu1Ag), (C) [Saeed Mhmdi](https://unsplash.com/@saeedanathema), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
-[default-hero.jpg](https://unsplash.com/search/desk?photo=mCg0ZgD7BgU), (C) [Aleksi Tappura](https://unsplash.com/@a), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+[default-hero.jpg](https://pixabay.com/en/people-adult-two-one-women-3142549/), (C) [Melissa Angela Flor](https://pixabay.com/en/users/melissaflor-7788859/), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Icon [to-top.png](http://fa2png.io/r/font-awesome/arrow-circle-up/), Generated with [FA2PNG](http://fa2png.io/), [SIL OFL](http://scripts.sil.org/OFL)
