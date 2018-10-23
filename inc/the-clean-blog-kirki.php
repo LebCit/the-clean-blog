@@ -1,6 +1,10 @@
 <?php
+/**
+ * Exit if accessed directly
+ *
+ * @package kirki-helpers
+ */
 
-// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -16,40 +20,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 class The_Clean_Blog_Kirki {
 
 	/**
+	 * Array Configuration
+	 *
 	 * @static
 	 * @access protected
 	 * @var array
 	 */
 	protected static $config = array();
-	
+
 	/**
+	 * Field's Array
+	 *
 	 * @static
 	 * @access protected
 	 * @var array
 	 */
 	protected static $fields = array();
-	
+
 	/**
 	 * The class constructor
 	 */
 	public function __construct() {
-		// If Kirki exists then there's no reason to procedd
+		// If Kirki exists then there's no reason to procedd.
 		if ( class_exists( 'Kirki' ) ) {
 			return;
 		}
-		// Add our CSS
+		// Add our CSS.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 20 );
-		// Add google fonts
+		// Add google fonts.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_fonts' ) );
 	}
 
 	/**
 	 * Get the value of an option from the db.
 	 *
-	 * @param    string    $config_id    The ID of the configuration corresponding to this field
-	 * @param    string    $field_id     The field_id (defined as 'settings' in the field arguments)
+	 * @param    string $config_id    The ID of the configuration corresponding to this field.
+	 * @param    string $field_id     The field_id (defined as 'settings' in the field arguments).
 	 *
-	 * @return 	mixed 	the saved value of the field.
+	 * @return  mixed   the saved value of the field.
 	 */
 	public static function get_option( $config_id = '', $field_id = '' ) {
 		// if Kirki exists, use it.
@@ -57,17 +65,17 @@ class The_Clean_Blog_Kirki {
 			return Kirki::get_option( $config_id, $field_id );
 		}
 		// Kirki does not exist, continue with our custom implementation.
-		// Get the default value of the field
+		// Get the default value of the field.
 		$default = '';
 		if ( isset( self::$fields[ $field_id ] ) && isset( self::$fields[ $field_id ]['default'] ) ) {
 			$default = self::$fields[ $field_id ]['default'];
 		}
-		// Make sure the config is defined
+		// Make sure the config is defined.
 		if ( isset( self::$config[ $config_id ] ) ) {
 			if ( 'option' == self::$config[ $config_id ]['option_type'] ) {
-				// check if we're using serialized options
+				// check if we're using serialized options.
 				if ( isset( self::$config[ $config_id ]['option_name'] ) && ! empty( self::$config[ $config_id ]['option_name'] ) ) {
-					// Get all our options
+					// Get all our options.
 					$all_options = get_option( self::$config[ $config_id ]['option_name'], array() );
 					// If our option is not saved, return the default value.
 					if ( ! isset( $all_options[ $field_id ] ) ) {
@@ -87,7 +95,7 @@ class The_Clean_Blog_Kirki {
 				}
 				return $value;
 			}
-			// We're not using options so fallback to theme_mod
+			// We're not using options so fallback to theme_mod.
 			return get_theme_mod( $field_id, $default );
 		}
 	}
@@ -95,8 +103,8 @@ class The_Clean_Blog_Kirki {
 	/**
 	 * Create a new panel
 	 *
-	 * @param   string      the ID for this panel
-	 * @param   array       the panel arguments
+	 * @param   string $id     the ID for this panel.
+	 * @param   array  $args   the panel arguments.
 	 */
 	public static function add_panel( $id = '', $args = array() ) {
 		if ( class_exists( 'Kirki' ) ) {
@@ -108,8 +116,8 @@ class The_Clean_Blog_Kirki {
 	/**
 	 * Create a new section
 	 *
-	 * @param   string      the ID for this section
-	 * @param   array       the section arguments
+	 * @param   string $id     the ID for this section.
+	 * @param   array  $args     the section arguments.
 	 */
 	public static function add_section( $id, $args ) {
 		if ( class_exists( 'Kirki' ) ) {
@@ -122,8 +130,8 @@ class The_Clean_Blog_Kirki {
 	/**
 	 * Sets the configuration options.
 	 *
-	 * @param    string    $config_id    The configuration ID
-	 * @param    array     $args         The configuration arguments
+	 * @param    string $config_id    The configuration ID.
+	 * @param    array  $args         The configuration arguments.
 	 */
 	public static function add_config( $config_id, $args = array() ) {
 		// if Kirki exists, use it.
@@ -131,9 +139,9 @@ class The_Clean_Blog_Kirki {
 			Kirki::add_config( $config_id, $args );
 			return;
 		}
-		// Kirki does not exist, set the config arguments
+		// Kirki does not exist, set the config arguments.
 		$config[ $config_id ] = $args;
-		// Make sure an option_type is defined
+		// Make sure an option_type is defined.
 		if ( ! isset( self::$config[ $config_id ]['option_type'] ) ) {
 			self::$config[ $config_id ]['option_type'] = 'theme_mod';
 		}
@@ -142,8 +150,8 @@ class The_Clean_Blog_Kirki {
 	/**
 	 * Create a new field
 	 *
-	 * @param    string    $config_id    The configuration ID
-	 * @param    array     $args         The field's arguments
+	 * @param    string $config_id    The configuration ID.
+	 * @param    array  $args         The field's arguments.
 	 */
 	public static function add_field( $config_id, $args ) {
 		// if Kirki exists, use it.
@@ -152,14 +160,14 @@ class The_Clean_Blog_Kirki {
 			return;
 		}
 		// Kirki was not located, so we'll need to add our fields here.
-		// check that the "settings" & "type" arguments have been defined
+		// check that the "settings" & "type" arguments have been defined.
 		if ( isset( $args['settings'] ) && isset( $args['type'] ) ) {
 			// Make sure we add the config_id to the field itself.
 			// This will make it easier to get the value when generating the CSS later.
 			if ( ! isset( $args['kirki_config'] ) ) {
 				$args['kirki_config'] = $config_id;
 			}
-			// Background fields need to be built separately
+			// Background fields need to be built separately.
 			if ( 'background' == $args['type'] && isset( $args['output'] ) ) {
 				if ( isset( $args['default'] ) && is_array( $args['default'] ) ) {
 					foreach ( $args['default'] as $default_property => $default_value ) {
@@ -175,10 +183,12 @@ class The_Clean_Blog_Kirki {
 							$output_property = 'background-attachment';
 						}
 						if ( is_string( $subfield['output'] ) ) {
-							$subfield['output'] = array( array(
-								'element'  => $args['output'],
-								'property' => $output_property,
-							) );
+							$subfield['output'] = array(
+								array(
+									'element'  => $args['output'],
+									'property' => $output_property,
+								),
+							);
 						} else {
 							foreach ( $subfield['output'] as $key => $output ) {
 								$subfield['output'][ $key ]['property'] = $output_property;
@@ -188,7 +198,7 @@ class The_Clean_Blog_Kirki {
 						if ( in_array( $key, array( 'color', 'image' ) ) ) {
 							$type = $key;
 						}
-						$property_setting = esc_attr( $args['settings'] ) . '_' . $setting;
+						$property_setting                  = esc_attr( $args['settings'] ) . '_' . $setting;
 						self::$fields[ $property_setting ] = $subfield;
 					}
 				}
@@ -201,15 +211,15 @@ class The_Clean_Blog_Kirki {
 	 * Enqueues the stylesheet
 	 */
 	public function enqueue_styles() {
-		// If Kirki exists there's no need to proceed any further
+		// If Kirki exists there's no need to proceed any further.
 		if ( class_exists( 'Kirki' ) ) {
 			return;
 		}
-		// Get our inline styles
+		// Get our inline styles.
 		$styles = $this->get_styles();
 		// If we have some styles to add, add them now.
 		if ( ! empty( $styles ) ) {
-			// enqueue the theme's style.css file
+			// enqueue the theme's style.css file.
 			$current_theme = ( wp_get_theme() );
 			wp_enqueue_style( $current_theme->stylesheet . '_no-kirki', get_stylesheet_uri(), null, null );
 			wp_add_inline_style( $current_theme->stylesheet . '_no-kirki', $styles );
@@ -220,9 +230,9 @@ class The_Clean_Blog_Kirki {
 	 * Gets all our styles and returns them as a string.
 	 */
 	public function get_styles() {
-		// Get an array of all our fields
+		// Get an array of all our fields.
 		$fields = self::$fields;
-		// Check if we need to exit early
+		// Check if we need to exit early.
 		if ( empty( self::$fields ) || ! is_array( $fields ) ) {
 			return;
 		}
@@ -230,15 +240,15 @@ class The_Clean_Blog_Kirki {
 		// This is going to make processing them a lot easier
 		// and make sure there are no duplicate styles etc.
 		$css = array();
-		// start parsing our fields
+		// start parsing our fields.
 		foreach ( $fields as $field ) {
-			// No need to process fields without an output, or an improperly-formatted output
+			// No need to process fields without an output, or an improperly-formatted output.
 			if ( ! isset( $field['output'] ) || empty( $field['output'] ) || ! is_array( $field['output'] ) ) {
 				continue;
 			}
-			// Get the value of this field
+			// Get the value of this field.
 			$value = self::get_option( $field['kirki_config'], $field['settings'] );
-			// start parsing the output arguments of the field
+			// start parsing the output arguments of the field.
 			foreach ( $field['output'] as $output ) {
 				$defaults = array(
 					'element'       => '',
@@ -250,14 +260,14 @@ class The_Clean_Blog_Kirki {
 					'value_pattern' => '$',
 					'choice'        => '',
 				);
-				$output = wp_parse_args( $output, $defaults );
-				// If element is an array, convert it to a string
+				$output   = wp_parse_args( $output, $defaults );
+				// If element is an array, convert it to a string.
 				if ( is_array( $output['element'] ) ) {
 					$output['element'] = array_unique( $output['element'] );
 					sort( $output['element'] );
 					$output['element'] = implode( ',', $output['element'] );
 				}
-				// Simple fields
+				// Simple fields.
 				if ( ! is_array( $value ) ) {
 					$value = str_replace( '$', $value, $output['value_pattern'] );
 					if ( ! empty( $output['element'] ) && ! empty( $output['property'] ) ) {
@@ -266,15 +276,15 @@ class The_Clean_Blog_Kirki {
 				} else {
 					if ( 'typography' == $field['type'] ) {
 						foreach ( $value as $key => $subvalue ) {
-							// exclude subsets as a property
+							// exclude subsets as a property.
 							if ( 'subsets' == $key ) {
 								continue;
 							}
-							// add double quotes if needed to font-families
+							// add double quotes if needed to font-families.
 							if ( 'font-family' == $key && false !== strpos( $subvalue, ' ' ) && false === strpos( $subvalue, '"' ) ) {
 								$css[ $output['media_query'] ][ $output['element'] ]['font-family'] = '"' . $subvalue . '"';
 							}
-							// variants contain both font-weight & italics
+							// variants contain both font-weight & italics.
 							if ( 'variant' == $key ) {
 								$font_weight = str_replace( 'italic', '', $subvalue );
 								$font_weight = ( in_array( $font_weight, array( '', 'regular' ) ) ) ? '400' : $font_weight;
@@ -307,29 +317,29 @@ class The_Clean_Blog_Kirki {
 				}
 			}
 		}
-		// Process the array of CSS properties and produce the final CSS
+		// Process the array of CSS properties and produce the final CSS.
 		$final_css = '';
 		if ( ! is_array( $css ) || empty( $css ) ) {
 			return '';
 		}
 		// Parse the generated CSS array and create the CSS string for the output.
 		foreach ( $css as $media_query => $styles ) {
-			// Handle the media queries
+			// Handle the media queries.
 			$final_css .= ( 'global' != $media_query ) ? $media_query . '{' : '';
 			foreach ( $styles as $style => $style_array ) {
 				$final_css .= $style . '{';
-					foreach ( $style_array as $property => $value ) {
-						$value = ( is_string( $value ) ) ? $value : '';
-						// Make sure background-images are properly formatted
-						if ( 'background-image' == $property ) {
-							if ( false === strrpos( $value, 'url(' ) ) {
-								$value = 'url("' . esc_url_raw( $value ) . '")';
-							}
-						} else {
-							$value = esc_textarea( $value );
+				foreach ( $style_array as $property => $value ) {
+					$value = ( is_string( $value ) ) ? $value : '';
+					// Make sure background-images are properly formatted.
+					if ( 'background-image' == $property ) {
+						if ( false === strrpos( $value, 'url(' ) ) {
+							$value = 'url("' . esc_url_raw( $value ) . '")';
 						}
-						$final_css .= $property . ':' . $value . ';';
+					} else {
+						$value = esc_textarea( $value );
 					}
+					$final_css .= $property . ':' . $value . ';';
+				}
 				$final_css .= '}';
 			}
 			$final_css .= ( 'global' != $media_query ) ? '}' : '';
@@ -337,15 +347,18 @@ class The_Clean_Blog_Kirki {
 		return $final_css;
 	}
 
+	/**
+	 * Enqueue fonts
+	 */
 	public function enqueue_fonts() {
-		// Check if we need to exit early
+		// Check if we need to exit early.
 		if ( empty( self::$fields ) || ! is_array( self::$fields ) ) {
 			return;
 		}
 		foreach ( self::$fields as $field ) {
-			// Process typography fields
+			// Process typography fields.
 			if ( isset( $field['type'] ) && 'typography' == $field['type'] ) {
-				// Check if we've got everything we need
+				// Check if we've got everything we need.
 				if ( ! isset( $field['kirki_config'] ) || ! isset( $field['settings'] ) ) {
 					continue;
 				}
@@ -370,11 +383,11 @@ class The_Clean_Blog_Kirki {
 					$key = md5( $value['font-family'] . $value['variant'] . $value['subset'] );
 					// check that the URL is valid. we're going to use transients to make this faster.
 					$url_is_valid = get_transient( $key );
-					if ( false === $url_is_valid ) { // transient does not exist
+					if ( false === $url_is_valid ) { // transient does not exist.
 						$response = wp_remote_get( 'https:' . $url );
 						if ( ! is_array( $response ) ) {
 							// the url was not properly formatted,
-							// cache for 12 hours and continue to the next field
+							// cache for 12 hours and continue to the next field.
 							set_transient( $key, null, 12 * HOUR_IN_SECONDS );
 							continue;
 						}
@@ -382,7 +395,7 @@ class The_Clean_Blog_Kirki {
 						if ( isset( $response['response'] ) && isset( $response['response']['code'] ) ) {
 							if ( 200 == $response['response']['code'] ) {
 								// URL was ok
-								// set transient to true and cache for a week
+								// set transient to true and cache for a week.
 								set_transient( $key, true, 7 * 24 * HOUR_IN_SECONDS );
 								$url_is_valid = true;
 							}

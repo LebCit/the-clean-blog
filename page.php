@@ -11,28 +11,30 @@
  *
  * @package The_Clean_Blog
  */
+
 get_header();
 
 ?>
 
 <div id="primary" class="content-area col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <main id="main" class="site-main" role="main">
+	<main id="main" class="site-main" role="main">
 
-        <?php
-        while (have_posts()) : the_post();
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-            get_template_part('components/page/content', 'page');
+			get_template_part( 'components/page/content', 'page' );
 
-            // If comments are open or we have at least one comment, load up the comment template.
-            if (comments_open() || get_comments_number()) :
-                comments_template();
-            endif;
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-        endwhile; // End of the loop.
+		endwhile; // End of the loop.
 
-        ?>
+		?>
 
-    </main>
+	</main>
 </div>
 <?php
 get_footer();
