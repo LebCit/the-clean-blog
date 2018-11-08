@@ -125,6 +125,28 @@ function thecleanblog_the_custom_logo() {
 }
 
 /**
+ * Registers a widget area.
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ *
+ * @since The_Clean_Blog 18.11.08
+ */
+function thecleanblog_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar', 'the-clean-blog' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Add widgets here to appear in your sidebar.', 'the-clean-blog' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'thecleanblog_widgets_init' );
+
+/**
  * Enqueue scripts and styles.
  */
 function thecleanblog_scripts() {
