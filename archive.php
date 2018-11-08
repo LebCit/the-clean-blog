@@ -10,8 +10,7 @@
 get_header();
 
 ?>
-
-<div id="primary" class="content-area col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<?php get_template_part( 'components/main/main', 'template' ); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -49,6 +48,7 @@ get_header();
 
 	</main>
 </div>
+<!-- #primary .content-area -->
 <?php
 get_sidebar();
 get_footer();
