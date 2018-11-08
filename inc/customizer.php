@@ -2654,3 +2654,34 @@ The_Clean_Blog_Kirki::add_panel(
 		'panel'       => 'thecleanblog_theme',
 	)
 );
+// 10.1- Change Site Layout
+The_Clean_Blog_Kirki::add_section(
+	'site_layouts_settings',
+	array(
+		'title'          => __( 'Change Site Layout', 'the-clean-blog' ),
+		'description'    => __( 'Choose Site\'s Layout !', 'the-clean-blog' ),
+		'panel'          => 'theme_layouts',
+		'priority'       => 5,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '', // Rarely needed.
+	)
+);
+// 10.1.1- Site Layouts
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'            => 'radio-image',
+		'settings'        => 'site_layouts',
+		'label'           => __( 'Site Layouts', 'the-clean-blog' ),
+		'section'         => 'site_layouts_settings',
+		'default'         => 'fullwidth',
+		'priority'        => 5,
+		'choices'         => array(
+			'fullwidth'     => plugins_url() . '/kirki/assets/images/1c.png',
+			'sidebar-right' => plugins_url() . '/kirki/assets/images/2cr.png',
+			'sidebar-left'  => plugins_url() . '/kirki/assets/images/2cl.png',
+		),
+		'transport'       => 'postMessage',
+		'active_callback' => 'is_home',
+	)
+);
