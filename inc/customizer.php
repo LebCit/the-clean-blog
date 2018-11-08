@@ -2643,3 +2643,14 @@ The_Clean_Blog_Kirki::add_field(
 		'active_callback' => 'is_preloader_activated',
 	)
 );
+
+// Theme's Layouts Panel.
+The_Clean_Blog_Kirki::add_panel(
+	'theme_layouts',
+	array(
+		'priority'    => 5,
+		'title'       => __( 'THEME\'S LAYOUTS', 'the-clean-blog' ),
+		'description' => __( 'Customize Theme\'s Layouts', 'the-clean-blog' ),
+		'panel'       => 'thecleanblog_theme',
+	)
+);
