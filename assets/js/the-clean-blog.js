@@ -326,4 +326,57 @@ jQuery(document).ready(function ($) {
     // Finally, when the preloader fadeOut(), remove the .preloader-site class from the body to prevent preloader's styles from affecting the body
     $('body').removeClass('preloader-site');
     //End 10.
+    //12. Site, Posts and Pages layout
+    var siteLayoutName = thecleanblog_set.thecleanblog_site_layouts;
+    var postsLayoutName = thecleanblog_set.thecleanblog_posts_layouts;
+    var pagesLayoutName = thecleanblog_set.thecleanblog_pages_layouts;
+    if ($('body').hasClass('page-template-generic-full-template') || $('body').hasClass('post-template-generic-full-template')){
+            $('#secondary').hide(); // hide() the .sidebar from the live site
+    } else if ($('body').hasClass('page-template-generic-left-template') || $('body').hasClass('post-template-generic-left-template')) {
+            $('#primary').addClass('col-md-push-4');
+            $('#secondary').addClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site
+    } else if  ($('body').hasClass('page-template-generic-rigth-template') || $('body').hasClass('post-template-generic-rigth-template')) {
+            $('#primary').removeClass('col-md-push-4');
+            $('#secondary').removeClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site
+    } else if ($('body').hasClass('post-template-default')){
+        if(postsLayoutName == 'fullwidth-posts') {
+            $('#secondary').hide(); // hide() the .sidebar from the live site @see customizer.js - Posts layouts.
+        } else if (postsLayoutName == 'sidebar-left-posts') {
+            $('#primary').addClass('col-md-push-4');
+            $('#secondary').addClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site @see customizer.js - Posts layouts.
+        } else { //(postsLayoutName == 'sidebar-right-posts')
+            $('#primary').removeClass('col-md-push-4');
+            $('#secondary').removeClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site @see customizer.js - Posts layouts.
+        }
+    } else if ($('body').hasClass('page-template-default')){
+        if(pagesLayoutName == 'fullwidth-pages') {
+            $('#secondary').hide(); // hide() the .sidebar from the live site @see customizer.js - Pages layouts.
+        } else if (pagesLayoutName == 'sidebar-left-pages') {
+            $('#primary').addClass('col-md-push-4');
+            $('#secondary').addClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site @see customizer.js - Pages layouts.
+        } else { //(pagesLayoutName == 'sidebar-right-pages')
+            $('#primary').removeClass('col-md-push-4');
+            $('#secondary').removeClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site @see customizer.js - Pages layouts.
+        }
+    } else {
+        if(siteLayoutName == 'fullwidth') {
+            $('#secondary').hide(); // hide() the .sidebar from the live site @see customizer.js - Site layout
+        } else if (siteLayoutName == 'sidebar-left') {
+            $('#primary').addClass('col-md-push-4');
+            $('#secondary').addClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site @see customizer.js - Site layout
+        } else { //(siteLayoutName == 'sidebar-right')
+            $('#primary').removeClass('col-md-push-4');
+            $('#secondary').removeClass('col-md-pull-8');
+            $('#secondary').show(); // show() the .sidebar in the live site @see customizer.js - Site layout
+        }
+    }
+    //End 12.
+
 });

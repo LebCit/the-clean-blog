@@ -189,6 +189,9 @@ function thecleanblog_scripts() {
 		'thecleanblog_slider_slides_loop'                 => get_theme_mod( 'slider_slides_loop', 0 ),
 		'thecleanblog_slider_horizontal_slides_direction' => get_theme_mod( 'slider_horizontal_slides_direction', 0 ),
 		'thecleanblog_preloader_animation_time'           => get_theme_mod( 'preloader_animation_time', 1500 ),
+		'thecleanblog_site_layouts'                       => get_theme_mod( 'site_layouts', 'fullwidth' ),
+		'thecleanblog_posts_layouts'                      => get_theme_mod( 'posts_layouts', 'fullwidth-posts' ),
+		'thecleanblog_pages_layouts'                      => get_theme_mod( 'pages_layouts', 'fullwidth-pages' ),
 	);
 	wp_localize_script( 'thecleanblog-script', 'thecleanblog_set', $thecleanblog_settings );
 
