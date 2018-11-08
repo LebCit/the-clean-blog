@@ -2685,3 +2685,42 @@ The_Clean_Blog_Kirki::add_field(
 		'active_callback' => 'is_home',
 	)
 );
+// 10.2- Change Posts Layouts
+The_Clean_Blog_Kirki::add_section(
+	'posts_layouts_settings',
+	array(
+		'title'          => __( 'Change ALL Posts Layout', 'the-clean-blog' ),
+		'description'    => __( 'Choose ALL Posts Layout !', 'the-clean-blog' ),
+		'panel'          => 'theme_layouts',
+		'priority'       => 10,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '', // Rarely needed.
+	)
+);
+/**
+ * Function to check if we are viewing a post with no template.
+ */
+function is_only_single_no_template() {
+	// Check if is_single returns true and is_page-template is false.
+	return is_single() === true && ! is_page_template();
+}
+// 10.2.1- Post Layouts
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'            => 'radio-image',
+		'settings'        => 'posts_layouts',
+		'label'           => __( 'ALL Posts Layouts', 'the-clean-blog' ),
+		'description'     => __( 'This will change the layout of ALL posts. You can set a specific template for this post under the Post Attributes in administration.', 'the-clean-blog' ),
+		'section'         => 'posts_layouts_settings',
+		'default'         => 'fullwidth-posts',
+		'priority'        => 5,
+		'choices'         => array(
+			'fullwidth-posts'     => plugins_url() . '/kirki/assets/images/1c.png',
+			'sidebar-right-posts' => plugins_url() . '/kirki/assets/images/2cr.png',
+			'sidebar-left-posts'  => plugins_url() . '/kirki/assets/images/2cl.png',
+		),
+		'transport'       => 'postMessage',
+		'active_callback' => 'is_only_single_no_template',
+	)
+);
