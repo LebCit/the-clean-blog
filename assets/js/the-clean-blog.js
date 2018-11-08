@@ -326,6 +326,22 @@ jQuery(document).ready(function ($) {
     // Finally, when the preloader fadeOut(), remove the .preloader-site class from the body to prevent preloader's styles from affecting the body
     $('body').removeClass('preloader-site');
     //End 10.
+
+    //11. Toggle the visibility of sub-menu in menu widget
+    // Target the link <a> of each <li> item that has children
+    var itemHasChlidren = $('.widget.widget_nav_menu .menu-item-has-children > a');
+    /**
+     * When this link is clicked, we slideToggle() his parent <li> children
+     * and we slideUp this <li> siblings' children if they where opened previously.
+     */
+    itemHasChlidren.on('click', function (e) {
+        e.preventDefault();
+        $(this).addClass('item-has-children-link-clicked'); // Added to control the :hover effect after :focus state
+        $(this).parent().children('.sub-menu').slideToggle(1000);
+        $(this).parent().siblings().children('.sub-menu').slideUp(1000);
+    });
+    //End 11.
+
     //12. Site, Posts and Pages layout
     var siteLayoutName = thecleanblog_set.thecleanblog_site_layouts;
     var postsLayoutName = thecleanblog_set.thecleanblog_posts_layouts;
@@ -379,4 +395,8 @@ jQuery(document).ready(function ($) {
     }
     //End 12.
 
+    //13. Some styles for the calendar widget
+    $('.widget_calendar #today').parent().prevAll().children(':not(.pad)').css('background-image', 'linear-gradient(to bottom right, transparent calc(50% - 1px), red, transparent calc(50% + 1px))');
+    $('.widget_calendar #today').prevAll().css('background-image', 'linear-gradient(to bottom right, transparent calc(50% - 1px), red, transparent calc(50% + 1px))');
+    //End 13.
 });

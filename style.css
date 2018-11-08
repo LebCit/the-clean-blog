@@ -263,7 +263,8 @@ table {
 
 td,
 th {
-    padding: 0;
+	padding: 0;
+	border: 1px solid #d1d1d1;
 }
 
 /*--------------------------------------------------------------
@@ -588,7 +589,6 @@ ol {
 li > ul,
 li > ol {
     margin-bottom: 0;
-    margin-left: 1.5em;
 }
 
 dt {
@@ -751,20 +751,8 @@ body {
     /* Fallback for when there is no custom background color defined. */
 }
 
-.content-area {
-    float: left;
-    margin: 0 -25% 0 0;
-    width: 100%;
-}
-
 .site-main {
     margin: 0;
-}
-
-.site-content .widget-area {
-    float: right;
-    overflow: hidden;
-    width: 25%;
 }
 
 .site-footer {
@@ -820,12 +808,153 @@ body {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.sidebar {
+    display: none; /* Hide sidebar-left before displaying it or we will see it as sidebar-right for 1s */
+	margin-top: 20px;
+}
+
 .widget {
     margin: 0 0 1.5em;
-    /* Make sure select elements fit in widgets. */
+	/* Make sure select elements fit in widgets. */
+	border-bottom: 4px solid #1a1a1a;
+	padding-bottom: 20px;
 }
 .widget select {
     max-width: 100%;
+}
+
+/* Calendar widget */
+.widget.widget_calendar table {
+	margin: 0;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+	line-height: 2.5625;
+	padding: 0;
+	text-align: center;
+}
+
+.widget_calendar caption {
+	font-weight: 900;
+	margin-bottom: 1.75em;
+}
+
+.widget_calendar tbody a {
+	background-color: #007acc;
+	color: #fff;
+	display: block;
+	font-weight: 700;
+}
+
+.widget_calendar tbody a:hover,
+.widget_calendar tbody a:focus {
+	background-color: #686868;
+	color: #fff;
+}
+
+.widget_calendar #today {
+    background-color: gainsboro;
+    font-weight: bolder;
+}
+
+
+/* Categories widget */
+.widget.widget_categories .children {
+	padding-left: 0;
+}
+
+/* Menu widget */
+.widget.widget_nav_menu .menu-item-has-children > a::before {
+	content: '\f107';
+    display: block;
+    position: absolute;
+    right: 20px;
+	font-size: 1em;
+	font-family: fontawesome;
+	cursor: pointer;
+}
+
+.widget.widget_nav_menu .menu-item-has-children > a:focus {
+    color: #333333;
+    text-decoration: none;
+}
+.item-has-children-link-clicked:hover {
+    color: #0085A1 !important;
+    text-decoration: underline !important;
+}
+
+.widget.widget_nav_menu .sub-menu {
+	margin-left: 0px;
+	padding-left: 20px;
+	list-style: circle;
+	display: none;
+}
+
+.widget.widget_nav_menu .sub-menu a {
+    color: #0085A1 !important;
+}
+
+/* Pages widget */
+.widget.widget_pages .children {
+	padding-left: 0;
+}
+
+/* Search widget */
+.widget.widget_search {
+    display: grid; /* Allows it's child inline-grid to take the full width of it's parent grid */
+}
+.widget.widget_search .search-form {
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.widget.widget_search form.search-form label {
+	margin-bottom: 0;
+}
+
+.widget input[type="search"].search-field {
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+}
+
+.widget.widget_search .search-submit {
+	border-radius: 0;
+	background: #ccc;
+	color: #fff;
+	box-shadow: none;
+}
+
+.widget.widget_search .icon-search {
+	padding-top: 2px;
+}
+
+/* Tag Cloud widget */
+.tagcloud a {
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+	display: inline-block;
+	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	line-height: 1;
+	margin: 0 0.1875em 0.4375em 0;
+	padding: 0.5625em 0.4375em 0.5em;
+}
+
+.tagcloud ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.tagcloud ul li {
+	display: inline-block;
+}
+
+.tagcloud a:hover,
+.tagcloud a:focus {
+	border-color: #007acc;
+	color: #007acc;
+	outline: 0;
 }
 
 /*--------------------------------------------------------------
