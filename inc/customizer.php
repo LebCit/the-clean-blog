@@ -13,23 +13,9 @@
 function thecleanblog_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->title = __( 'Background Image/Color', 'the-clean-blog' );
 	$wp_customize->remove_section( 'colors' );
-	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-	$wp_customize->selective_refresh->add_partial(
-		'blogname',
-		array(
-			'selector'        => 'h1.site-title a',
-			'render_callback' => 'thecleanblog_customize_partial_blogname',
-		)
-	);
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->selective_refresh->add_partial(
-		'blogdescription',
-		array(
-			'selector'        => '.site-description',
-			'render_callback' => 'thecleanblog_customize_partial_blogdescription',
-		)
-	);
-	$wp_customize->get_control( 'background_color' )->section = 'background_image';
+	$wp_customize->get_control( 'background_color' )->section  = 'background_image';
 }
 add_action( 'customize_register', 'thecleanblog_customize_register' );
 
