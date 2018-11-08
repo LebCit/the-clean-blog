@@ -23,7 +23,7 @@ add_action( 'customize_register', 'thecleanblog_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function thecleanblog_customize_preview_js() {
-	wp_enqueue_script( 'thecleanblog_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'thecleanblog_customizer', get_theme_file_uri() . '/assets/js/customizer.js', array( 'customize-preview', 'jquery' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'thecleanblog_customize_preview_js' );
 
