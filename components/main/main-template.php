@@ -5,7 +5,7 @@
  * Displays the layout structure depending on the user's choice.
  *
  * @package The_Clean_Blog
- * @since The_Clean_Blog 18.11.08
+ * @since The_Clean_Blog 18.11.09
  */
 
 if ( is_single() ) {

@@ -129,7 +129,7 @@ function thecleanblog_the_custom_logo() {
  *
  * @link https://developer.wordpress.org/reference/functions/register_sidebar/
  *
- * @since The_Clean_Blog 18.11.08
+ * @since The_Clean_Blog 18.11.09
  */
 function thecleanblog_widgets_init() {
 	register_sidebar(

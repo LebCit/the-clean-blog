@@ -7,13 +7,13 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-s
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.9.8  
-Stable tag: 18.10.23  
+Stable tag: 18.11.09  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 
-The Clean Blog is a carefully styled Bootstrap blog theme, **without sidebars**, that is perfect for personal or company blogs.  
+The Clean Blog is a carefully styled Bootstrap blog theme, **with<sup>(new)</sup> or without sidebars**, that is perfect for personal or company blogs.  
 The Clean Blog is **Fully Responsive**, with a **Modern Design** and a **Distraction Free** blog text optimized for legibility with a menu bar interface that conveniently appears when you scroll up !  
 The **defined featured image of a post or page turns into a responsive full screen custom parallax header background image !**  
 **Header's background image** is retrieved with AJAX to speed time's load !  
@@ -21,7 +21,12 @@ Galleries are displayed in a **responsive touch-friendly image lightbox** when i
 The **fixed/revealed footer** displays social links controlled by the Customizer, and a dynamic copyright information line, based on your Site Title and the year's date of your first and last posts.  
 The **new** improved navigation with **one sub-menu depth**, can hold only 5 main items and 5 children items on desktop. No limitation of items on mobile.  
 **Unslider** slider is fully integrated to the theme **with powerful and cool controls** from the Customizer !  
-A nice and stylish **Preloader**, 28 animations included, with tons of controls, allows you to provide your visitors a beautiful animation before loading the site.
+A nice and stylish **Preloader**, 28 animations included, with tons of controls, allows you to provide your visitors a beautiful animation before loading the site.  
+**<sup>(New)</sup>** Here come the **Sidebars** !  
+Infact, it's just one sidebar that you can choose to display on the right or the left of the content.  
+**BUT** you can choose to display it on the whole site, or all the posts, or all the pages, directly from the Customizer by postMessage **without refreshing the view** !  
+Also, you can choose a different layout on each part : site, posts and pages !  
+**Furthermore**, you can choose a specific layout for a post or a page from the administration under the **Post Attributes** or the **Pages Attributes** as a Generic Template !
 
 ## Installation
 
@@ -64,7 +69,29 @@ But on desktop view, only the **First 5** will show up !
 Almost all of the theme controls are under **The Clean Blog Theme** panel in the Customizer.  
 Head over and start customizing the theme to make it looks and behave as you want !
 
+### Where is the Sidebar ?!
+
+In the Customizer, go from **The Clean Blog Theme** panel > to **THEME'S LAYOUTS** panel, and choose fom the provided section(s).  
+Provided section(s) depends on the actual view of the site !  
+Please note that if you set a Generic template for a post or page, no section/setting/control will be provided since it already has a particular template ! 
+
 ## Changelog
+
+### 18.11.09 =
+* Released: November 09, 2018
+- Added main header part for main files.
+- Added page templates.
+- Added Pages Layouts Section and Control.
+- Added Posts Layouts Section and Control.
+- Added Site Layouts Section and Control.
+- Added Theme's Layout Panel.
+- Live View for Site, Posts and Pages Layouts.
+- Modified thecleanblog_customize_preview_js() function.
+- postMessage for Site, Posts and Pages Layouts.
+- Register, create and display a widget area.
+- Removed selective_refresh from 'blogname' and 'blogdescription'.
+- Styles for the Sidebar and some widgets.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.10.23 =
 * Released: October 23, 2018

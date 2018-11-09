@@ -3,7 +3,7 @@
  * The template for the sidebar containing the main widget area
  *
  * @package The_Clean_Blog
- * @since The_Clean_Blog 18.11.08
+ * @since The_Clean_Blog 18.11.09
  */
 
 ?>
