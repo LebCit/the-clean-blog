@@ -867,7 +867,7 @@ body {
 /* Menu widget */
 .widget.widget_nav_menu .menu-item-has-children > a::before {
 	content: '\f107';
-    display: block;
+    display: inline-block; /* Fix for Chrome */
     position: absolute;
     right: 20px;
 	font-size: 1em;
