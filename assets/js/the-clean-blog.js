@@ -396,7 +396,8 @@ jQuery(document).ready(function ($) {
     //End 12.
 
     //13. Some styles for the calendar widget
-    $('.widget_calendar #today').parent().prevAll().children(':not(.pad)').css('background-image', 'linear-gradient(to bottom right, transparent calc(50% - 1px), red, transparent calc(50% + 1px))');
-    $('.widget_calendar #today').prevAll().css('background-image', 'linear-gradient(to bottom right, transparent calc(50% - 1px), red, transparent calc(50% + 1px))');
+    // Modified linear-gradient to work in IE and Edge.
+    $('.widget_calendar #today').parent().prevAll().children(':not(.pad)').css('background-image', 'linear-gradient(to right bottom, transparent 49%, red 50%, transparent 51%)');
+    $('.widget_calendar #today').prevAll().css('background-image', 'linear-gradient(to right bottom, transparent 49%, red 50%, transparent 51%)');
     //End 13.
 });
