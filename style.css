@@ -809,7 +809,6 @@ body {
 # Widgets
 --------------------------------------------------------------*/
 .sidebar {
-    display: none; /* Hide sidebar-left before displaying it or we will see it as sidebar-right for 1s */
 	margin-top: 20px;
 }
 

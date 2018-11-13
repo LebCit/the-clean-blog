@@ -13,7 +13,7 @@
 get_header();
 
 ?>
-<div id="primary" class="col-md-8 col-md-push-4">
+<div id="primary" class="content-area col-md-8 col-md-push-4">
 	<main id="main" class="site-main" role="main">
 
 		<?php
@@ -40,6 +40,10 @@ get_header();
 	</main>
 </div>
 <!-- #primary .content-area -->
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<aside id="secondary" class="sidebar widget-area col-md-4 col-md-pull-8" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</aside><!-- .sidebar .col-md-4 .col-md-pull-8 -->
+<?php endif; ?>
 <?php
-get_sidebar();
 get_footer();

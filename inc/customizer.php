@@ -2681,7 +2681,6 @@ The_Clean_Blog_Kirki::add_field(
 			'sidebar-right' => plugins_url() . '/kirki/assets/images/2cr.png',
 			'sidebar-left'  => plugins_url() . '/kirki/assets/images/2cl.png',
 		),
-		'transport'       => 'postMessage',
 		'active_callback' => 'is_home',
 	)
 );
@@ -2704,7 +2703,7 @@ function is_only_single_no_template() {
 	// Check if is_single returns true and is_page-template is false.
 	return is_single() === true && ! is_page_template();
 }
-// 10.2.1- Post Layouts
+// 10.2.1- Posts Layouts
 The_Clean_Blog_Kirki::add_field(
 	'thecleanblog',
 	array(
@@ -2720,7 +2719,6 @@ The_Clean_Blog_Kirki::add_field(
 			'sidebar-right-posts' => plugins_url() . '/kirki/assets/images/2cr.png',
 			'sidebar-left-posts'  => plugins_url() . '/kirki/assets/images/2cl.png',
 		),
-		'transport'       => 'postMessage',
 		'active_callback' => 'is_only_single_no_template',
 	)
 );
@@ -2740,10 +2738,10 @@ The_Clean_Blog_Kirki::add_section(
  * Function to check if we are viewing a page with no template.
  */
 function is_only_page_no_template() {
-	// Check if is_single returns true and is_page-template is false.
+	// Check if is_page returns true and is_page-template is false.
 	return is_page() === true && ! is_page_template();
 }
-// 10.3.1- Post Layouts
+// 10.3.1- Pages Layouts
 The_Clean_Blog_Kirki::add_field(
 	'thecleanblog',
 	array(
@@ -2759,7 +2757,6 @@ The_Clean_Blog_Kirki::add_field(
 			'sidebar-right-pages' => plugins_url() . '/kirki/assets/images/2cr.png',
 			'sidebar-left-pages'  => plugins_url() . '/kirki/assets/images/2cl.png',
 		),
-		'transport'       => 'postMessage',
 		'active_callback' => 'is_only_page_no_template',
 	)
 );

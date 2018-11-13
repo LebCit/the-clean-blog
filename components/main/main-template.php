@@ -16,11 +16,11 @@ if ( is_single() ) {
 		?>
 		<div id="primary" class="content-area col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-	<?php elseif ( 'sidebar-right-posts' === $layout_value ) : ?>
+		<?php elseif ( 'sidebar-right-posts' === $layout_value ) : ?>
 		<div id="primary" class="content-area col-md-8">
 
 		<?php elseif ( 'sidebar-left-posts' === $layout_value ) : ?>
-		<div id="primary" class="col-md-8 col-md-push-4">
+		<div id="primary" class="content-area col-md-8 col-md-push-4">
 
 		<?php
 		endif;
@@ -32,11 +32,11 @@ if ( is_single() ) {
 		?>
 		<div id="primary" class="content-area col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-	<?php elseif ( 'sidebar-right-pages' === $layout_value ) : ?>
+		<?php elseif ( 'sidebar-right-pages' === $layout_value ) : ?>
 		<div id="primary" class="content-area col-md-8">
 
 		<?php elseif ( 'sidebar-left-pages' === $layout_value ) : ?>
-		<div id="primary" class="col-md-8 col-md-push-4">
+		<div id="primary" class="content-area col-md-8 col-md-push-4">
 
 		<?php
 		endif;
@@ -48,11 +48,11 @@ if ( is_single() ) {
 		?>
 		<div id="primary" class="content-area col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-	<?php elseif ( 'sidebar-right' === $layout_value ) : ?>
+		<?php elseif ( 'sidebar-right' === $layout_value ) : ?>
 		<div id="primary" class="content-area col-md-8">
 
 		<?php elseif ( 'sidebar-left' === $layout_value ) : ?>
-		<div id="primary" class="col-md-8 col-md-push-4">
+		<div id="primary" class="content-area col-md-8 col-md-push-4">
 
 		<?php endif;
 }

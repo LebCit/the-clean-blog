@@ -41,5 +41,4 @@ get_header();
 </div>
 <!-- #primary .content-area -->
 <?php
-get_sidebar();
 get_footer();
