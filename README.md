@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-s
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 4.9.8  
-Stable tag: 18.11.09  
+Stable tag: 18.11.13  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,13 @@ Provided section(s) depends on the actual view of the site !
 Please note that if you set a Generic template for a post or page, no section/setting/control will be provided since it already has a particular template ! 
 
 ## Changelog
+
+### 18.11.13 =
+* Released: November 13, 2018
+- Adjusted arrow position in menu widget for Chrome.
+- DRY implementation of sidebar.
+- Modified linear-gradient to work in IE and Edge.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.11.09 =
 * Released: November 09, 2018
