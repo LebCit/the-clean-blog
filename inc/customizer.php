@@ -20,6 +20,17 @@ function thecleanblog_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'thecleanblog_customize_register' );
 
 /**
+ * Hooking in JS code to affect the controls in the Customizer.
+ * FOR LATER USE !
+ */
+function thecleanblog_customize_controls() {
+	wp_enqueue_script( 'thecleanblog-customize-controls', get_template_directory_uri() . '/assets/js/customize-controls.js', array( 'customize-controls' ), filemtime( get_theme_file_path( '/assets/js/customize-controls.js' ) ), true );
+	$customizer_settings = array();
+	wp_localize_script( 'thecleanblog-customize-controls', 'tcb_cc', $customizer_settings );
+}
+add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customize_controls' );
+
+/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function thecleanblog_customize_preview_js() {

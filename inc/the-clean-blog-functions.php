@@ -68,7 +68,7 @@ function thecleanblog_header_script() {
 		return;
 	}
 
-	$hero_img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '' );
+	$hero_img         = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '' );
 	$hero_img_default = get_theme_mod( 'default_header_background_image' );
 	if ( empty( $hero_img_default ) ) {
 		$hero_img_default = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
@@ -361,7 +361,7 @@ function thecleanblog_comments( $comment, $depth, $args ) {
 					<time datetime="<?php comment_time( 'c' ); ?>">
 						<?php
 						/* translators: 1: comment date, 2: comment time */
-						printf( esc_attr__( '%1$s at %2$s', 'the-clean-blog' ), get_comment_date( '', $comment ), get_comment_time() );
+						printf( esc_attr__( '%1$s at %2$s', 'the-clean-blog' ), esc_attr( get_comment_date( '', $comment ) ), esc_attr( get_comment_time() ) );
 						?>
 					</time>
 				</a>
@@ -585,15 +585,3 @@ function thecleanblog_copyright_date() {
 	}
 	return $output;
 }
-
-/**
- * Hooking in JS code to affect the controls in the customizer.
- */
-function thecleanblog_customizer_controls() {
-	wp_enqueue_script( 'thecleanblog-customizer-controls', get_template_directory_uri() . '/assets/js/the-clean-blog-customizer.js', array( 'jquery', 'customize-controls' ), filemtime( get_theme_file_path( '/assets/js/the-clean-blog-customizer.js' ) ), true );
-	$customizer_settings = array(
-		'thecleanblog_control_placeholder' => esc_html__( 'Replace Default Text', 'the-clean-blog' ),
-	);
-	wp_localize_script( 'thecleanblog-customizer-controls', 'thecleanblog_customizer_set', $customizer_settings );
-}
-add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customizer_controls' );
