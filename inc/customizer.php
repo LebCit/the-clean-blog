@@ -90,6 +90,18 @@ add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customize_contro
  */
 function thecleanblog_customize_preview_js() {
 			'tcb_site_title'                            => esc_html( wp_parse_url( home_url() )['host'] ),
+			'tcb_placeholder_text'                      => esc_attr( 'Search &hellip;' ),
+			'tcb_search_page_title_text'                => esc_html( 'Searching gives all answers' ),
+			'tcb_search_results_page_text'              => esc_html( 'Search Results for' ),
+			'tcb_error404_page_title_text'              => esc_html( 'Wrong Archives Row !' ),
+			'tcb_search_404_page_title_text'            => esc_html( 'Oops! That page can’t be found.' ),
+			'tcb_error404_page_subtitle_text'           => esc_html( 'Try to search below' ),
+			'tcb_search_404_page_paragraph_text'        => esc_html( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?' ),
+			'tcb_search_page_subtitle_title_text'       => esc_html( 'KEEP SEARCHING !' ),
+			'tcb_search_no_results_page_title_text'     => esc_html( 'Nothing Found' ),
+			'tcb_search_no_results_page_paragraph_text' => esc_html( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ),
+		)
+	);
 }
 add_action( 'customize_preview_init', 'thecleanblog_customize_preview_js' );
 
@@ -542,14 +554,17 @@ The_Clean_Blog_Kirki::add_field(
 The_Clean_Blog_Kirki::add_field(
 	'thecleanblog',
 	array(
-		'type'      => 'text',
-		'settings'  => 'dropdown_search_placeholder_text',
-		'label'     => __( 'Dropdown Search Placeholder Text', 'the-clean-blog' ),
-		'section'   => 'search-icon-and-dropdown-colors',
-		'default'   => '',
-		'priority'  => 25,
-		'transport' => 'postMessage',
-		'js_vars'   => array(
+		'type'        => 'text',
+		'settings'    => 'dropdown_search_placeholder_text',
+		'label'       => __( 'Dropdown Search Placeholder Text', 'the-clean-blog' ),
+		'section'     => 'search-icon-and-dropdown-colors',
+		'default'     => '',
+		'input_attrs' => array(
+			'placeholder' => __( 'Replace Default Search Placeholder Text', 'the-clean-blog' ),
+		),
+		'priority'    => 25,
+		'transport'   => 'postMessage',
+		'js_vars'     => array(
 			array(
 				'element'  => '.search-dropdown input#header-search',
 				'function' => 'html',
@@ -630,6 +645,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search Page Title Text', 'the-clean-blog' ),
 		'section'         => 'header_background_images',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Default Search Page Title Text', 'the-clean-blog' ),
+		),
 		'priority'        => 20,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -651,6 +669,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search Page Subtitle Text', 'the-clean-blog' ),
 		'section'         => 'header_background_images',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Default Search Subtitle Text', 'the-clean-blog' ),
+		),
 		'priority'        => 25,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -700,6 +721,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Error404 Page Title Text', 'the-clean-blog' ),
 		'section'         => 'header_background_images',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Error404 Page Title Text', 'the-clean-blog' ),
+		),
 		'priority'        => 30,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -721,6 +745,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Error404 Page Subtitle Text', 'the-clean-blog' ),
 		'section'         => 'header_background_images',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Error404 Page Subtitle Text', 'the-clean-blog' ),
+		),
 		'priority'        => 35,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -770,6 +797,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search Results Page Title Text', 'the-clean-blog' ),
 		'section'         => 'search_pages_texts',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Search Results Page Title Text', 'the-clean-blog' ),
+		),
 		'priority'        => 5,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -791,6 +821,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search No Results Page Title Text', 'the-clean-blog' ),
 		'section'         => 'search_pages_texts',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Search No Results Page Title Text', 'the-clean-blog' ),
+		),
 		'priority'        => 10,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -812,6 +845,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search No Results Page Paragraph Text', 'the-clean-blog' ),
 		'section'         => 'search_pages_texts',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Search No Results Page Paragraph Text', 'the-clean-blog' ),
+		),
 		'priority'        => 15,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -833,6 +869,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search 404 Page Title Text', 'the-clean-blog' ),
 		'section'         => 'search_pages_texts',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Search 404 Page Title Text', 'the-clean-blog' ),
+		),
 		'priority'        => 20,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
@@ -854,6 +893,9 @@ The_Clean_Blog_Kirki::add_field(
 		'label'           => __( 'Search 404 Page Paragraph Text', 'the-clean-blog' ),
 		'section'         => 'search_pages_texts',
 		'default'         => '',
+		'input_attrs'     => array(
+			'placeholder' => __( 'Replace Search 404 Page Paragraph Text', 'the-clean-blog' ),
+		),
 		'priority'        => 25,
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
