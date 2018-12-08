@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 17:02+0000\n"
+"POT-Creation-Date: 2018-12-08 23:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -86,874 +86,915 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#. search text for results
 #: search.php:24
 #, php-format
-msgid "Search Results for: %s"
+msgid "%1$s: %2$s"
 msgstr ""
 
 #: inc/customizer.php:14
 msgid "Background Image/Color"
 msgstr ""
 
-#: inc/customizer.php:50
+#: inc/customizer.php:135
 msgid "The Clean Blog Theme"
 msgstr ""
 
-#: inc/customizer.php:51
+#: inc/customizer.php:136
 msgid "Customize The Clean Blog Theme"
 msgstr ""
 
-#: inc/customizer.php:59
+#: inc/customizer.php:144
 msgid "DESKTOP Menu Colors"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:145
 msgid "Change DESKTOP Menu Colors"
 msgstr ""
 
-#: inc/customizer.php:74
+#: inc/customizer.php:159
 msgid "Menu Background Color"
 msgstr ""
 
-#: inc/customizer.php:103
+#: inc/customizer.php:188
 msgid "Menu Links Color"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:218
 msgid "Selected Link Arrow Color"
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:243
 msgid "Sub Menu Background Color"
 msgstr ""
 
-#: inc/customizer.php:180 inc/customizer.php:333
+#: inc/customizer.php:265 inc/customizer.php:418
 msgid "Sub Menu Links Color"
 msgstr ""
 
-#: inc/customizer.php:200
+#: inc/customizer.php:285
 msgid "MOBILE Menu Colors"
 msgstr ""
 
-#: inc/customizer.php:201
+#: inc/customizer.php:286
 msgid "Change MOBILE Menu Colors"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:300
 msgid "Menu Bar Background Color"
 msgstr ""
 
-#: inc/customizer.php:236
+#: inc/customizer.php:321
 msgid "Menu Trigger Background Color"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:346
 msgid "Mobile Menu Background Color"
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:367
 msgid "Mobile Menu Links Color"
 msgstr ""
 
-#: inc/customizer.php:312
+#: inc/customizer.php:397
 msgid "Mobile Sub Menu Background Color"
 msgstr ""
 
-#: inc/customizer.php:355
+#: inc/customizer.php:440
 msgid "Sub Menu Go Back Arrow Color"
 msgstr ""
 
-#: inc/customizer.php:377
+#: inc/customizer.php:462
 msgid "Search Icon and Dropdown Colors"
 msgstr ""
 
-#: inc/customizer.php:378
+#: inc/customizer.php:463
 msgid "Change Search Icon and Dropdown Colors"
 msgstr ""
 
-#: inc/customizer.php:392
+#: inc/customizer.php:477
 msgid "Search Icon Color"
 msgstr ""
 
-#: inc/customizer.php:415
+#: inc/customizer.php:500
 msgid "Search Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:438
+#: inc/customizer.php:523
 msgid "Dropdown Search Background Color"
 msgstr ""
 
-#: inc/customizer.php:461
+#: inc/customizer.php:546
 msgid "Dropdown Search Placeholder Color"
 msgstr ""
 
-#: inc/customizer.php:481
+#: inc/customizer.php:566
 msgid "Dropdown Search Placeholder Text"
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:570
+msgid "Replace Default Search Placeholder Text"
+msgstr ""
+
+#: inc/customizer.php:588
 msgid "Header Background Image & Texts"
 msgstr ""
 
-#: inc/customizer.php:501
+#: inc/customizer.php:589
 msgid "Change Default Image & Texts "
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:603
 msgid "Deafult Header Background Image"
 msgstr ""
 
-#: inc/customizer.php:536
+#: inc/customizer.php:624
 msgid "Search Header Background Image"
 msgstr ""
 
-#: inc/customizer.php:564
+#: inc/customizer.php:652
 msgid "Search Page Title Text"
 msgstr ""
 
-#: inc/customizer.php:585
+#: inc/customizer.php:656
+msgid "Replace Default Search Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:676
 msgid "Search Page Subtitle Text"
 msgstr ""
 
-#: inc/customizer.php:606
+#: inc/customizer.php:680
+msgid "Replace Default Search Subtitle Text"
+msgstr ""
+
+#: inc/customizer.php:700
 msgid "Error404 Header Background Image"
 msgstr ""
 
-#: inc/customizer.php:634
+#: inc/customizer.php:728
 msgid "Error404 Page Title Text"
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:732
+msgid "Replace Error404 Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:752
 msgid "Error404 Page Subtitle Text"
 msgstr ""
 
-#: inc/customizer.php:674
+#: inc/customizer.php:756
+msgid "Replace Error404 Page Subtitle Text"
+msgstr ""
+
+#: inc/customizer.php:774
 msgid "Search Pages Texts"
 msgstr ""
 
-#: inc/customizer.php:675
+#: inc/customizer.php:775
 msgid "Change Default Search Texts "
 msgstr ""
 
-#: inc/customizer.php:704
+#: inc/customizer.php:804
 msgid "Search Results Page Title Text"
 msgstr ""
 
-#: inc/customizer.php:725
+#: inc/customizer.php:808
+msgid "Replace Search Results Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:828
 msgid "Search No Results Page Title Text"
 msgstr ""
 
-#: inc/customizer.php:746
+#: inc/customizer.php:832
+msgid "Replace Search No Results Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:852
 msgid "Search No Results Page Paragraph Text"
 msgstr ""
 
-#: inc/customizer.php:767
+#: inc/customizer.php:856
+msgid "Replace Search No Results Page Paragraph Text"
+msgstr ""
+
+#: inc/customizer.php:876
 msgid "Search 404 Page Title Text"
 msgstr ""
 
-#: inc/customizer.php:788
+#: inc/customizer.php:880
+msgid "Replace Search 404 Page Title Text"
+msgstr ""
+
+#: inc/customizer.php:900
 msgid "Search 404 Page Paragraph Text"
 msgstr ""
 
-#: inc/customizer.php:809
+#: inc/customizer.php:904
+msgid "Replace Search 404 Page Paragraph Text"
+msgstr ""
+
+#: inc/customizer.php:924
 msgid "Site Title and Description Color"
 msgstr ""
 
-#: inc/customizer.php:832
+#: inc/customizer.php:947
 msgid "Site Title Hover Color"
 msgstr ""
 
-#: inc/customizer.php:855
+#: inc/customizer.php:970
 msgid "Strike and Arrow Down Color"
 msgstr ""
 
-#: inc/customizer.php:880
+#: inc/customizer.php:995
 msgid "BODY COLORS !"
 msgstr ""
 
-#: inc/customizer.php:881
+#: inc/customizer.php:996
 msgid "Change Default Body Colors"
 msgstr ""
 
-#: inc/customizer.php:890 inc/customizer.php:904
+#: inc/customizer.php:1005 inc/customizer.php:1019
 msgid "Body Background Color"
 msgstr ""
 
-#: inc/customizer.php:891
+#: inc/customizer.php:1006
 msgid "Change Default Background Body Color"
 msgstr ""
 
-#: inc/customizer.php:922
+#: inc/customizer.php:1037
 msgid "Posts Colors"
 msgstr ""
 
-#: inc/customizer.php:923
+#: inc/customizer.php:1038
 msgid "Change Default Posts Colors"
 msgstr ""
 
-#: inc/customizer.php:936
+#: inc/customizer.php:1051
 msgid "Post Title Color"
 msgstr ""
 
-#: inc/customizer.php:958
+#: inc/customizer.php:1073
 msgid "Post Title Hover Color"
 msgstr ""
 
-#: inc/customizer.php:980
+#: inc/customizer.php:1095
 msgid "Post Paragraphs Color"
 msgstr ""
 
-#: inc/customizer.php:1003
+#: inc/customizer.php:1118
 msgid "Read More Link Color"
 msgstr ""
 
-#: inc/customizer.php:1022
+#: inc/customizer.php:1137
 msgid "Read More Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1044
+#: inc/customizer.php:1159
 msgid "Byline&Posted Color"
 msgstr ""
 
-#: inc/customizer.php:1065
+#: inc/customizer.php:1180
 msgid "Links Colors"
 msgstr ""
 
-#: inc/customizer.php:1066
+#: inc/customizer.php:1181
 msgid "Change Default Links Colors"
 msgstr ""
 
-#: inc/customizer.php:1079
+#: inc/customizer.php:1194
 msgid "Body Links Color"
 msgstr ""
 
-#: inc/customizer.php:1104
+#: inc/customizer.php:1219
 msgid "Body Links Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1128
+#: inc/customizer.php:1243
 msgid "Horizontal Rule Colors"
 msgstr ""
 
-#: inc/customizer.php:1129
+#: inc/customizer.php:1244
 msgid "Change Default Horizontal Rule Colors"
 msgstr ""
 
-#: inc/customizer.php:1142
+#: inc/customizer.php:1257
 msgid "Horizontal Rule Color"
 msgstr ""
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1276
 msgid "Horizontal Rule Background Color"
 msgstr ""
 
-#: inc/customizer.php:1179
+#: inc/customizer.php:1294
 msgid "Pagination Colors"
 msgstr ""
 
-#: inc/customizer.php:1180
+#: inc/customizer.php:1295
 msgid "Change Default Pagination Colors"
 msgstr ""
 
-#: inc/customizer.php:1193
+#: inc/customizer.php:1308
 msgid "Pagination Background Color"
 msgstr ""
 
-#: inc/customizer.php:1215
+#: inc/customizer.php:1330
 msgid "Pagination Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1244
+#: inc/customizer.php:1359
 msgid "Pagination Text Color"
 msgstr ""
 
-#: inc/customizer.php:1263
+#: inc/customizer.php:1378
 msgid "Pagination Text Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1284
+#: inc/customizer.php:1399
 msgid "Posts Social Sharing Colors"
 msgstr ""
 
-#: inc/customizer.php:1285
+#: inc/customizer.php:1400
 msgid "Change Posts Default Social Sharing Colors"
 msgstr ""
 
-#: inc/customizer.php:1293
+#: inc/customizer.php:1408
 msgid "Social Sharing Background"
 msgstr ""
 
-#: inc/customizer.php:1294
+#: inc/customizer.php:1409
 msgid "Change Default Social Sharing Background Color"
 msgstr ""
 
-#: inc/customizer.php:1307
+#: inc/customizer.php:1422
 msgid "Social Sharing Background Color"
 msgstr ""
 
-#: inc/customizer.php:1324
+#: inc/customizer.php:1439
 msgid "Social Sharing Text"
 msgstr ""
 
-#: inc/customizer.php:1325
+#: inc/customizer.php:1440
 msgid "Change Default Social Sharing Text Color"
 msgstr ""
 
-#: inc/customizer.php:1338
+#: inc/customizer.php:1453
 msgid "Social Sharing Text Color"
 msgstr ""
 
-#: inc/customizer.php:1355
+#: inc/customizer.php:1470
 msgid "Email Icon"
 msgstr ""
 
-#: inc/customizer.php:1356
+#: inc/customizer.php:1471
 msgid "Change Default Email Icon Colors"
 msgstr ""
 
-#: inc/customizer.php:1369
+#: inc/customizer.php:1484
 msgid "Email Icon Color"
 msgstr ""
 
-#: inc/customizer.php:1388
+#: inc/customizer.php:1503
 msgid "Email Icon Background Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1407
+#: inc/customizer.php:1522
 msgid "Email Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1424
+#: inc/customizer.php:1539
 msgid "Twitter Icon"
 msgstr ""
 
-#: inc/customizer.php:1425
+#: inc/customizer.php:1540
 msgid "Change Default Twitter Icon Colors"
 msgstr ""
 
-#: inc/customizer.php:1438
+#: inc/customizer.php:1553
 msgid "Twitter Icon Color"
 msgstr ""
 
-#: inc/customizer.php:1457
+#: inc/customizer.php:1572
 msgid "Twitter Icon Background Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1476
+#: inc/customizer.php:1591
 msgid "Twitter Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1493
+#: inc/customizer.php:1608
 msgid "Facebook Icon"
 msgstr ""
 
-#: inc/customizer.php:1494
+#: inc/customizer.php:1609
 msgid "Change Default Facebook Icon Colors"
 msgstr ""
 
-#: inc/customizer.php:1507
+#: inc/customizer.php:1622
 msgid "Facebook Icon Color"
 msgstr ""
 
-#: inc/customizer.php:1526
+#: inc/customizer.php:1641
 msgid "Facebook Icon Background Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1545
+#: inc/customizer.php:1660
 msgid "Facebook Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1562
+#: inc/customizer.php:1677
 msgid "Google Plus Icon"
 msgstr ""
 
-#: inc/customizer.php:1563
+#: inc/customizer.php:1678
 msgid "Change Default Google Plus Icon Colors"
 msgstr ""
 
-#: inc/customizer.php:1576
+#: inc/customizer.php:1691
 msgid "Google Plus Icon Color"
 msgstr ""
 
-#: inc/customizer.php:1595
+#: inc/customizer.php:1710
 msgid "Google Plus Icon Background Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1614
+#: inc/customizer.php:1729
 msgid "Google Plus Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1631
+#: inc/customizer.php:1746
 msgid "Pinterest Icon"
 msgstr ""
 
-#: inc/customizer.php:1632
+#: inc/customizer.php:1747
 msgid "Change Default Pinterest Icon Colors"
 msgstr ""
 
-#: inc/customizer.php:1645
+#: inc/customizer.php:1760
 msgid "Pinterest Icon Color"
 msgstr ""
 
-#: inc/customizer.php:1664
+#: inc/customizer.php:1779
 msgid "Pinterest Icon Background Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1683
+#: inc/customizer.php:1798
 msgid "Pinterest Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1700
+#: inc/customizer.php:1815
 msgid "WhatsApp Icon (Tablet / Mobile)"
 msgstr ""
 
-#: inc/customizer.php:1701
+#: inc/customizer.php:1816
 msgid "Change Default WhatsApp Icon Colors"
 msgstr ""
 
-#: inc/customizer.php:1714
+#: inc/customizer.php:1829
 msgid "WhatsApp Icon Color"
 msgstr ""
 
-#: inc/customizer.php:1733
+#: inc/customizer.php:1848
 msgid "WhatsApp Icon Background Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1752
+#: inc/customizer.php:1867
 msgid "WhatsApp Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:1770
+#: inc/customizer.php:1885
 msgid "Posts Comments Colors"
 msgstr ""
 
-#: inc/customizer.php:1771
+#: inc/customizer.php:1886
 msgid "Change Posts Default Comments Colors"
 msgstr ""
 
-#: inc/customizer.php:1779
+#: inc/customizer.php:1894
 msgid "Comments Title & Notes"
 msgstr ""
 
-#: inc/customizer.php:1780
+#: inc/customizer.php:1895
 msgid "Change Default Comments Title & Notes Colors"
 msgstr ""
 
-#: inc/customizer.php:1792
+#: inc/customizer.php:1907
 msgid "Comments Title Color"
 msgstr ""
 
-#: inc/customizer.php:1811
+#: inc/customizer.php:1926
 msgid "Comments Notes Color"
 msgstr ""
 
-#: inc/customizer.php:1829
+#: inc/customizer.php:1944
 msgid "Comments Boxes"
 msgstr ""
 
-#: inc/customizer.php:1830
+#: inc/customizer.php:1945
 msgid "Change Default Comments Boxes Colors"
 msgstr ""
 
-#: inc/customizer.php:1842
+#: inc/customizer.php:1957
 msgid "Comments Placeholders Color"
 msgstr ""
 
-#: inc/customizer.php:1861
+#: inc/customizer.php:1976
 msgid "Comments Background Color"
 msgstr ""
 
-#: inc/customizer.php:1880
+#: inc/customizer.php:1995
 msgid "Comments Focus Border Color"
 msgstr ""
 
-#: inc/customizer.php:1897
+#: inc/customizer.php:2012
 msgid "Comments Submit Button Color"
 msgstr ""
 
-#: inc/customizer.php:1898
+#: inc/customizer.php:2013
 msgid "Change Default Comments Submit Button Colors"
 msgstr ""
 
-#: inc/customizer.php:1910
+#: inc/customizer.php:2025
 msgid "Comments Submit Text Color"
 msgstr ""
 
-#: inc/customizer.php:1929
+#: inc/customizer.php:2044
 msgid "Comments Submit Background Color"
 msgstr ""
 
-#: inc/customizer.php:1948
+#: inc/customizer.php:2063
 msgid "Comments Submit Borders Colors"
 msgstr ""
 
-#: inc/customizer.php:1959
+#: inc/customizer.php:2074
 msgid "Border Top"
 msgstr ""
 
-#: inc/customizer.php:1960
+#: inc/customizer.php:2075
 msgid "Border Right"
 msgstr ""
 
-#: inc/customizer.php:1961
+#: inc/customizer.php:2076
 msgid "Border Bottom"
 msgstr ""
 
-#: inc/customizer.php:1962
+#: inc/customizer.php:2077
 msgid "Border Left"
 msgstr ""
 
-#: inc/customizer.php:1977
+#: inc/customizer.php:2092
 msgid "Slider Settings"
 msgstr ""
 
-#: inc/customizer.php:1978
+#: inc/customizer.php:2093
 msgid "Control the slider settings"
 msgstr ""
 
-#: inc/customizer.php:1992
+#: inc/customizer.php:2107
 msgid "Activate Slider"
 msgstr ""
 
-#: inc/customizer.php:1993
+#: inc/customizer.php:2108
 msgid ""
 "You can choose to display on your homepage (Your latest posts) a static "
 "header background image or a slider of header background images of posts "
 "from a choosen category."
 msgstr ""
 
-#: inc/customizer.php:1998 inc/customizer.php:2151
+#: inc/customizer.php:2113 inc/customizer.php:2266
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer.php:1999 inc/customizer.php:2152
+#: inc/customizer.php:2114 inc/customizer.php:2267
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:2009
+#: inc/customizer.php:2124
 msgid "Choose a category"
 msgstr ""
 
-#: inc/customizer.php:2010
+#: inc/customizer.php:2125
 msgid "Choose the category of posts for the slider."
 msgstr ""
 
-#: inc/customizer.php:2042
+#: inc/customizer.php:2157
 msgid "Set the number of posts/slides"
 msgstr ""
 
-#: inc/customizer.php:2043
+#: inc/customizer.php:2158
 msgid "Set the number of posts/slides for the slider."
 msgstr ""
 
-#: inc/customizer.php:2067
+#: inc/customizer.php:2182
 msgid "Choose Slider Animation"
 msgstr ""
 
-#: inc/customizer.php:2073
+#: inc/customizer.php:2188
 msgid "horizontal"
 msgstr ""
 
-#: inc/customizer.php:2074
+#: inc/customizer.php:2189
 msgid "vertical"
 msgstr ""
 
-#: inc/customizer.php:2075
+#: inc/customizer.php:2190
 msgid "fade"
 msgstr ""
 
-#: inc/customizer.php:2092
+#: inc/customizer.php:2207
 msgid "Choose the slides loop"
 msgstr ""
 
-#: inc/customizer.php:2093
+#: inc/customizer.php:2208
 msgid "Choose to make the slides loop infinitely or not."
 msgstr ""
 
-#: inc/customizer.php:2112
+#: inc/customizer.php:2227
 msgid "Horizontal animation direction"
 msgstr ""
 
-#: inc/customizer.php:2113
+#: inc/customizer.php:2228
 msgid "Change animation from right to left."
 msgstr ""
 
-#: inc/customizer.php:2131
+#: inc/customizer.php:2246
 msgid "Preloader Settings"
 msgstr ""
 
-#: inc/customizer.php:2132
+#: inc/customizer.php:2247
 msgid "Control LoadingOverlay settings"
 msgstr ""
 
-#: inc/customizer.php:2145
+#: inc/customizer.php:2260
 msgid "Activate Preloader"
 msgstr ""
 
-#: inc/customizer.php:2146
+#: inc/customizer.php:2261
 msgid "Choose to display a preloader or not !"
 msgstr ""
 
-#: inc/customizer.php:2169
+#: inc/customizer.php:2284
 msgid "Preloader on Homepage Only"
 msgstr ""
 
-#: inc/customizer.php:2170
+#: inc/customizer.php:2285
 msgid "Activate Preloader Only On Homepage"
 msgstr ""
 
-#: inc/customizer.php:2183
+#: inc/customizer.php:2298
 msgid "Preloader Background Color"
 msgstr ""
 
-#: inc/customizer.php:2203
+#: inc/customizer.php:2318
 msgid "Choose Preloader Animation"
 msgstr ""
 
-#: inc/customizer.php:2209
+#: inc/customizer.php:2324
 msgid "Ball Beat"
 msgstr ""
 
-#: inc/customizer.php:2210
+#: inc/customizer.php:2325
 msgid "Ball Clip 1"
 msgstr ""
 
-#: inc/customizer.php:2211
+#: inc/customizer.php:2326
 msgid "Ball Clip 2"
 msgstr ""
 
-#: inc/customizer.php:2212
+#: inc/customizer.php:2327
 msgid "Ball Clip 3"
 msgstr ""
 
-#: inc/customizer.php:2213
+#: inc/customizer.php:2328
 msgid "Ball Grid Beat"
 msgstr ""
 
-#: inc/customizer.php:2214
+#: inc/customizer.php:2329
 msgid "Ball Grid Pulse"
 msgstr ""
 
-#: inc/customizer.php:2215
+#: inc/customizer.php:2330
 msgid "Ball Pulse"
 msgstr ""
 
-#: inc/customizer.php:2216
+#: inc/customizer.php:2331
 msgid "Ball Pulse Rise"
 msgstr ""
 
-#: inc/customizer.php:2217
+#: inc/customizer.php:2332
 msgid "Ball Pulse Sync"
 msgstr ""
 
-#: inc/customizer.php:2218
+#: inc/customizer.php:2333
 msgid "Ball Rotate"
 msgstr ""
 
-#: inc/customizer.php:2219
+#: inc/customizer.php:2334
 msgid "Ball Scale 1"
 msgstr ""
 
-#: inc/customizer.php:2220
+#: inc/customizer.php:2335
 msgid "Ball Scale 2"
 msgstr ""
 
-#: inc/customizer.php:2221
+#: inc/customizer.php:2336
 msgid "Ball Scale 3"
 msgstr ""
 
-#: inc/customizer.php:2222
+#: inc/customizer.php:2337
 msgid "Ball Scale 4"
 msgstr ""
 
-#: inc/customizer.php:2223
+#: inc/customizer.php:2338
 msgid "Ball Scale 5"
 msgstr ""
 
-#: inc/customizer.php:2224
+#: inc/customizer.php:2339
 msgid "Ball Spin"
 msgstr ""
 
-#: inc/customizer.php:2225
+#: inc/customizer.php:2340
 msgid "Ball Triangle"
 msgstr ""
 
-#: inc/customizer.php:2226
+#: inc/customizer.php:2341
 msgid "Ball Zigzag 1"
 msgstr ""
 
-#: inc/customizer.php:2227
+#: inc/customizer.php:2342
 msgid "Ball Zigzag 2"
 msgstr ""
 
-#: inc/customizer.php:2228
+#: inc/customizer.php:2343
 msgid "Cube Transition"
 msgstr ""
 
-#: inc/customizer.php:2229
+#: inc/customizer.php:2344
 msgid "Line Scale 1"
 msgstr ""
 
-#: inc/customizer.php:2230
+#: inc/customizer.php:2345
 msgid "Line Scale 2"
 msgstr ""
 
-#: inc/customizer.php:2231
+#: inc/customizer.php:2346
 msgid "Line Scale 3"
 msgstr ""
 
-#: inc/customizer.php:2232
+#: inc/customizer.php:2347
 msgid "Line Scale 4"
 msgstr ""
 
-#: inc/customizer.php:2233
+#: inc/customizer.php:2348
 msgid "Line Spin"
 msgstr ""
 
-#: inc/customizer.php:2234
+#: inc/customizer.php:2349
 msgid "Pacman"
 msgstr ""
 
-#: inc/customizer.php:2235
+#: inc/customizer.php:2350
 msgid "Square Spin"
 msgstr ""
 
-#: inc/customizer.php:2236
+#: inc/customizer.php:2351
 msgid "Triangle Spin"
 msgstr ""
 
-#: inc/customizer.php:2247
+#: inc/customizer.php:2362
 msgid "Preloader Animation Color Set 1"
 msgstr ""
 
-#: inc/customizer.php:2273
+#: inc/customizer.php:2388
 msgid "Preloader Animation Color Set 2"
 msgstr ""
 
-#: inc/customizer.php:2299
+#: inc/customizer.php:2414
 msgid "Ball Clip 1 Colors"
 msgstr ""
 
-#: inc/customizer.php:2303 inc/customizer.php:2442 inc/customizer.php:2475
-#: inc/customizer.php:2542
+#: inc/customizer.php:2418 inc/customizer.php:2557 inc/customizer.php:2590
+#: inc/customizer.php:2657
 msgid "Border Top Color"
 msgstr ""
 
-#: inc/customizer.php:2304 inc/customizer.php:2508
+#: inc/customizer.php:2419 inc/customizer.php:2623
 msgid "Border Right Color"
 msgstr ""
 
-#: inc/customizer.php:2305 inc/customizer.php:2509 inc/customizer.php:2544
+#: inc/customizer.php:2420 inc/customizer.php:2624 inc/customizer.php:2659
 msgid "Border Left Color"
 msgstr ""
 
-#: inc/customizer.php:2334
+#: inc/customizer.php:2449
 msgid "Ball Rotate Color"
 msgstr ""
 
-#: inc/customizer.php:2360
+#: inc/customizer.php:2475
 msgid "Balls Rotate Color"
 msgstr ""
 
-#: inc/customizer.php:2386
+#: inc/customizer.php:2501
 msgid "Triangle Spin Color"
 msgstr ""
 
-#: inc/customizer.php:2412
+#: inc/customizer.php:2527
 msgid "Ball Clip 2 Internal Color"
 msgstr ""
 
-#: inc/customizer.php:2438
+#: inc/customizer.php:2553
 msgid "Ball Clip 2 External Colors"
 msgstr ""
 
-#: inc/customizer.php:2443 inc/customizer.php:2476 inc/customizer.php:2543
+#: inc/customizer.php:2558 inc/customizer.php:2591 inc/customizer.php:2658
 msgid "Border Bottom Color"
 msgstr ""
 
-#: inc/customizer.php:2471
+#: inc/customizer.php:2586
 msgid "Ball Clip 3 Internal Colors"
 msgstr ""
 
-#: inc/customizer.php:2504
+#: inc/customizer.php:2619
 msgid "Ball Clip 3 External Colors"
 msgstr ""
 
-#: inc/customizer.php:2537
+#: inc/customizer.php:2652
 msgid "Pacman Color"
 msgstr ""
 
-#: inc/customizer.php:2538
+#: inc/customizer.php:2653
 msgid "PLEASE CHOOSE THE SAME COLOR FOR THE PACMAN OR IT WILL NOT WORK !"
 msgstr ""
 
-#: inc/customizer.php:2573
+#: inc/customizer.php:2688
 msgid "Pacman Balls Color"
 msgstr ""
 
-#: inc/customizer.php:2574
+#: inc/customizer.php:2689
 msgid "For a better animation, please choose the same color as the pacman !"
 msgstr ""
 
-#: inc/customizer.php:2600
+#: inc/customizer.php:2715
 msgid "Choose Preloader Animation Dimension"
 msgstr ""
 
-#: inc/customizer.php:2626
+#: inc/customizer.php:2741
 msgid "Set Preloader Animation Time"
 msgstr ""
 
-#: inc/customizer.php:2652
+#: inc/customizer.php:2767
 msgid "THEME'S LAYOUTS"
 msgstr ""
 
-#: inc/customizer.php:2653
+#: inc/customizer.php:2768
 msgid "Customize Theme's Layouts"
 msgstr ""
 
-#: inc/customizer.php:2661
+#: inc/customizer.php:2776
 msgid "Change Site Layout"
 msgstr ""
 
-#: inc/customizer.php:2662
+#: inc/customizer.php:2777
 msgid "Choose Site's Layout !"
 msgstr ""
 
-#: inc/customizer.php:2675
+#: inc/customizer.php:2790
 msgid "Site Layouts"
 msgstr ""
 
-#: inc/customizer.php:2692
+#: inc/customizer.php:2806
 msgid "Change ALL Posts Layout"
 msgstr ""
 
-#: inc/customizer.php:2693
+#: inc/customizer.php:2807
 msgid "Choose ALL Posts Layout !"
 msgstr ""
 
-#: inc/customizer.php:2713
+#: inc/customizer.php:2827
 msgid "ALL Posts Layouts"
 msgstr ""
 
-#: inc/customizer.php:2714
+#: inc/customizer.php:2828
 msgid ""
 "This will change the layout of ALL posts. You can set a specific template "
 "for this post under the Post Attributes in administration."
 msgstr ""
 
-#: inc/customizer.php:2731
+#: inc/customizer.php:2844
 msgid "Change ALL Pages Layout"
 msgstr ""
 
-#: inc/customizer.php:2732
+#: inc/customizer.php:2845
 msgid "Choose ALL Pages Layout !"
 msgstr ""
 
-#: inc/customizer.php:2752
+#: inc/customizer.php:2865
 msgid "ALL Pages Layouts"
 msgstr ""
 
-#: inc/customizer.php:2753
+#: inc/customizer.php:2866
 msgid ""
 "This will change the layout of ALL pages. You can set a specific template "
 "for this page under the Page Attributes in administration."
@@ -1198,10 +1239,6 @@ msgstr ""
 #: inc/the-clean-blog-functions.php:548
 #, php-format
 msgid "%s icon"
-msgstr ""
-
-#: inc/the-clean-blog-functions.php:595
-msgid "Replace Default Text"
 msgstr ""
 
 #. Name of the template
