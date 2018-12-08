@@ -100,7 +100,7 @@ function thecleanblog_customize_preview_js() {
 			'tcb_search_page_title_text'                => esc_html( 'Searching gives all answers' ),
 			'tcb_search_results_page_text'              => esc_html( 'Search Results for' ),
 			'tcb_error404_page_title_text'              => esc_html( 'Wrong Archives Row !' ),
-			'tcb_search_404_page_title_text'            => esc_html( 'Oops! That page can’t be found.' ),
+			'tcb_search_404_page_title_text'            => esc_html( 'Oops! That page can&rsquo;t be found.' ),
 			'tcb_error404_page_subtitle_text'           => esc_html( 'Try to search below' ),
 			'tcb_search_404_page_paragraph_text'        => esc_html( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?' ),
 			'tcb_search_page_subtitle_title_text'       => esc_html( 'KEEP SEARCHING !' ),
