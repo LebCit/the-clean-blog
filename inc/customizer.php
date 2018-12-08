@@ -697,13 +697,13 @@ The_Clean_Blog_Kirki::add_field(
 		'transport'       => 'auto',
 		'output'          => array(
 			array(
-				'element'  => 'body.error404 .intro-header',
+				'element'  => 'body.error404 #masthead',
 				'property' => 'background-image',
 			),
 		),
 		'js_vars'         => array(
 			array(
-				'element'  => 'body.error404 .intro-header',
+				'element'  => 'body.error404 #masthead',
 				'function' => 'css',
 				'property' => 'background-image',
 			),
