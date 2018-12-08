@@ -89,6 +89,11 @@ add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customize_contro
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function thecleanblog_customize_preview_js() {
+	wp_enqueue_script( 'thecleanblog-customizer-preview', get_theme_file_uri() . '/assets/js/customize-preview.js', array( 'customize-preview' ), '20151215', true );
+	wp_localize_script(
+		'thecleanblog-customizer-preview',
+		'tcb_cp',
+		array(
 			'tcb_site_title'                            => esc_html( wp_parse_url( home_url() )['host'] ),
 			'tcb_activate_slider'                       => get_theme_mod( 'activate_slider', false ),
 			'tcb_placeholder_text'                      => esc_attr( 'Search &hellip;' ),
