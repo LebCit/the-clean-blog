@@ -15,7 +15,32 @@ function thecleanblog_customize_register( $wp_customize ) {
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->get_control( 'background_color' )->section  = 'background_image';
+	// Abort if selective refresh is not available.
+	if ( ! isset( $wp_customize->selective_refresh ) ) {
+		return;
+	} else {
+		$wp_customize->selective_refresh->add_partial(
+			'site_title',
+			array(
+				'selector'        => '.site-title a',
+				'settings'        => array( 'blogname' ),
+				'render_callback' => function() {
+					return get_bloginfo( 'name', 'display' );
+				},
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'site_description',
+			array(
+				'selector'        => 'p.site-description',
+				'settings'        => array( 'blogdescription' ),
+				'render_callback' => function() {
+					return bloginfo( 'description' );
+				},
+			)
+		);
+}
+	$wp_customize->get_control( 'background_color' )->section = 'background_image';
 }
 add_action( 'customize_register', 'thecleanblog_customize_register' );
 
@@ -34,7 +59,7 @@ add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customize_contro
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function thecleanblog_customize_preview_js() {
-	wp_enqueue_script( 'thecleanblog_customizer', get_theme_file_uri() . '/assets/js/customizer.js', array( 'customize-preview', 'jquery' ), '20151215', true );
+			'tcb_site_title'                            => esc_html( wp_parse_url( home_url() )['host'] ),
 }
 add_action( 'customize_preview_init', 'thecleanblog_customize_preview_js' );
 
