@@ -21,9 +21,9 @@ get_header();
 					$search_results = get_theme_mod( 'search_results_page_text' );
 					if ( empty( $search_results ) ) {
 						/* translators: search text for results */
-						$search_results = printf( esc_html__( 'Search Results for: %s', 'the-clean-blog' ), '<span>' . get_search_query() . '</span>' );
+						$search_results = printf( esc_html__( '%1$s: %2$s', 'the-clean-blog' ), '<span id="srft">Search Results for</span>', '<span">' . get_search_query() . '</span>' );
 					} else {
-						printf( esc_html( $search_results . ' %s' ), '<span>' . get_search_query() . '</span>' );
+						printf( esc_html( '%1$s: %2$s' ), '<span id="srft">' . esc_html( $search_results ) . '</span>', '<span>' . get_search_query() . '</span>' );
 					}
 					?>
 				</h1>

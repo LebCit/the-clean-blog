@@ -804,7 +804,7 @@ The_Clean_Blog_Kirki::add_field(
 		'transport'       => 'postMessage',
 		'js_vars'         => array(
 			array(
-				'element'  => 'body.search .page-header h1.page-title',
+				'element'  => 'body.search .page-header h1.page-title #srft',
 				'function' => 'html',
 			),
 		),
