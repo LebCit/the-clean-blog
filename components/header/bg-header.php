@@ -18,17 +18,39 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<div class="site-heading">
 					<header class="entry-header">
-	<?php if ( is_front_page() && is_home() ) { ?>
-						<h1 id="responsive_headline" class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php
+	if ( is_front_page() && is_home() ) {
+		?>
+						<h1 id="responsive_headline" class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<?php
+								// Getting 'blogname' option.
+								$tcb_blogname = get_option( 'blogname' );
+								/**
+								 * Parsing home_url().
+								 *
+								 * @see https://developer.wordpress.org/reference/functions/wp_parse_url/
+								 * @see https://developer.wordpress.org/reference/functions/home_url/
+								 */
+								$tcb_home_url_parts = wp_parse_url( home_url() );
+								if ( empty( $tcb_blogname ) ) {
+									// Using esc_html since 'host' is a string.
+									echo esc_html( $tcb_home_url_parts['host'] );
+								} else {
+									bloginfo( 'name' );
+								}
+								?>
+							</a>
+						</h1>
 		<?php
-} elseif ( is_single() || is_sticky() ) {
-	the_title( '<h1 class="entry-title">', '</h1>' );
-} elseif ( is_archive() ) {
-	the_archive_title( '<h1 class="entry-title">', '</h1>' );
-} else {
-	the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-}
-?>
+	} elseif ( is_single() || is_sticky() ) {
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	} elseif ( is_archive() ) {
+		the_archive_title( '<h1 class="entry-title">', '</h1>' );
+	} else {
+		the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+	}
+	?>
 
 						<div class="strike bounce">
 							<span>

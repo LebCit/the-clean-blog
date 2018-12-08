@@ -17,7 +17,7 @@ if ( ! empty( $horizontal_slides_direction ) ) {
 <div class="tcb-slider" dir="<?php echo esc_attr( $horizontal_slides_direction ); ?>">
 	<ul class="tcb-slides">
 		<li>                   
-			<header id="masthead" class="site-header intro-header" role="banner">
+			<header id="masthead" class="site-header intro-header no-post-thumbnail" role="banner">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -61,17 +61,20 @@ if ( ! empty( $horizontal_slides_direction ) ) {
 			$rslides->the_post();
 			?>
 		<li>
-			<header id="masthead" class="site-header intro-header"
+			<header id="masthead"
 				<?php
 				if ( has_post_thumbnail() ) {
 					$hero_img_slider = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '' );
 					?>
-					style="background-image: url('<?php echo esc_url( $hero_img_slider[0] ); ?>')"
+					class="site-header intro-header" style="background-image: url('<?php echo esc_url( $hero_img_slider[0] ); ?>')"
 					<?php
 				} else {
-					$hero_img_slider = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
+					$hero_img_slider = get_theme_mod( 'default_header_background_image' );
+					if ( empty( $hero_img_slider ) ) {
+						$hero_img_slider = get_template_directory_uri() . '/components/header/images/default-hero.jpg';
+					}
 					?>
-					style="background-image: url('<?php echo esc_url( $hero_img_slider ); ?>')"
+					class="site-header intro-header no-post-thumbnail" style="background-image: url('<?php echo esc_url( $hero_img_slider ); ?>')"
 				<?php } ?>
 			role="banner">
 				<div class="container">

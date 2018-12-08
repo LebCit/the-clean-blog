@@ -39,7 +39,7 @@ function thecleanblog_customize_register( $wp_customize ) {
 				},
 			)
 		);
-}
+	}
 	$wp_customize->get_control( 'background_color' )->section = 'background_image';
 }
 add_action( 'customize_register', 'thecleanblog_customize_register' );
@@ -90,6 +90,7 @@ add_action( 'customize_controls_enqueue_scripts', 'thecleanblog_customize_contro
  */
 function thecleanblog_customize_preview_js() {
 			'tcb_site_title'                            => esc_html( wp_parse_url( home_url() )['host'] ),
+			'tcb_activate_slider'                       => get_theme_mod( 'activate_slider', false ),
 			'tcb_placeholder_text'                      => esc_attr( 'Search &hellip;' ),
 			'tcb_search_page_title_text'                => esc_html( 'Searching gives all answers' ),
 			'tcb_search_results_page_text'              => esc_html( 'Search Results for' ),
@@ -98,6 +99,7 @@ function thecleanblog_customize_preview_js() {
 			'tcb_error404_page_subtitle_text'           => esc_html( 'Try to search below' ),
 			'tcb_search_404_page_paragraph_text'        => esc_html( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?' ),
 			'tcb_search_page_subtitle_title_text'       => esc_html( 'KEEP SEARCHING !' ),
+			'tcb_default_header_background_image'       => get_template_directory_uri() . '/components/header/images/default-hero.jpg',
 			'tcb_search_no_results_page_title_text'     => esc_html( 'Nothing Found' ),
 			'tcb_search_no_results_page_paragraph_text' => esc_html( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ),
 		)
