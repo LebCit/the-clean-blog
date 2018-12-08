@@ -3,11 +3,11 @@
 ![Screenshot](https://github.com/LebCit/the-clean-blog/raw/master/screenshot.png "The Clean Blog Screenshot")
 
 Contributors: [LebCit](https://profiles.wordpress.org/lebcit)  
-Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, one-column, theme-options, threaded-comments, translation-ready
+Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, full-width-template, one-column, theme-options, threaded-comments, translation-ready, two-columns
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 4.9.8  
-Stable tag: 18.11.13  
+Tested up to: WordPress 5.0  
+Stable tag: 18.12.09  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,19 @@ Provided section(s) depends on the actual view of the site !
 Please note that if you set a Generic template for a post or page, no section/setting/control will be provided since it already has a particular template ! 
 
 ## Changelog
+
+### 18.12.09 =
+* Released: December 09, 2018
+- Added Placeholder Texts For Texts Fields in Customizer.
+- Added Selective Refresh to Site Title & Description.
+- Changed File Name & Code, customize-preview.js
+- Corrected CSS Target & Code of search_results_page_text
+- Corrected CSS Target of error404_header_background_image
+- Corrected Header Background Image Code.
+- Moved Init Code, Changed File Name & Code, customize-controls.js
+- Removed Core 'Menus' Panel From Customizer.
+- Updated .pot file with new strings.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.11.13 =
 * Released: November 13, 2018
