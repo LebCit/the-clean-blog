@@ -44,6 +44,36 @@ function thecleanblog_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'thecleanblog_customize_register' );
 
+
+/**
+ * Removes the core 'Menus' panel from the Customizer.
+ *
+ * @see https://wordpress.stackexchange.com/questions/228770/remove-nav-menus-from-customizer-using-a-theme
+ */
+add_action(
+	'customize_register',
+	function ( $wp_customize_manager ) {
+		// Check if WP_Customize_Nav_Menus object exist.
+		if ( isset( $wp_customize_manager->nav_menus ) && is_object( $wp_customize_manager->nav_menus ) ) {
+
+			// Remove all the filters/actions resiterd in WP_Customize_Nav_Menus __construct.
+			remove_filter( 'customize_refresh_nonces', array( $wp_customize_manager->nav_menus, 'filter_nonces' ) );
+			remove_action( 'wp_ajax_load-available-menu-items-customizer', array( $wp_customize_manager->nav_menus, 'ajax_load_available_items' ) );
+			remove_action( 'wp_ajax_search-available-menu-items-customizer', array( $wp_customize_manager->nav_menus, 'ajax_search_available_items' ) );
+			remove_action( 'customize_controls_enqueue_scripts', array( $wp_customize_manager->nav_menus, 'enqueue_scripts' ) );
+			remove_action( 'customize_register', array( $wp_customize_manager->nav_menus, 'customize_register' ), 11 );
+			remove_filter( 'customize_dynamic_setting_args', array( $wp_customize_manager->nav_menus, 'filter_dynamic_setting_args' ), 10, 2 );
+			remove_filter( 'customize_dynamic_setting_class', array( $wp_customize_manager->nav_menus, 'filter_dynamic_setting_class' ), 10, 3 );
+			remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize_manager->nav_menus, 'print_templates' ) );
+			remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize_manager->nav_menus, 'available_items_template' ) );
+			remove_action( 'customize_preview_init', array( $wp_customize_manager->nav_menus, 'customize_preview_init' ) );
+			remove_filter( 'customize_dynamic_partial_args', array( $wp_customize_manager->nav_menus, 'customize_dynamic_partial_args' ), 10, 2 );
+
+		}
+	},
+	-1
+); // Give it a lowest priority so we can remove it on right time.
+
 /**
  * Hooking in JS code to affect the controls in the Customizer.
  * FOR LATER USE !
