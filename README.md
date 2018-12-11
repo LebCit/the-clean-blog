@@ -7,7 +7,7 @@ Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-s
 
 Requires at least: WordPress 4.7  
 Tested up to: WordPress 5.0  
-Stable tag: 18.12.09  
+Stable tag: 18.12.11  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,10 @@ Provided section(s) depends on the actual view of the site !
 Please note that if you set a Generic template for a post or page, no section/setting/control will be provided since it already has a particular template ! 
 
 ## Changelog
+
+### 18.12.11 =
+* Released: December 11, 2018
+- Bumped version number, new upload to WordPress.
 
 ### 18.12.09 =
 * Released: December 09, 2018
