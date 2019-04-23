@@ -2759,7 +2759,7 @@ The_Clean_Blog_Kirki::add_field(
 	)
 );
 
-// Theme's Layouts Panel.
+// 10- Theme's Layouts Panel.
 The_Clean_Blog_Kirki::add_panel(
 	'theme_layouts',
 	array(
@@ -2873,5 +2873,551 @@ The_Clean_Blog_Kirki::add_field(
 			'sidebar-left-pages'  => plugins_url() . '/kirki/assets/images/2cl.png',
 		),
 		'active_callback' => 'is_only_page_no_template',
+	)
+);
+
+// 11- Sidebar Widgets Colors Panel.
+The_Clean_Blog_Kirki::add_panel(
+	'sidebar_widgets_colors',
+	array(
+		'title'    => __( 'Sidebar Widgets Colors', 'the-clean-blog' ),
+		'panel'    => 'thecleanblog_theme',
+		'priority' => 20,
+	)
+);
+
+// 11.1- Search Widget Section.
+The_Clean_Blog_Kirki::add_section(
+	'search_widget',
+	array(
+		'title'    => __( 'Search Widget', 'the-clean-blog' ),
+		'panel'    => 'sidebar_widgets_colors',
+		'priority' => 5,
+	)
+);
+
+// 11.1.1- Search Field Background.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'search_widget_field_background',
+		'label'     => __( 'Search Field Background', 'the-clean-blog' ),
+		'section'   => 'search_widget',
+		'default'   => '#fff',
+		'priority'  => 5,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary input[type="search"]',
+				'property' => 'background',
+			),
+		),
+	)
+);
+
+// 11.1.2- Search Field Text.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'search_widget_field_text',
+		'label'     => __( 'Search Field Text', 'the-clean-blog' ),
+		'section'   => 'search_widget',
+		'default'   => '#666',
+		'priority'  => 10,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary input[type="search"]',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.1.3- Search Field Text Focus.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'search_widget_field_text_focus',
+		'label'     => __( 'Search Field Text Focus', 'the-clean-blog' ),
+		'section'   => 'search_widget',
+		'default'   => '#111',
+		'priority'  => 15,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary input[type="search"]:focus',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.1.4- Search Field Border Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'search_widget_field_border_color',
+		'label'     => __( 'Search Field Border Color', 'the-clean-blog' ),
+		'section'   => 'search_widget',
+		'default'   => '#ccc',
+		'priority'  => 20,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary input[type="search"]',
+				'property' => 'border-color',
+			),
+		),
+	)
+);
+
+// 11.1.5- Search Icon Background.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'search_widget_icon_background',
+		'label'     => __( 'Search Icon Background', 'the-clean-blog' ),
+		'section'   => 'search_widget',
+		'default'   => '#ccc',
+		'priority'  => 25,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary .widget.widget_search .search-submit',
+				'property' => 'background',
+			),
+		),
+	)
+);
+
+// 11.1.6- Search Widget Icon Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'search_widget_icon_color',
+		'label'     => __( 'Search Widget Icon Color', 'the-clean-blog' ),
+		'section'   => 'search_widget',
+		'default'   => '#fff',
+		'priority'  => 30,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary .widget.widget_search .search-submit',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.2- Calendar Widget Section.
+The_Clean_Blog_Kirki::add_section(
+	'calendar_widget',
+	array(
+		'title'    => __( 'Calendar Widget', 'the-clean-blog' ),
+		'panel'    => 'sidebar_widgets_colors',
+		'priority' => 10,
+	)
+);
+
+// 11.2.1- Calendar Widget Caption Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_caption_color',
+		'label'     => __( 'Calendar Caption color', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#777',
+		'priority'  => 5,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary #wp-calendar caption',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.2.2- Calendar Widget Header Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_header_color',
+		'label'     => __( 'Calendar Header Color', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#333333',
+		'priority'  => 10,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary #wp-calendar thead',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.2.3- Calendar Widget Body Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_body_color',
+		'label'     => __( 'Calendar Body Color', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#333333',
+		'priority'  => 15,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary #wp-calendar tbody',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.2.4- Calendar Widget Footer Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_footer_color',
+		'label'     => __( 'Calendar Month Color', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#333333',
+		'priority'  => 20,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'#secondary #wp-calendar tfoot td#prev a',
+					'#secondary #wp-calendar tfoot td#next a',
+				),
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.2.5- Calendar Widget Footer Hover Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_footer_hover_color',
+		'label'     => __( 'Calendar Month Hover Color', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#0085A1',
+		'priority'  => 25,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'#secondary #wp-calendar tfoot td#prev a:hover',
+					'#secondary #wp-calendar tfoot td#prev a:focus',
+					'#secondary #wp-calendar tfoot td#next a:hover',
+					'#secondary #wp-calendar tfoot td#next a:focus',
+				),
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.2.6- Calendar Widget Links Background.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_links_background',
+		'label'     => __( 'Calendar Link Day Background', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#007acc',
+		'priority'  => 30,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '.widget_calendar tbody a',
+				'property' => 'background-color',
+			),
+		),
+	)
+);
+
+// 11.2.7- Calendar Widget Links Hover Background.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_links_background_hover',
+		'label'     => __( 'Calendar Link Day Hover Background', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#686868',
+		'priority'  => 35,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'.widget_calendar tbody a:hover',
+					'.widget_calendar tbody a:focus',
+				),
+				'property' => 'background-color',
+			),
+		),
+	)
+);
+
+// 11.2.8- Calendar Widget Links Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'calendar_widget_links_color',
+		'label'     => __( 'Calendar Link Day Color', 'the-clean-blog' ),
+		'section'   => 'calendar_widget',
+		'default'   => '#fff',
+		'priority'  => 40,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'.widget_calendar tbody a',
+					'.widget_calendar tbody a:hover',
+					'.widget_calendar tbody a:focus',
+				),
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.3- Tag Cloud Widget Section.
+The_Clean_Blog_Kirki::add_section(
+	'tag_cloud_widget',
+	array(
+		'title'    => __( 'Posts Tag Cloud Widget', 'the-clean-blog' ),
+		'panel'    => 'sidebar_widgets_colors',
+		'priority' => 15,
+	)
+);
+
+// 11.3.1- Tag Cloud Border Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'tag_cloud_border_color',
+		'label'     => __( 'Tag Cloud Border Color', 'the-clean-blog' ),
+		'section'   => 'tag_cloud_widget',
+		'default'   => '#d1d1d1',
+		'priority'  => 5,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '.tagcloud a',
+				'property' => 'border-color',
+			),
+		),
+	)
+);
+
+// 11.3.2- Tag Cloud Text Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'tag_cloud_text_color',
+		'label'     => __( 'Tag Cloud Text Color', 'the-clean-blog' ),
+		'section'   => 'tag_cloud_widget',
+		'default'   => '#333333',
+		'priority'  => 10,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '.tagcloud a',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.3.3- Tag Cloud Text/Border Hover Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'tag_cloud_text_border_hover_color',
+		'label'     => __( 'Tag Cloud Text/Border Hover Color', 'the-clean-blog' ),
+		'section'   => 'tag_cloud_widget',
+		'default'   => '#007acc',
+		'priority'  => 15,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'.tagcloud a:hover',
+					'.tagcloud a:focus',
+				),
+				'property' => 'border-color',
+			),
+			array(
+				'element'  => array(
+					'.tagcloud a:hover',
+					'.tagcloud a:focus',
+				),
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.4- Global Widgets Styles Section.
+The_Clean_Blog_Kirki::add_section(
+	'global_widgets_styles',
+	array(
+		'title'    => __( 'Global Widgets Styles', 'the-clean-blog' ),
+		'panel'    => 'sidebar_widgets_colors',
+		'priority' => 20,
+	)
+);
+
+// 11.4.1- Widgets Titles Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'widgets_titles_color',
+		'label'     => __( 'Widgets Titles Color', 'the-clean-blog' ),
+		'section'   => 'global_widgets_styles',
+		'default'   => '#333333',
+		'priority'  => 5,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '#secondary h2',
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.4.2- Widgets Separator Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'widgets_separator_color',
+		'label'     => __( 'Widgets Separator Color', 'the-clean-blog' ),
+		'section'   => 'global_widgets_styles',
+		'default'   => '#1a1a1a',
+		'priority'  => 10,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => '.widget',
+				'property' => 'border-bottom-color',
+			),
+		),
+	)
+);
+
+// 11.4.3- Widgets Links Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'widgets_links_color',
+		'label'     => __( 'Widgets Links Color', 'the-clean-blog' ),
+		'section'   => 'global_widgets_styles',
+		'default'   => '#333333',
+		'priority'  => 15,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'.widget_meta a',
+					'.widget_meta a:visited',
+					'.widget_nav_menu a',
+					'.widget_nav_menu a:visited',
+					'.widget_categories a',
+					'.widget_categories a:visited',
+					'.widget_pages a',
+					'.widget_pages a:visited',
+					'.widget_recent_entries a',
+					'.widget_recent_entries a:visited',
+					'.widget_recent_comments a',
+					'.widget_recent_comments a:visited',
+					'.widget_archive a',
+					'.widget_archive a:visited',
+				),
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.4.4- Widgets Links Hover Color.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'      => 'color-alpha',
+		'settings'  => 'widgets_links_hover_color',
+		'label'     => __( 'Widgets Links Hover Color', 'the-clean-blog' ),
+		'section'   => 'global_widgets_styles',
+		'default'   => '#0085A1',
+		'priority'  => 20,
+		'transport' => 'auto',
+		'output'    => array(
+			array(
+				'element'  => array(
+					'.widget_meta a:hover',
+					'.widget_meta a:focus',
+					'.widget_nav_menu a:hover',
+					'.widget_nav_menu a:focus',
+					'.widget_categories a:hover',
+					'.widget_categories a:focus',
+					'.widget_pages a:hover',
+					'.widget_pages a:focus',
+					'.widget_recent_entries a:hover',
+					'.widget_recent_entries a:focus',
+					'.widget_recent_comments a:hover',
+					'.widget_recent_comments a:focus',
+					'.widget_archive a:hover',
+					'.widget_archive a:focus',
+				),
+				'property' => 'color',
+			),
+		),
+	)
+);
+
+// 11.4.5- Global Widgets Content.
+The_Clean_Blog_Kirki::add_field(
+	'thecleanblog',
+	array(
+		'type'        => 'color-alpha',
+		'settings'    => 'global_widgets_content',
+		'label'       => __( 'Global Widgets Content', 'the-clean-blog' ),
+		'description' => __( 'Affects texts and paragraphs<br>like text widget content.', 'the-clean-blog' ),
+		'section'     => 'global_widgets_styles',
+		'default'     => '#333333',
+		'priority'    => 25,
+		'transport'   => 'auto',
+		'output'      => array(
+			array(
+				'element'  => 'body #secondary',
+				'property' => 'color',
+			),
+		),
 	)
 );
