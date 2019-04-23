@@ -6,8 +6,8 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, full-width-template, one-column, theme-options, threaded-comments, translation-ready, two-columns
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 5.0  
-Stable tag: 18.12.11  
+Tested up to: WordPress 5.1.1  
+Stable tag: 19.04.23  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,14 @@ Provided section(s) depends on the actual view of the site !
 Please note that if you set a Generic template for a post or page, no section/setting/control will be provided since it already has a particular template ! 
 
 ## Changelog
+
+### 19.04.23 =
+* Released: April 21, 2019
+- Added Sidebar Widgets Colors Panel in Customizer.
+- Modified Search Widget Proportions.
+- Tested up to version 5.1.1 of WordPress.
+- Updated .pot file with new strings.
+- Updated [readme.md](https://github.com/LebCit/the-clean-blog/blob/master/README.md)
 
 ### 18.12.11 =
 * Released: December 11, 2018
