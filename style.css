@@ -905,7 +905,7 @@ body {
 }
 .widget.widget_search .search-form {
 	display: inline-grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 0.25fr;
 }
 
 .widget.widget_search form.search-form label {
