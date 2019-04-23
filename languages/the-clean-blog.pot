@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-08 23:04+0000\n"
+"POT-Creation-Date: 2019-04-23 09:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -998,6 +998,118 @@ msgstr ""
 msgid ""
 "This will change the layout of ALL pages. You can set a specific template "
 "for this page under the Page Attributes in administration."
+msgstr ""
+
+#: inc/customizer.php:2883
+msgid "Sidebar Widgets Colors"
+msgstr ""
+
+#: inc/customizer.php:2893
+msgid "Search Widget"
+msgstr ""
+
+#: inc/customizer.php:2905
+msgid "Search Field Background"
+msgstr ""
+
+#: inc/customizer.php:2925
+msgid "Search Field Text"
+msgstr ""
+
+#: inc/customizer.php:2945
+msgid "Search Field Text Focus"
+msgstr ""
+
+#: inc/customizer.php:2965
+msgid "Search Field Border Color"
+msgstr ""
+
+#: inc/customizer.php:2985
+msgid "Search Icon Background"
+msgstr ""
+
+#: inc/customizer.php:3005
+msgid "Search Widget Icon Color"
+msgstr ""
+
+#: inc/customizer.php:3023
+msgid "Calendar Widget"
+msgstr ""
+
+#: inc/customizer.php:3035
+msgid "Calendar Caption color"
+msgstr ""
+
+#: inc/customizer.php:3055
+msgid "Calendar Header Color"
+msgstr ""
+
+#: inc/customizer.php:3075
+msgid "Calendar Body Color"
+msgstr ""
+
+#: inc/customizer.php:3095
+msgid "Calendar Month Color"
+msgstr ""
+
+#: inc/customizer.php:3118
+msgid "Calendar Month Hover Color"
+msgstr ""
+
+#: inc/customizer.php:3143
+msgid "Calendar Link Day Background"
+msgstr ""
+
+#: inc/customizer.php:3163
+msgid "Calendar Link Day Hover Background"
+msgstr ""
+
+#: inc/customizer.php:3186
+msgid "Calendar Link Day Color"
+msgstr ""
+
+#: inc/customizer.php:3208
+msgid "Posts Tag Cloud Widget"
+msgstr ""
+
+#: inc/customizer.php:3220
+msgid "Tag Cloud Border Color"
+msgstr ""
+
+#: inc/customizer.php:3240
+msgid "Tag Cloud Text Color"
+msgstr ""
+
+#: inc/customizer.php:3260
+msgid "Tag Cloud Text/Border Hover Color"
+msgstr ""
+
+#: inc/customizer.php:3288
+msgid "Global Widgets Styles"
+msgstr ""
+
+#: inc/customizer.php:3300
+msgid "Widgets Titles Color"
+msgstr ""
+
+#: inc/customizer.php:3320
+msgid "Widgets Separator Color"
+msgstr ""
+
+#: inc/customizer.php:3340
+msgid "Widgets Links Color"
+msgstr ""
+
+#: inc/customizer.php:3375
+msgid "Widgets Links Hover Color"
+msgstr ""
+
+#: inc/customizer.php:3410
+msgid "Global Widgets Content"
+msgstr ""
+
+#: inc/customizer.php:3411
+msgid "Affects texts and paragraphs<br>like text widget content."
 msgstr ""
 
 #: inc/include-kirki.php:54
