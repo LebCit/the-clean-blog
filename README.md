@@ -6,8 +6,9 @@ Contributors: [LebCit](https://profiles.wordpress.org/lebcit)
 Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, full-width-template, one-column, theme-options, threaded-comments, translation-ready, two-columns
 
 Requires at least: WordPress 4.7  
-Tested up to: WordPress 5.1.1  
-Stable tag: 19.04.23  
+Tested up to: WordPress 5.2.2  
+Requires PHP: 5.4  
+Stable tag: 19.07.06  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +77,11 @@ Provided section(s) depends on the actual view of the site !
 Please note that if you set a Generic template for a post or page, no section/setting/control will be provided since it already has a particular template ! 
 
 ## Changelog
+
+### 19.07.06 =
+* Released: July 06, 2019
+- Escaping variables, made some rectifications.
+- Updated version & readme
 
 ### 19.04.23 =
 * Released: April 21, 2019
