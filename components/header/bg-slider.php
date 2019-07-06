@@ -37,7 +37,7 @@ if ( ! empty( $horizontal_slides_direction ) ) {
 											$description = get_bloginfo( 'description', 'display' );
 										if ( $description || is_customize_preview() ) :
 											?>
-											<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+											<p class="site-description"><?php echo esc_html( $description ); ?></p>
 										<?php endif; ?>
 									</h2>
 								</header>

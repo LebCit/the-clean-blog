@@ -143,7 +143,23 @@ function thecleanblog_fallback_menu() {
 	}
 		$html .= '</ul>';
 	$html     .= '</nav>';
-	echo $html; /* WPCS: xss ok. */
+	echo wp_kses(
+		$html,
+		array(
+			'nav' => array(
+				'class' => array(),
+			),
+			'ul'  => array(
+				'class' => array(),
+			),
+			'li'  => array(
+				'class' => array(),
+			),
+			'a'   => array(
+				'href' => array(),
+			),
+		)
+	);
 }
 
 /**
@@ -338,7 +354,7 @@ add_filter( 'comment_form_default_fields', 'thecleanblog_comment_form_fields' );
  */
 function thecleanblog_comments( $comment, $depth, $args ) {
 	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li'; ?>
-	<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+	<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->ID->has_children ? 'parent' : '', $comment ); ?>>
 	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 		<footer class="comment-meta">
 			<div class="comment-author vcard">

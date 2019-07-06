@@ -33,8 +33,8 @@ if ( post_password_required() ) {
 			printf(// WPCS: XSS OK.
 				/* translators: %1$s: number of comments */
 				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'the-clean-blog' ) ),
-				number_format_i18n( get_comments_number() ),
-				'<span>' . get_the_title() . '</span>'
+				esc_html( number_format_i18n( get_comments_number() ) ),
+				'<span>' . esc_html( get_the_title() ) . '</span>'
 			);
 
 			?>

@@ -30,7 +30,7 @@
 				<div class="preloader-wrapper">
 					<div class="preloader">
 						<div class="loader">
-							<div class="loader-inner <?php echo get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ); ?>"></div>
+							<div class="loader-inner <?php echo esc_attr( get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ) ); ?>"></div>
 						</div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 			<div class="preloader-wrapper">
 				<div class="preloader">
 					<div class="loader">
-						<div class="loader-inner <?php echo get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ); ?>"></div>
+						<div class="loader-inner <?php echo esc_attr( get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ) ); ?>"></div>
 					</div>
 				</div>
 			</div>

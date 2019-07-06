@@ -46,7 +46,30 @@ if ( ! function_exists( 'thecleanblog_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="byline">' . $byline . '</span><span class="posted-on"> ' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline">' .
+		wp_kses(
+			$byline,
+			array(
+				'span' => array(
+					'class' => array(),
+				),
+				'a'    => array(
+					'class' => array(),
+					'href'  => array(),
+				),
+			)
+		) .
+		'</span><span class="posted-on"> ' .
+		wp_kses(
+			$posted_on,
+			array(
+				'a' => array(
+					'href' => array(),
+					'rel'  => array(),
+				),
+			)
+		) .
+		'</span>';
 	}
 endif;
 
@@ -61,15 +84,37 @@ if ( ! function_exists( 'thecleanblog_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'the-clean-blog' ) );
 			if ( $categories_list && thecleanblog_categorized_blog() ) {
-				/* translators: post's category(s) */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in : %1$s', 'the-clean-blog' ) . '</span><br><br>', $categories_list ); // WPCS: XSS OK.
+				printf(
+					/* translators: post's category(s) */
+					'<span class="cat-links">' . esc_html__( 'Posted in : %1$s', 'the-clean-blog' ) . '</span><br><br>',
+					wp_kses(
+						$categories_list,
+						array(
+							'a' => array(
+								'href' => array(),
+								'rel'  => array(),
+							),
+						)
+					)
+				);
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'the-clean-blog' ) );
 			if ( $tags_list ) {
-				/* translators: post's tag(s) */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged : %1$s', 'the-clean-blog' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf(
+					/* translators: post's tag(s) */
+					'<span class="tags-links">' . esc_html__( 'Tagged : %1$s', 'the-clean-blog' ) . '</span>',
+					wp_kses(
+						$tags_list,
+						array(
+							'a' => array(
+								'href' => array(),
+								'rel'  => array(),
+							),
+						)
+					)
+				);
 			}
 		}
 
@@ -150,8 +195,9 @@ endif;
  * @return bool
  */
 function thecleanblog_categorized_blog() {
+	$all_the_cool_cats = get_transient( 'thecleanblog_categories' );
 	/* translators: count post's categories */
-	if ( false === ( $all_the_cool_cats = get_transient( 'thecleanblog_categories' ) ) ) {
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories(
 			array(

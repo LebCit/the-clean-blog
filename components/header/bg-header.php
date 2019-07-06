@@ -64,14 +64,14 @@
 		$description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) :
 			?>
-								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+								<p class="site-description"><?php echo esc_html( $description ); ?></p>
 			<?php
 		endif; } elseif ( is_single() ) {
 		thecleanblog_posted_on();
 		}
 		?>
 						</h2>
-					</header>                                             
+					</header>
 				</div>
 			</div>
 		</div>
