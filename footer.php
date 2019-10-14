@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
  * Contains the closing of the #content div and all content after.
  *
@@ -10,24 +10,29 @@
  */
 
 ?>
-</div>
-</div>
-<!-- Main Content -->
-<hr class="page-footer">
-</main>
-</div>
-<!-- #page.site -->
 
-<!-- Footer -->
-<footer id="colophon" class="site-footer" role="contentinfo">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<?php get_template_part( 'components/footer/site', 'info' ); ?>
-			</div>
-		</div>
-	</div>
-</footer>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- #content -->
+
+	<hr>
+
+	<!-- Footer -->
+	<footer id="colophon" class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<ul id="tcb-social" class="list-inline text-center">
+						<?php thecleanblog_social_media_icons(); ?>
+					</ul>
+					<p id="site-info" class="site-info copyright text-muted">
+						<?php thecleanblog_site_info(); ?>
+					</p><!-- .site-info -->
+				</div><!-- .col-lg-8.col-md-10.mx-auto -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
 

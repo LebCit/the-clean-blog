@@ -1,28 +1,30 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package The_Clean_Blog
  */
 
 get_header();
-
 ?>
-<?php get_template_part( 'components/main/main', 'template' ); ?>
-	<main id="main" class="site-main" role="main">
+
+	<div id="primary" class="content-area col-lg-8 col-md-10 mx-auto">
+		<main id="main" class="site-main">
+
+		<?php thecleanblog_breadcrumb(); ?>
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'components/page/content', 'page' );
+			get_template_part( 'template-parts/content', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -30,12 +32,11 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
-
 		?>
 
-	</main>
-</div>
-<!-- #primary .content-area -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
 <?php
 get_sidebar();
 get_footer();

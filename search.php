@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying search results pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
@@ -8,27 +8,16 @@
  */
 
 get_header();
-
 ?>
-<?php get_template_part( 'components/main/main', 'template' ); ?>
-	<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+	<section id="primary" class="content-area col-lg-8 col-md-10 mx-auto">
+		<main id="main" class="site-main">
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					$search_results = get_theme_mod( 'search_results_page_text' );
-					if ( empty( $search_results ) ) {
-						/* translators: search text for results */
-						$search_results = printf( esc_html__( '%1$s: %2$s', 'the-clean-blog' ), '<span id="srft">Search Results for</span>', '<span">' . get_search_query() . '</span>' );
-					} else {
-						printf( esc_html( '%1$s: %2$s' ), '<span id="srft">' . esc_html( $search_results ) . '</span>', '<span>' . get_search_query() . '</span>' );
-					}
-					?>
-				</h1>
-			</header>
-			<?php
+		<?php thecleanblog_breadcrumb(); ?>
+
+		<?php
+		if ( have_posts() ) :
+
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -38,23 +27,22 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'components/post/content', 'search' );
+				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
 
-			thecleanblog_posts_navigation();
+			the_posts_navigation();
 
-		else :
+			else :
 
-			get_template_part( 'components/post/content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+			?>
 
-		?>
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
-	</main>
-</div>
-<!-- #primary .content-area -->
 <?php
 get_sidebar();
 get_footer();

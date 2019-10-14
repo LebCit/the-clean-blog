@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme.
+ * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -9,69 +9,63 @@
  * @package The_Clean_Blog
  */
 
-?><!DOCTYPE html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
-	<head>
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-		<?php wp_head(); ?>
-	</head>
+	<?php wp_head(); ?>
+</head>
 
-	<body <?php body_class( 'preloader-site' ); ?>> <!-- Add .preloader-site class to the body every time the page loads until the document is ready()  -->
+<body <?php body_class(); ?>>
+<?php
+// Shim for backwards compatibility of wp_body_open.
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} else {
+	do_action( 'wp_body_open' );
+}
+?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-clean-blog' ); ?></a>
 
-		<!-- Preloader  -->
-		<?php
-		if ( get_theme_mod( 'activate_preloader' ) == true && get_theme_mod( 'activate_preloader_homepage' ) == true ) {
-			if ( is_home() ) {
-				?>
-				<div class="preloader-wrapper">
-					<div class="preloader">
-						<div class="loader">
-							<div class="loader-inner <?php echo esc_attr( get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ) ); ?>"></div>
-						</div>
-					</div>
-				</div>
-				<?php
-			}
-		} elseif ( get_theme_mod( 'activate_preloader' ) == true ) {
-			?>
-			<div class="preloader-wrapper">
-				<div class="preloader">
-					<div class="loader">
-						<div class="loader-inner <?php echo esc_attr( get_theme_mod( 'preloader_animation', 'ball-pulse-rise' ) ); ?>"></div>
-					</div>
-				</div>
-			</div>
-		<?php } ?>
-		<!-- Preloader  -->
-
-		<div id="page" class="site">
-			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-clean-blog' ); ?></a>
-
-			<!-- Navigation -->
-			<header class="cb-nav">
-				<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-				<button class="search-trigger"><i class="icon-search"></i></button>
-				<li class="search-trigger"><i class="icon-search"></i></li>
-			</header>
-
-			<main class="cb-main-content">
-
-			<!-- Page Header -->
+	<!-- Navigation -->
+	<nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation">
+		<div class="container">
+			<?php the_custom_logo(); ?>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<?php esc_html_e( 'Menu', 'the-clean-blog' ); ?>
+				<span class="navbartogglericon"></span>
+			</button>
 			<?php
-			if ( is_404() ) {
-				get_template_part( 'components/header/bg', '404' );
-			} elseif ( is_search() ) {
-				get_template_part( 'components/header/bg', 'search' );
-			} else {
-				get_template_part( 'components/header/bg', 'header' );
-			}
-
+			wp_nav_menu(
+				array(
+					'container'       => 'div',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'navbarResponsive',
+					'menu_class'      => 'navbar-nav ml-auto',
+					'theme_location'  => 'menu-1',
+					'fallback_cb'     => 'thecleanblog_fallback_menu',
+				)
+			);
 			?>
+		</div>
+	</nav><!-- #mainNav -->
 
-			<!-- Main Content -->
-			<div id="content" class="site-content container">
-				<div class="row">
+	<!-- Page Header -->
+	<?php
+	$homepage_slider_checkbox_value = get_theme_mod( 'homepage_slider_checkbox', false );
+	if ( is_front_page() && is_home() && true == $homepage_slider_checkbox_value ) : // phpcs:ignore
+		get_template_part( 'template-parts/slider', 'masthead' );
+	else :
+		get_template_part( 'template-parts/masthead' );
+	endif;
+	?>
+
+	<!-- Main Content -->
+	<div id="content" class="site-content">
+		<div class="container">
+			<div class="row">

@@ -1,11 +1,11 @@
 <?php
 /**
- * The template for displaying comments.
+ * The template for displaying comments
  *
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package The_Clean_Blog
  */
@@ -18,7 +18,6 @@
 if ( post_password_required() ) {
 	return;
 }
-
 ?>
 
 <div id="comments" class="comments-area">
@@ -26,70 +25,55 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
-
 		?>
 		<h2 class="comments-title">
 			<?php
-			printf(// WPCS: XSS OK.
-				/* translators: %1$s: number of comments */
-				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'the-clean-blog' ) ),
-				esc_html( number_format_i18n( get_comments_number() ) ),
-				'<span>' . esc_html( get_the_title() ) . '</span>'
-			);
-
+			$thecleanblog_comment_count = get_comments_number();
+			if ( '1' === $thecleanblog_comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'the-clean-blog' ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
+				);
+			} else {
+				printf(
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $thecleanblog_comment_count, 'comments title', 'the-clean-blog' ) ),
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					number_format_i18n( $thecleanblog_comment_count ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
+				);
+			}
 			?>
-		</h2>
+		</h2><!-- .comments-title -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'the-clean-blog' ); ?></h2>
-				<ul class="nav-links pager">
-
-					<li class="nav-previous previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'the-clean-blog' ) ); ?></li>
-					<li class="nav-next next"><?php next_comments_link( esc_html__( 'Newer Comments', 'the-clean-blog' ) ); ?></li>
-
-				</ul>
-			</nav>
-		<?php endif; // Check for comment navigation. ?>
+		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
-					'avatar_size' => 100,
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'reply_text'  => '<i class="fa fa-reply" aria-hidden="true"></i>' . __( 'Reply', 'the-clean-blog' ),
+					'avatar_size' => 56,
 				)
 			);
-
 			?>
-		</ol>
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'the-clean-blog' ); ?></h2>
-				<ul class="nav-links pager">
+		</ol><!-- .comment-list -->
 
-					<li class="nav-previous previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'the-clean-blog' ) ); ?></li>
-					<li class="nav-next next"><?php next_comments_link( esc_html__( 'Newer Comments', 'the-clean-blog' ) ); ?></li>
+		<?php
+		the_comments_navigation();
 
-				</ul>
-			</nav>
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) :
+			?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'the-clean-blog' ); ?></p>
 			<?php
-		endif; // Check for comment navigation.
+		endif;
 
 	endif; // Check for have_comments().
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-
-		?>
-
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'the-clean-blog' ); ?></p>
-		<?php
-	endif;
 
 	comment_form();
-
 	?>
 
 </div><!-- #comments -->

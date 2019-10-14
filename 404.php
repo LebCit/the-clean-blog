@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying 404 pages (not found).
+ * The template for displaying 404 pages (not found)
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
@@ -8,44 +8,20 @@
  */
 
 get_header();
-
 ?>
-<?php get_template_part( 'components/main/main', 'template' ); ?>
-	<main id="main" class="site-main" role="main">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title">
+	<div id="primary" class="content-area col-lg-8 col-md-10 mx-auto">
+		<main id="main" class="site-main">
+
+			<section class="error-404 not-found">
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'the-clean-blog' ); ?></p>
+
 					<?php
-					$search404_tilte = get_theme_mod( 'search_404_page_title_text' );
-					if ( empty( $search404_tilte ) ) {
-						$search404_tilte = esc_html_e( 'Oops! That page can&rsquo;t be found.', 'the-clean-blog' );
-					} else {
-						echo esc_html( $search404_tilte );
-					}
-					?>
-				</h1>
-			</header>
-			<div class="page-content">
-				<p>
-					<?php
-					$search404_paragraph = get_theme_mod( 'search_404_page_paragraph_text' );
-					if ( empty( $search404_paragraph ) ) {
-						$search404_paragraph = esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'the-clean-blog' );
-					} else {
-						echo esc_html( $search404_paragraph );
-					}
-					?>
-				</p>
+					get_search_form();
 
-				<?php
-				get_search_form();
-
-				the_widget( 'WP_Widget_Recent_Posts' );
-
-				// Only show the widget if site has multiple categories.
-				if ( thecleanblog_categorized_blog() ) :
-
+					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
 					<div class="widget widget_categories">
@@ -61,26 +37,23 @@ get_header();
 									'number'     => 10,
 								)
 							);
-
 							?>
 						</ul>
-					</div>
+					</div><!-- .widget -->
+
 					<?php
-				endif;
+					/* translators: %1$s: smiley */
+					$thecleanblog_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'the-clean-blog' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$thecleanblog_archive_content" );
 
-				/* translators: %1$s: smiley */
-				$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'the-clean-blog' ), convert_smilies( ':)' ) ) . '</p>';
-				the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					the_widget( 'WP_Widget_Tag_Cloud' );
+					?>
 
-				the_widget( 'WP_Widget_Tag_Cloud' );
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
 
-				?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-			</div>
-		</section>
-	</main>
-</div>
-<!-- #primary .content-area -->
 <?php
-get_sidebar();
 get_footer();

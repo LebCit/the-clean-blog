@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -8,18 +8,20 @@
  */
 
 get_header();
-
 ?>
-<?php get_template_part( 'components/main/main', 'template' ); ?>
-	<main id="main" class="site-main" role="main">
+
+	<div id="primary" class="content-area col-lg-8 col-md-10 mx-auto">
+		<main id="main" class="site-main">
+
+		<?php thecleanblog_breadcrumb(); ?>
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'components/post/content', get_post_format() );
+			get_template_part( 'template-parts/content', get_post_type() );
 
-			thecleanblog_post_navigation();
+			the_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -27,12 +29,11 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
-
 		?>
 
-	</main>
-</div>
-<!-- #primary .content-area -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
 <?php
 get_sidebar();
 get_footer();
