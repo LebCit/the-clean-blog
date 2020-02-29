@@ -1,10 +1,10 @@
 === The Clean Blog ===
 
 Contributors: lebcit
-Requires at least: WordPress 5.2.0
-Tested up to: WordPress 5.2.2
-Requires PHP: 5.5
-Stable tag: 19.10.11
+Requires at least: WordPress 4.7.0
+Tested up to: WordPress 5.3.2
+Requires PHP: 5.2
+Stable tag: 20.02.29
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -39,19 +39,22 @@ The Clean Blog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 20.02.29 - February 29 2020 =
+* Changed domain name
+
 = 19.10.11 - October 11 2019 =
 * Initial release
 * Theme rebuild from ground up
 
 == Upgrade Notice ==
 
-= 19.10.11 =
+= 20.02.29 =
 * Actual stable theme version after rebuild from ground up.
 
 == Resources ==
 
-* The Clean Blog Theme, © 2019 LebCit, GPLv3
-* The Clean Blog, © 2019 Styleshout, MIT
+* The Clean Blog Theme, © 2017-2020 LebCit, GPLv3
+* Clean Blog, © 2019 Styleshout, MIT
 * Underscores, © 2012-2019 Automattic, Inc., GPLv2 or later
 * normalize.css, © 2012-2018 Nicolas Gallagher, MIT
 * slabText, © 2012-2018 Brian McAllister @freqdec, MIT/GPL2
