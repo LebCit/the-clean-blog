@@ -447,7 +447,7 @@ function thecleanblog_site_info() {
 	if ( ! empty( $footer_copyright_area_checkbox ) ) :
 			$html  = '<a href="' . esc_url( 'https://wordpress.org/' ) . '">' . esc_html( 'Proudly powered by WordPress' ) . '</a>';
 			$html .= '<span class="sep"> | </span>';
-			$html .= esc_html( 'Theme: the-clean-blog by ' ) . '<a href="' . esc_url( 'https://lebcit.ml/' ) . '">' . esc_html( 'LebCit' ) . '</a>.';
+			$html .= esc_html( 'Theme: the-clean-blog by ' ) . '<a href="' . esc_url( 'https://lebcit.github.io/' ) . '">' . esc_html( 'LebCit' ) . '</a>.';
 			echo wp_kses(
 				$html,
 				array(
