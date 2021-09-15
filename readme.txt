@@ -2,9 +2,9 @@
 
 Contributors: lebcit
 Requires at least: WordPress 4.7.0
-Tested up to: WordPress 5.4.1
+Tested up to: WordPress 5.8.1
 Requires PHP: 5.2
-Stable tag: 20.05.09
+Stable tag: 21.09.15
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -39,6 +39,9 @@ The Clean Blog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 21.09.15 - September 15 2021 =
+* Corrected Theme URI
+
 = 20.05.09 - May 09 2020 =
 * Changed domain name to GitHub
 
@@ -51,8 +54,8 @@ The Clean Blog includes support for Infinite Scroll in Jetpack.
 
 == Upgrade Notice ==
 
-= 20.05.09 =
-* Actual stable theme version after changing  domain name to GitHub.
+= 21.09.15 =
+* Actual stable theme version after correcting Theme URI.
 
 == Resources ==
 
